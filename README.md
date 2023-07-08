@@ -24,8 +24,8 @@
 
 この拡張機能は、Xcratchの他の拡張機能と一緒に使用できます。
 1.  [Xcratch Editor](https://xcratch.github.io/editor)を開く
-2. 'Add Extension' ボタンをクリックする
-3. 'Extension Loader' 拡張機能を選択する
+2. 左下の '拡張機能を追加' ボタンをクリックする
+3. '拡張機能を読み込む' 拡張機能を選択する
 4. 入力フィールドにモジュールURLを入力する
 ```
 https://creativival.github.io/voxelaming-extension/dist/voxelaming.mjs
