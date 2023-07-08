@@ -1,6 +1,6 @@
 # ボクセラミング拡張機能
 
-[Xcratch](https://xcratch.github.io/)用のVoxelaming拡張機能
+[Xcratch](https://xcratch.github.io/)用のボクセラミング拡張機能
 
 *Read this in other languages: [English](README.en.md), [日本語](README.md)*
 
@@ -14,9 +14,9 @@
 
 ## ✨ この拡張機能で何ができるのか
 
-ボクセラミング拡張機能で何ができるのかを確認するために、例示プロジェクトを再生してみてください。
+ボクセラミング拡張機能で何ができるのかを確認するために、サンプルプロジェクトを再生してみてください。
 
-[Example Project](https://xcratch.github.io/editor/#https://creativival.github.io/voxelaming-extension/projects/example.sb3)
+[サンプルプロジェクト](https://xcratch.github.io/editor/#https://creativival.github.io/voxelaming-extension/projects/example.sb3)
 
 <iframe src="https://xcratch.github.io/editor/player#https://creativival.github.io/voxelaming-extension/projects/example.sb3" width="540px" height="460px"></iframe>
 
