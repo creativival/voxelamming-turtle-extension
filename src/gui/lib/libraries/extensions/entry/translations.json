@@ -1,14 +1,14 @@
 {
   "en": {
     "voxelaming.entry.name": "Voxelaming",
-    "voxelaming.entry.description": "Description of this extension"
+    "voxelaming.entry.description": "Enjoy creating AR voxel art!"
   },
   "ja": {
     "voxelaming.entry.name": "Voxelaming",
-    "voxelaming.entry.description": "拡張機能の説明"
+    "voxelaming.entry.description": "ARボクセルアートを作って遊ぼう！"
   },
   "ja-Hira": {
     "voxelaming.entry.name": "Voxelaming",
-    "voxelaming.entry.description": "かくちょうきのうのせつめい"
+    "voxelaming.entry.description": "ARボクセルアートをつくってあそぼう！"
   }
 }

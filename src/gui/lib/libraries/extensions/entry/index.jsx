@@ -2,8 +2,8 @@
  * This is an extension for Xcratch.
  */
 
-import iconURL from './entry-icon.png';
-import insetIconURL from './inset-icon.svg';
+import iconURL from './voxelaming_600x372.png';
+import insetIconURL from './voxelaming_80x80.png';
 import translations from './translations.json';
 
 /**
@@ -23,13 +23,13 @@ const entry = {
         });
     },
     extensionId: 'voxelaming',
-    extensionURL: 'https://https://github.com/creativival.github.io/voxelaming-extension/dist/voxelaming.mjs',
-    collaborator: 'https://github.com/creativival',
+    extensionURL: 'https://creativival.github.io/voxelaming-extension/dist/voxelaming.mjs',
+    collaborator: 'creativival',
     iconURL: iconURL,
     insetIconURL: insetIconURL,
     get description () {
         return formatMessage({
-            defaultMessage: 'an extension for Xcratch',
+            defaultMessage: 'Enjoy creating AR voxel art!',
             description: 'Description for this extension',
             id: 'voxelaming.entry.description'
         });
@@ -37,8 +37,8 @@ const entry = {
     featured: true,
     disabled: false,
     bluetoothRequired: false,
-    internetConnectionRequired: false,
-    helpLink: 'https://https://github.com/creativival.github.io/voxelaming-extension/',
+    internetConnectionRequired: true,
+    helpLink: 'https://creativival.github.io/voxelaming-extension/',
     setFormatMessage: formatter => {
         formatMessage = formatter;
     },

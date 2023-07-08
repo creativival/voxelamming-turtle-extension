@@ -1,49 +1,60 @@
-# Voxelaming
-An example extension for [Xcratch](https://xcratch.github.io/)
+# ボクセラミング拡張機能
 
-This extension add extra-block "do it", that executes string in its input field as a sentence in Javascript and return the result.
+[Xcratch](https://xcratch.github.io/)用のVoxelaming拡張機能
 
+*Read this in other languages: [English](README.en.md), [日本語](README.md)*
 
-## ✨ What You Can Do With This Extension
+## ボクセラミングとは
 
-Play [Example Project](https://xcratch.github.io/editor/#https://https://github.com/creativival.github.io/voxelaming-extension/projects/example.sb3) to look at what you can do with "Voxelaming" extension. 
-<iframe src="https://xcratch.github.io/editor/player#https://https://github.com/creativival.github.io/voxelaming-extension/projects/example.sb3" width="540px" height="460px"></iframe>
+ボクセラミング = ボクセル + プログラミング
 
+ボクセラミングはARKitを利用したプログラミング学習アプリです。ARKit互換のiPhoneおよびiPad（iOS 13以上）で無料で使用できます。コンピュータ上でプログラムされたボクセル（3D空間におけるピクセルの立方体相当）を仮想空間に配置して楽しむことができます。
 
-## How to Use in Xcratch
+詳細については、以下のサイトを参照してください。https://github.com/creativival/Voxelaming
 
-This extension can be used with other extension in [Xcratch](https://xcratch.github.io/). 
-1. Open [Xcratch Editor](https://xcratch.github.io/editor)
-2. Click 'Add Extension' button
-3. Select 'Extension Loader' extension
-4. Type the module URL in the input field 
+## ✨ この拡張機能で何ができるのか
+
+ボクセラミング拡張機能で何ができるのかを確認するために、例示プロジェクトを再生してみてください。
+
+[Example Project](https://xcratch.github.io/editor/#https://creativival.github.io/voxelaming-extension/projects/example.sb3)
+
+<iframe src="https://xcratch.github.io/editor/player#https://creativival.github.io/voxelaming-extension/projects/example.sb3" width="540px" height="460px"></iframe>
+
+## Xcratchでの使用方法
+
+この拡張機能は、Xcratchの他の拡張機能と一緒に使用できます。
+1.  [Xcratch Editor](https://xcratch.github.io/editor)を開く
+2. 'Add Extension' ボタンをクリックする
+3. 'Extension Loader' 拡張機能を選択する
+4. 入力フィールドにモジュールURLを入力する
 ```
-https://https://github.com/creativival.github.io/voxelaming-extension/dist/voxelaming.mjs
+https://creativival.github.io/voxelaming-extension/dist/voxelaming.mjs
 ```
 
-## Development
+## 開発
 
-### Register on the local Xcratch
+[README.md](README.md)
 
-Run register script to install this extension on the local Xcratch for testing.
+### ローカルのXcratchに登録
 
-```sh
+テストのためにこの拡張機能をローカルのXcratchにインストールするために、登録スクリプトを実行します。
+
+```
 npm run register
 ```
 
-### Bundle into a Module
+### モジュールにバンドルする
 
-Run build script to bundle this extension into a module file which could be loaded on Xcratch.
+この拡張機能をXcratchで読み込むことができるモジュールファイルにバンドルするために、ビルドスクリプトを実行します。
 
-```sh
+```
 npm run build
 ```
 
-## 🏠 Home Page
+## 🏠 ホームページ
 
-Open this page from [https://https://github.com/creativival.github.io/voxelaming-extension/](https://https://github.com/creativival.github.io/voxelaming-extension/)
+このページはここから開けます https://creativival.github.io/voxelaming-extension/
 
+## 🤝 貢献
 
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/https://github.com/creativival/voxelaming-extension/issues). 
+貢献、問題、機能リクエストは大歓迎です！<br />お気軽に[issues page](https://github.com/https://creativival/voxelaming-extension/issues)をチェックしてみてください。

@@ -2,7 +2,7 @@ import BlockType from '../../extension-support/block-type';
 import ArgumentType from '../../extension-support/argument-type';
 import Cast from '../../util/cast';
 import translations from './translations.json';
-import blockIcon from './block-icon.png';
+import blockIcon from './voxelaming_40x40_transparent.png';
 
 /**
  * Formatter which is used for translation.
@@ -32,7 +32,7 @@ const EXTENSION_ID = 'voxelaming';
  * When it was loaded as a module, 'extensionURL' will be replaced a URL which is retrieved from.
  * @type {string}
  */
-let extensionURL = 'https://https://github.com/creativival.github.io/voxelaming-extension/dist/voxelaming.mjs';
+let extensionURL = 'https://creativival.github.io/voxelaming-extension/dist/voxelaming.mjs';
 
 /**
  * Scratch 3.0 blocks for example of Xcratch.
@@ -84,18 +84,15 @@ class ExtensionBlocks {
          * @type {Runtime}
          */
         this.runtime = runtime;
+        this.roomName = '1000';
+        this.boxes = [];
+        this.size = 1.0;
+        this.buildInterval = 0.01;
 
         if (runtime.formatMessage) {
             // Replace 'formatMessage' to a formatter which is used in the runtime.
             formatMessage = runtime.formatMessage;
         }
-    }
-
-    doIt (args) {
-        const func = new Function(`return (${Cast.toString(args.SCRIPT)})`);
-        const result = func.call(this);
-        console.log(result);
-        return result;
     }
 
     /**
@@ -111,25 +108,211 @@ class ExtensionBlocks {
             showStatusButton: false,
             blocks: [
                 {
-                    opcode: 'do-it',
-                    blockType: BlockType.REPORTER,
-                    blockAllThreads: false,
+                    opcode: 'setRoomName',
+                    blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelaming.doIt',
-                        default: 'do it [SCRIPT]',
-                        description: 'execute javascript for example'
+                        id: 'voxelaming.setRoomName',
+                        default: 'Set room name to [ROOMNAME]',
+                        description: 'set room name'
                     }),
-                    func: 'doIt',
                     arguments: {
-                        SCRIPT: {
+                        ROOMNAME: {
                             type: ArgumentType.STRING,
-                            defaultValue: '3 + 4'
+                            defaultValue: '1000'
                         }
                     }
+                },
+                {
+                    opcode: 'createBox',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelaming.createBox',
+                        default: 'Create box at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B]',
+                        description: 'create box'
+                    }),
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        Y: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        Z: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        R: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        G: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        B: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        }
+                    }
+                },
+                {
+                    opcode: 'removeBox',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelaming.removeBox',
+                        default: 'Remove box at x: [X] y: [Y] z: [Z]',
+                        description: 'remove box'
+                    }),
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        Y: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        Z: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        }
+                    }
+                },
+                {
+                    opcode: 'setBoxSize',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelaming.setBoxSize',
+                        default: 'Set box size to [BOXSIZE]',
+                        description: 'set box size'
+                    }),
+                    arguments: {
+                        BOXSIZE: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1.0
+                        }
+                    }
+                },
+                {
+                    opcode: 'setBuildInterval',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelaming.setBuildInterval',
+                        default: 'Set build interval to [INTERVAL]',
+                        description: 'set build interval'
+                    }),
+                    arguments: {
+                        INTERVAL: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0.01
+                        }
+                    }
+                },
+                {
+                    opcode: 'clearData',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelaming.clearData',
+                        default: 'Clear data',
+                        description: 'clear data'
+                    }),
+                },
+                {
+                    opcode: 'sendData',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelaming.sendData',
+                        default: 'Send data',
+                        description: 'send data to server'
+                    }),
                 }
             ],
             menus: {
             }
+        };
+    }
+
+    setRoomName(args) {
+        this.roomName = args.ROOMNAME;
+    }
+
+    createBox(args) {
+        let x = Math.floor(Number(args.X));
+        let y = Math.floor(Number(args.Y));
+        let z = Math.floor(Number(args.Z));
+        let r = Number(args.R);
+        let g = Number(args.G);
+        let b = Number(args.B);
+        this.boxes.push([x, y, z, r, g, b]);
+    }
+
+    removeBox(args) {
+        let x = Math.floor(Number(args.X));
+        let y = Math.floor(Number(args.Y));
+        let z = Math.floor(Number(args.Z));
+        for (let i = 0; i < this.boxes.length; i++) {
+            let box = this.boxes[i];
+            if (box[0] === x && box[1] === y && box[2] === z) {
+                this.boxes.splice(i, 1);
+                break;
+            }
+        }
+    }
+
+    setBoxSize(args) {
+        this.size = Number(args.BOXSIZE);
+    }
+
+    setBuildInterval(args) {
+        this.buildInterval = Number(args.INTERVAL);
+    }
+
+    clearData() {
+        this.boxes = [];
+        this.size = 1.0;
+        this.buildInterval = 0.01;
+    }
+
+    sendData () {
+        console.log('Sending data...');
+        let date = new Date();
+        let self = this;
+        let dataToSend = {
+            boxes: this.boxes,
+            size: this.size,
+            interval: this.buildInterval,
+            date: date.toISOString()
+        };
+
+        let socket = new WebSocket("wss://render-nodejs-server.onrender.com");
+        console.log(socket);
+
+        socket.onopen = function() {
+            console.log("Connection open...");
+            // socket.send("Hello Server");
+            socket.send(self.roomName);
+            console.log(`Joined room: ${self.roomName}`);
+            socket.send(JSON.stringify(dataToSend));
+            console.log("Sent data: ", JSON.stringify(dataToSend));
+
+            self.clearData();
+
+            // Close the WebSocket connection after sending data
+            socket.close();
+        };
+
+        socket.onmessage = function(event) {
+            console.log("Received data: ", event.data);
+        };
+
+        socket.onclose = function() {
+            console.log("Connection closed.");
+        };
+
+        socket.onerror = function(error) {
+            console.error("WebSocket Error: ", error);
         };
     }
 }

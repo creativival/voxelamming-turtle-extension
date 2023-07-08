@@ -1,14 +1,32 @@
 {
   "en": {
     "voxelaming.name": "Voxelaming",
-    "voxelaming.doIt": "do it [SCRIPT]"
+    "voxelaming.setRoomName": "Set room name to [ROOMNAME]",
+    "voxelaming.createBox": "Create voxel at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B]",
+    "voxelaming.removeBox": "Remove voxel at x: [X] y: [Y] z: [Z]",
+    "voxelaming.setBoxSize": "Set voxel size to [BOXSIZE]",
+    "voxelaming.setBuildInterval": "Set build interval to [INTERVAL]",
+    "voxelaming.clearData": "Clear data",
+    "voxelaming.sendData": "Send data"
   },
   "ja": {
-    "voxelaming.name": "Voxelaming",
-    "voxelaming.doIt": "[SCRIPT] を実行する"
+    "voxelaming.name": "ボクセラミング",
+    "voxelaming.setRoomName": "ルームネームを [ROOMNAME] にする",
+    "voxelaming.createBox": "ボクセルを x: [X] y: [Y] z: [Z] に作成する。色 r: [R] g: [G] b: [B]",
+    "voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] から削除する",
+    "voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
+    "voxelaming.setBuildInterval": "ボクセルの作成間隔を [INTERVAL] 秒にする",
+    "voxelaming.clearData": "データを初期化する",
+    "voxelaming.sendData": "データを送信する"
   },
   "ja-Hira": {
-    "voxelaming.name": "Voxelaming",
-    "voxelaming.doIt": "[SCRIPT] をじっこうする"
+    "voxelaming.name": "ボクセラミング",
+    "voxelaming.setRoomName": "ルームネームを [ROOMNAME] にする",
+    "voxelaming.createBox": "ボクセルを x: [X] y: [Y] z: [Z] につくる。いろ r: [R] g: [G] b: [B]",
+    "voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] からけす",
+    "voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
+    "voxelaming.setBuildInterval": "ボクセルのつくるかんかくを [INTERVAL] びょうにする",
+    "voxelaming.clearData": "データをけす",
+    "voxelaming.sendData": "データをおくる"
   }
 }
