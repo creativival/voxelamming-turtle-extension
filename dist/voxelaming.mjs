@@ -7,14 +7,14 @@ var en$1 = {
 	"voxelaming.entry.description": "Enjoy creating AR voxel art!"
 };
 var ja$1 = {
-	"voxelaming.entry.name": "Voxelaming",
+	"voxelaming.entry.name": "ボクセラミング",
 	"voxelaming.entry.description": "ARボクセルアートを作って遊ぼう！"
 };
 var translations$1 = {
 	en: en$1,
 	ja: ja$1,
 	"ja-Hira": {
-	"voxelaming.entry.name": "Voxelaming",
+	"voxelaming.entry.name": "ボクセラミング",
 	"voxelaming.entry.description": "ARボクセルアートをつくってあそぼう！"
 }
 };
