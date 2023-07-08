@@ -1,0 +1,14 @@
+{
+  "en": {
+    "voxelaming.entry.name": "Voxelaming",
+    "voxelaming.entry.description": "Description of this extension"
+  },
+  "ja": {
+    "voxelaming.entry.name": "Voxelaming",
+    "voxelaming.entry.description": "拡張機能の説明"
+  },
+  "ja-Hira": {
+    "voxelaming.entry.name": "Voxelaming",
+    "voxelaming.entry.description": "かくちょうきのうのせつめい"
+  }
+}

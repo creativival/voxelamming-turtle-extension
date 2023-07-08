@@ -1,0 +1,14 @@
+{
+  "en": {
+    "voxelaming.name": "Voxelaming",
+    "voxelaming.doIt": "do it [SCRIPT]"
+  },
+  "ja": {
+    "voxelaming.name": "Voxelaming",
+    "voxelaming.doIt": "[SCRIPT] を実行する"
+  },
+  "ja-Hira": {
+    "voxelaming.name": "Voxelaming",
+    "voxelaming.doIt": "[SCRIPT] をじっこうする"
+  }
+}
