@@ -5,147 +5,149 @@
     <link rel="stylesheet" type="text/css"
           href="https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@2.0.5/src/main/resources/vditor/dist/index.css"/>
     <script src="https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@2.0.5/src/main/resources/vditor/dist/js/i18n/en_US.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@2.0.5/src/main/resources/vditor/dist/method.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    </style>
 </head>
-<body style="width: 1075px;">
-<div class="vditor-reset" id="preview">
-    <h1 id="Voxelaming---Programming-learning-app-with-ARKit">Voxelaming - Programming learning app with ARKit<a
-            id="vditorAnchor-Voxelaming---Programming-learning-app-with-ARKit" class="vditor-anchor"
-            href="#Voxelaming---Programming-learning-app-with-ARKit">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h1>
-    <p align="center"><img src="image/voxel_ladder.jpeg" alt="VoxelLadder" width="50%"/></p>
-    <p><em>Read this in other languages: <a href="index.en.html">English</a>, <a href="index.html">日本語</a></em></p>
-    <h2 id="What-is-Voxelaming-">What is Voxelaming?<a id="vditorAnchor-What-is-Voxelaming-" class="vditor-anchor"
-                                                       href="#What-is-Voxelaming-">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h2>
-    <p>Voxelaming = Voxel + Programming</p>
-    <p>Voxelaming is a programming learning app with ARKit. It can be used for free on ARKit-compatible iPhones and
-        iPads (iOS 13 and above). You can have fun by arranging voxels (cubical equivalent to pixels in 3D space),
-        programmed on a computer, in a virtual space.</p>
-    <h2 id="Usage">Usage<a id="vditorAnchor-Usage" class="vditor-anchor" href="#Usage">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h2>
-    <h3 id="Preparing-your-Computer">Preparing your Computer<a id="vditorAnchor-Preparing-your-Computer"
-                                                               class="vditor-anchor" href="#Preparing-your-Computer">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h3>
-    <p>The app supports both Windows and Mac computers. If the programming languages (Python, Node.js, Ruby, Swift) are
-        not installed on your computer, please install the language you want to use. The data communication between your
-        computer and device (iPhone, iPad) uses internet connection (no need to be connected to the same network). This
-        completes the preparation of your computer.</p>
-    <h3 id="Setting-up-a-Planar-Anchor">Setting up a Planar Anchor<a id="vditorAnchor-Setting-up-a-Planar-Anchor"
-                                                                     class="vditor-anchor"
-                                                                     href="#Setting-up-a-Planar-Anchor">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h3>
-    <p>Launch the Voxelaming app. You will be asked to allow camera use only for the first launch, please allow it by
-        selecting 'Yes'. When the camera launches, ARKit automatically detects the plane of the real world. Once you see
-        the mark (RGB coordinate axis) of plane detection, tap the screen to set up a planar anchor. The planar anchor
-        consists of black and white tiles. This completes the preparation for placing voxels.</p>
-    <h3 id="Designing--Programming--the-Voxels">Designing (Programming) the Voxels<a
-            id="vditorAnchor-Designing--Programming--the-Voxels" class="vditor-anchor"
-            href="#Designing--Programming--the-Voxels">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h3>
-    <p>On your computer (Windows, Mac), program the &quot;voxel data&quot; for placing voxels. The voxel data includes
-        information such as &quot;position, color, size, and placement intervals&quot;. The supported languages are
-        Scratch3 MOD, Python, JavaScript (Node.js), Ruby, and Swift.</p>
-    <p>Let's create a script. First, set the room name to connect to the WebSocket server's room. The room name is the
-        string displayed in the center of the device (iPhone, iPad) screen. Assign the room name to the variable
-        room_name (roomName).</p>
-    <p>Next, using the loop statements and conditional statements of each language, create the voxel data. The position
-        of the voxel is specified by the x, y, and z axis values relative to the planar anchor. The x-axis represents
-        left-right, the y-axis represents up-down, and the z-axis represents depth (front is plus) (unit is
-        centimeters). The size of the voxel is specified in decimal based on 1.0cm. The color is specified in decimal
-        from 0 to 1 in RGB values. Also, specify the interval for placing voxels in seconds. By specifying the interval
-        to place the voxels, the voxels will not be placed all at once, but will be placed over time.</p>
-    <h3 id="Placing-Voxels">Placing Voxels<a id="vditorAnchor-Placing-Voxels" class="vditor-anchor"
-                                             href="#Placing-Voxels">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h3>
-    <p>When you run the script, the voxel data is sent to the device (iPhone, iPad) via WebSocket communication. Once
-        the data is received, the AR voxels are placed based on the planar anchor on the device screen.</p>
-    <p>** If the WebSocket server is in sleep mode, data transmission may fail. In that case, please wait for a while
-        and try running again.</p>
-    <h2 id="Method-Description">Method Description<a id="vditorAnchor-Method-Description" class="vditor-anchor"
-                                                     href="#Method-Description">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h2>
-    <p>We will explain the methods used in the script. The method names for each language are as follows:</p>
-    <ul>
-        <li>set_box_size(size): Sets the size of the voxel. The unit is centimeters. The default is 1.0.</li>
-        <li>set_build_interval(interval): Sets the interval for placing voxels. The unit is seconds. The default is
-            0.01.
-        </li>
-        <li>create_box(x, y, z, r, g, b): Places a voxel. Specify the position in x, y, z axis, and the color. Color is
-            specified in decimal from 0 to 1 in RGB values.
-        </li>
-        <li>remove_box(x, y, z): Removes a voxel. Specify the position in x, y, z axis. (If no voxel is at the specified
-            position, nothing happens.)
-        </li>
-        <li>send_data(): Sends voxel data to the device (iPhone, iPad).</li>
-        <li>clear_boxes(): Removes all placed voxels. Also resets the size and interval.</li>
-    </ul>
-    <p>Please translate snake case to camel case as needed. (set_box_size -&gt; setBoxSize)</p>
-    <h2 id="Example-Scripts">Example Scripts<a id="vditorAnchor-Example-Scripts" class="vditor-anchor"
-                                               href="#Example-Scripts">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h2>
-    <p>In the sample folder, we have prepared examples of scripts. Running the script below will place voxels as shown
-        in the image.</p>
-    <h3 id="Scratch3-MOD">Scratch3 MOD<a id="vditorAnchor-Scratch3-MOD" class="vditor-anchor" href="#Scratch3-MOD">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h3>
-    <p>Please load the Voxelaming extension and create your script.</p>
-    <p>
-        <a href="https://xcratch.github.io/editor/#https://creativival.github.io/voxelaming-extension/projects/example.sb3">Sample
-            project with Xcratch</a></p>
-    <p><img src="image/voxelaming_scratch3_en.png" alt="VoxelamingScratch3"/></p>
-    <h3 id="Python--3-6--">Python (3.6+)<a id="vditorAnchor-Python--3-6--" class="vditor-anchor" href="#Python--3-6--">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h3>
-    <h4 id="Script">Script<a id="vditorAnchor-Script" class="vditor-anchor" href="#Script">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h4>
-    <pre><code class="language-python"># Python
+<body>
+<div class="container">
+    <div class="vditor-reset" id="preview">
+        <h1 id="Voxelaming---Programming-learning-app-with-ARKit">Voxelaming - Programming learning app with ARKit<a
+                id="vditorAnchor-Voxelaming---Programming-learning-app-with-ARKit" class="vditor-anchor"
+                href="#Voxelaming---Programming-learning-app-with-ARKit">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h1>
+        <p align="center"><img src="image/voxel_ladder.jpeg" alt="VoxelLadder" width="50%"/></p>
+        <p><em>Read this in other languages: <a href="index.en.html">English</a>, <a href="index.html">日本語</a></em></p>
+        <h2 id="What-is-Voxelaming-">What is Voxelaming?<a id="vditorAnchor-What-is-Voxelaming-" class="vditor-anchor"
+                                                           href="#What-is-Voxelaming-">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h2>
+        <p>Voxelaming = Voxel + Programming</p>
+        <p>Voxelaming is a programming learning app with ARKit. It can be used for free on ARKit-compatible iPhones and
+            iPads (iOS 13 and above). You can have fun by arranging voxels (cubical equivalent to pixels in 3D space),
+            programmed on a computer, in a virtual space.</p>
+        <h2 id="Usage">Usage<a id="vditorAnchor-Usage" class="vditor-anchor" href="#Usage">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h2>
+        <h3 id="Preparing-your-Computer">Preparing your Computer<a id="vditorAnchor-Preparing-your-Computer"
+                                                                   class="vditor-anchor" href="#Preparing-your-Computer">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h3>
+        <p>The app supports both Windows and Mac computers. If the programming languages (Python, Node.js, Ruby, Swift) are
+            not installed on your computer, please install the language you want to use. The data communication between your
+            computer and device (iPhone, iPad) uses internet connection (no need to be connected to the same network). This
+            completes the preparation of your computer.</p>
+        <h3 id="Setting-up-a-Planar-Anchor">Setting up a Planar Anchor<a id="vditorAnchor-Setting-up-a-Planar-Anchor"
+                                                                         class="vditor-anchor"
+                                                                         href="#Setting-up-a-Planar-Anchor">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h3>
+        <p>Launch the Voxelaming app. You will be asked to allow camera use only for the first launch, please allow it by
+            selecting 'Yes'. When the camera launches, ARKit automatically detects the plane of the real world. Once you see
+            the mark (RGB coordinate axis) of plane detection, tap the screen to set up a planar anchor. The planar anchor
+            consists of black and white tiles. This completes the preparation for placing voxels.</p>
+        <h3 id="Designing--Programming--the-Voxels">Designing (Programming) the Voxels<a
+                id="vditorAnchor-Designing--Programming--the-Voxels" class="vditor-anchor"
+                href="#Designing--Programming--the-Voxels">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h3>
+        <p>On your computer (Windows, Mac), program the &quot;voxel data&quot; for placing voxels. The voxel data includes
+            information such as &quot;position, color, size, and placement intervals&quot;. The supported languages are
+            Scratch3 MOD, Python, JavaScript (Node.js), Ruby, and Swift.</p>
+        <p>Let's create a script. First, set the room name to connect to the WebSocket server's room. The room name is the
+            string displayed in the center of the device (iPhone, iPad) screen. Assign the room name to the variable
+            room_name (roomName).</p>
+        <p>Next, using the loop statements and conditional statements of each language, create the voxel data. The position
+            of the voxel is specified by the x, y, and z axis values relative to the planar anchor. The x-axis represents
+            left-right, the y-axis represents up-down, and the z-axis represents depth (front is plus) (unit is
+            centimeters). The size of the voxel is specified in decimal based on 1.0cm. The color is specified in decimal
+            from 0 to 1 in RGB values. Also, specify the interval for placing voxels in seconds. By specifying the interval
+            to place the voxels, the voxels will not be placed all at once, but will be placed over time.</p>
+        <h3 id="Placing-Voxels">Placing Voxels<a id="vditorAnchor-Placing-Voxels" class="vditor-anchor"
+                                                 href="#Placing-Voxels">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h3>
+        <p>When you run the script, the voxel data is sent to the device (iPhone, iPad) via WebSocket communication. Once
+            the data is received, the AR voxels are placed based on the planar anchor on the device screen.</p>
+        <p>** If the WebSocket server is in sleep mode, data transmission may fail. In that case, please wait for a while
+            and try running again.</p>
+        <h2 id="Method-Description">Method Description<a id="vditorAnchor-Method-Description" class="vditor-anchor"
+                                                         href="#Method-Description">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h2>
+        <p>We will explain the methods used in the script. The method names for each language are as follows:</p>
+        <ul>
+            <li>set_box_size(size): Sets the size of the voxel. The unit is centimeters. The default is 1.0.</li>
+            <li>set_build_interval(interval): Sets the interval for placing voxels. The unit is seconds. The default is
+                0.01.
+            </li>
+            <li>create_box(x, y, z, r, g, b): Places a voxel. Specify the position in x, y, z axis, and the color. Color is
+                specified in decimal from 0 to 1 in RGB values.
+            </li>
+            <li>remove_box(x, y, z): Removes a voxel. Specify the position in x, y, z axis. (If no voxel is at the specified
+                position, nothing happens.)
+            </li>
+            <li>send_data(): Sends voxel data to the device (iPhone, iPad).</li>
+            <li>clear_boxes(): Removes all placed voxels. Also resets the size and interval.</li>
+        </ul>
+        <p>Please translate snake case to camel case as needed. (set_box_size -&gt; setBoxSize)</p>
+        <h2 id="Example-Scripts">Example Scripts<a id="vditorAnchor-Example-Scripts" class="vditor-anchor"
+                                                   href="#Example-Scripts">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h2>
+        <p>In the sample folder, we have prepared examples of scripts. Running the script below will place voxels as shown
+            in the image.</p>
+        <h3 id="Scratch3-MOD">Scratch3 MOD<a id="vditorAnchor-Scratch3-MOD" class="vditor-anchor" href="#Scratch3-MOD">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h3>
+        <p>Please load the Voxelaming extension and create your script.</p>
+        <p>
+            <a href="https://xcratch.github.io/editor/#https://creativival.github.io/voxelaming-extension/projects/example.sb3">Sample
+                project with Xcratch</a></p>
+        <p><img src="image/voxelaming_scratch3_en.png" alt="VoxelamingScratch3"/></p>
+        <h3 id="Python--3-6--">Python (3.6+)<a id="vditorAnchor-Python--3-6--" class="vditor-anchor" href="#Python--3-6--">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h3>
+        <h4 id="Script">Script<a id="vditorAnchor-Script" class="vditor-anchor" href="#Script">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h4>
+        <pre><code class="language-python"># Python
 from build_box import BuildBox
 
 room_name = &quot;1000&quot;
@@ -175,32 +177,32 @@ for i in range(50):
 
 build_box.send_data()
 </code></pre>
-    <h4 id="Run-script">Run script<a id="vditorAnchor-Run-script" class="vditor-anchor" href="#Run-script">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h4>
-    <pre><code class="language-bash">$ python main.py
+        <h4 id="Run-script">Run script<a id="vditorAnchor-Run-script" class="vditor-anchor" href="#Run-script">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h4>
+        <pre><code class="language-bash">$ python main.py
 
 or
 
 $ python3 main.py
 </code></pre>
-    <h3 id="JavaScript--Node-js-">JavaScript (Node.js)<a id="vditorAnchor-JavaScript--Node-js-" class="vditor-anchor"
-                                                         href="#JavaScript--Node-js-">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h3>
-    <h4 id="Script-">Script<a id="vditorAnchor-Script-" class="vditor-anchor" href="#Script-">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h4>
-    <pre><code class="language-javascript">// JavaScript (Node.js)
+        <h3 id="JavaScript--Node-js-">JavaScript (Node.js)<a id="vditorAnchor-JavaScript--Node-js-" class="vditor-anchor"
+                                                             href="#JavaScript--Node-js-">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h3>
+        <h4 id="Script-">Script<a id="vditorAnchor-Script-" class="vditor-anchor" href="#Script-">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h4>
+        <pre><code class="language-javascript">// JavaScript (Node.js)
 import BuildBox from './buildBox.mjs';
 
 const roomName = '1000';
@@ -224,27 +226,27 @@ for (let i = 0; i &lt; 50; i++) {
 
 buildBox.sendData();
 </code></pre>
-    <h4 id="Run-script-">Run script<a id="vditorAnchor-Run-script-" class="vditor-anchor" href="#Run-script-">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h4>
-    <pre><code class="language-bash">$ node main.mjs
+        <h4 id="Run-script-">Run script<a id="vditorAnchor-Run-script-" class="vditor-anchor" href="#Run-script-">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h4>
+        <pre><code class="language-bash">$ node main.mjs
 </code></pre>
-    <h3 id="Ruby">Ruby<a id="vditorAnchor-Ruby" class="vditor-anchor" href="#Ruby">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h3>
-    <h4 id="Script--">Script<a id="vditorAnchor-Script--" class="vditor-anchor" href="#Script--">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h4>
-    <pre><code class="language-ruby"># Ruby
+        <h3 id="Ruby">Ruby<a id="vditorAnchor-Ruby" class="vditor-anchor" href="#Ruby">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h3>
+        <h4 id="Script--">Script<a id="vditorAnchor-Script--" class="vditor-anchor" href="#Script--">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h4>
+        <pre><code class="language-ruby"># Ruby
 require_relative 'build_box'
 
 room_name = '1000'
@@ -268,27 +270,27 @@ end
 
 build_box.send_data
 </code></pre>
-    <h4 id="Run-script--">Run script<a id="vditorAnchor-Run-script--" class="vditor-anchor" href="#Run-script--">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h4>
-    <pre><code class="language-bash">$ ruby main.rb
+        <h4 id="Run-script--">Run script<a id="vditorAnchor-Run-script--" class="vditor-anchor" href="#Run-script--">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h4>
+        <pre><code class="language-bash">$ ruby main.rb
 </code></pre>
-    <h3 id="Swift">Swift<a id="vditorAnchor-Swift" class="vditor-anchor" href="#Swift">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h3>
-    <h4 id="Script---">Script<a id="vditorAnchor-Script---" class="vditor-anchor" href="#Script---">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h4>
-    <pre><code class="language-swift">// Swift (Refactaring is required)
+        <h3 id="Swift">Swift<a id="vditorAnchor-Swift" class="vditor-anchor" href="#Swift">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h3>
+        <h4 id="Script---">Script<a id="vditorAnchor-Script---" class="vditor-anchor" href="#Script---">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h4>
+        <pre><code class="language-swift">// Swift (Refactaring is required)
 import Foundation
 
 let roomName = &quot;1000&quot;
@@ -327,60 +329,62 @@ if #available(iOS 15.0, macOS 12.0, *) {
     fatalError(&quot;This script requires iOS 15.0 / macOS 12.0 or later.&quot;)
 }
 </code></pre>
-    <h4 id="Run-script---">Run script<a id="vditorAnchor-Run-script---" class="vditor-anchor" href="#Run-script---">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h4>
-    <pre><code class="language-bash">$ cd swift/Sources
+        <h4 id="Run-script---">Run script<a id="vditorAnchor-Run-script---" class="vditor-anchor" href="#Run-script---">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h4>
+        <pre><code class="language-bash">$ cd swift/Sources
 $ swift run
 </code></pre>
-    <h3 id="Remove-voxel">Remove voxel<a id="vditorAnchor-Remove-voxel" class="vditor-anchor" href="#Remove-voxel">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h3>
-    <p>Prepare a script to remove the voxel.</p>
-    <h3 id="Animation-voxel">Animation voxel<a id="vditorAnchor-Animation-voxel" class="vditor-anchor"
-                                               href="#Animation-voxel">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h3>
-    <p>Prepare a script to animate the voxel.</p>
-    <h3 id="User-Sharing">User Sharing<a id="vditorAnchor-User-Sharing" class="vditor-anchor" href="#User-Sharing">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h3>
-    <p>Prepare a script to share the voxel with other users.</p>
-    <h2 id="Settings">Settings<a id="vditorAnchor-Settings" class="vditor-anchor" href="#Settings">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h2>
-    <p>You can move to the settings screen from the &quot;Settings&quot; button at the top right of the screen. If you
-        turn off debug mode, the information display on the screen will be disabled.</p>
-    <h2 id="License">License<a id="vditorAnchor-License" class="vditor-anchor" href="#License">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h2>
-    <p><a href="https://github.com/creativival/Voxelaming/blob/master/LICENSE">MIT License</a></p>
-    <h2 id="Author">Author<a id="vditorAnchor-Author" class="vditor-anchor" href="#Author">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
-            <path fill-rule="evenodd"
-                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-        </svg>
-    </a></h2>
-    <p>creativival</p>
+        <h3 id="Remove-voxel">Remove voxel<a id="vditorAnchor-Remove-voxel" class="vditor-anchor" href="#Remove-voxel">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h3>
+        <p>Prepare a script to remove the voxel.</p>
+        <h3 id="Animation-voxel">Animation voxel<a id="vditorAnchor-Animation-voxel" class="vditor-anchor"
+                                                   href="#Animation-voxel">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h3>
+        <p>Prepare a script to animate the voxel.</p>
+        <h3 id="User-Sharing">User Sharing<a id="vditorAnchor-User-Sharing" class="vditor-anchor" href="#User-Sharing">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h3>
+        <p>Prepare a script to share the voxel with other users.</p>
+        <h2 id="Settings">Settings<a id="vditorAnchor-Settings" class="vditor-anchor" href="#Settings">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h2>
+        <p>You can move to the settings screen from the &quot;Settings&quot; button at the top right of the screen. If you
+            turn off debug mode, the information display on the screen will be disabled.</p>
+        <h2 id="License">License<a id="vditorAnchor-License" class="vditor-anchor" href="#License">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h2>
+        <p><a href="https://github.com/creativival/Voxelaming/blob/master/LICENSE">MIT License</a></p>
+        <h2 id="Author">Author<a id="vditorAnchor-Author" class="vditor-anchor" href="#Author">
+            <svg viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                <path fill-rule="evenodd"
+                      d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+            </svg>
+        </a></h2>
+        <p>creativival</p>
+    </div>
 </div>
+
 <script>    const previewElement = document.getElementById('preview');
 Vditor.setContentTheme('idea-light', 'https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@2.0.5/src/main/resources/vditor/dist/css/content-theme');
 Vditor.codeRender(previewElement);
