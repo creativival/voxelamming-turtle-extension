@@ -239,21 +239,21 @@ class ExtensionBlocks {
     }
 
     createBox(args) {
-        let x = Math.floor(Number(args.X));
-        let y = Math.floor(Number(args.Y));
-        let z = Math.floor(Number(args.Z));
-        let r = Number(args.R);
-        let g = Number(args.G);
-        let b = Number(args.B);
+        const x = Math.floor(Number(args.X));
+        const y = Math.floor(Number(args.Y));
+        const z = Math.floor(Number(args.Z));
+        const r = Number(args.R);
+        const g = Number(args.G);
+        const b = Number(args.B);
         this.boxes.push([x, y, z, r, g, b]);
     }
 
     removeBox(args) {
-        let x = Math.floor(Number(args.X));
-        let y = Math.floor(Number(args.Y));
-        let z = Math.floor(Number(args.Z));
+        const x = Math.floor(Number(args.X));
+        const y = Math.floor(Number(args.Y));
+        const z = Math.floor(Number(args.Z));
         for (let i = 0; i < this.boxes.length; i++) {
-            let box = this.boxes[i];
+            const box = this.boxes[i];
             if (box[0] === x && box[1] === y && box[2] === z) {
                 this.boxes.splice(i, 1);
                 break;
@@ -277,9 +277,9 @@ class ExtensionBlocks {
 
     sendData () {
         console.log('Sending data...');
-        let date = new Date();
-        let self = this;
-        let dataToSend = {
+        const date = new Date();
+        const self = this;
+        const dataToSend = {
             boxes: this.boxes,
             size: this.size,
             interval: this.buildInterval,
@@ -287,7 +287,7 @@ class ExtensionBlocks {
         };
 
         let socket = new WebSocket("wss://render-nodejs-server.onrender.com");
-        console.log(socket);
+        // console.log(socket);
 
         socket.onopen = function() {
             console.log("Connection open...");
