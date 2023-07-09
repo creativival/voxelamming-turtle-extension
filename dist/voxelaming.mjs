@@ -213,7 +213,7 @@ var ja = {
 	"voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] から削除する",
 	"voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
 	"voxelaming.setBuildInterval": "ボクセルの作成間隔を [INTERVAL] 秒にする",
-	"voxelaming.setSentences": "[SENTEMCES] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B]",
+	"voxelaming.setSentences": "[SENTENCES] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B]",
 	"voxelaming.clearData": "データを初期化する",
 	"voxelaming.sendData": "データを送信する"
 };
@@ -227,7 +227,7 @@ var translations = {
 	"voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] からけす",
 	"voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
 	"voxelaming.setBuildInterval": "ボクセルのつくるかんかくを [INTERVAL] びょうにする",
-	"voxelaming.setSentences": "[SENTEMCES] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B]",
+	"voxelaming.setSentences": "[SENTENCES] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B]",
 	"voxelaming.clearData": "データをけす",
 	"voxelaming.sendData": "データをおくる"
 }
@@ -280,7 +280,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     this.runtime = runtime;
     this.roomName = '1000';
     this.boxes = [];
-    this.characters = [];
+    this.sentences = [];
     this.size = 1.0;
     this.buildInterval = 0.01;
     if (runtime.formatMessage) {
@@ -405,11 +405,11 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelaming.setSentences',
-            default: 'Write [SENTEMCES] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B]',
-            description: 'set characters'
+            default: 'Write [SENTENCES] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B]',
+            description: 'set sentences'
           }),
           arguments: {
-            SENTEMCES: {
+            SENTENCES: {
               type: argumentType.STRING,
               defaultValue: 'Hello World'
             },
@@ -501,19 +501,20 @@ var ExtensionBlocks = /*#__PURE__*/function () {
   }, {
     key: "setSentences",
     value: function setSentences(args) {
-      var characters = args.SENTEMCES;
+      var sentences = args.SENTENCES;
       var x = args.X;
       var y = args.Y;
       var z = args.Z;
       var r = args.R;
       var g = args.G;
       var b = args.B;
-      this.characters.push([characters, x, y, z, r, g, b]);
+      this.sentences.push([sentences, x, y, z, r, g, b]);
     }
   }, {
     key: "clearData",
     value: function clearData() {
       this.boxes = [];
+      this.sentences = [];
       this.size = 1.0;
       this.buildInterval = 0.01;
     }
@@ -525,6 +526,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       var self = this;
       var dataToSend = {
         boxes: this.boxes,
+        sentences: this.sentences,
         size: this.size,
         interval: this.buildInterval,
         date: date.toISOString()
