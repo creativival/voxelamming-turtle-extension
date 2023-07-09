@@ -477,7 +477,8 @@ var ExtensionBlocks = /*#__PURE__*/function () {
         date: date.toISOString()
       };
       var socket = new WebSocket("wss://render-nodejs-server.onrender.com");
-      console.log(socket);
+      // console.log(socket);
+
       socket.onopen = function () {
         console.log("Connection open...");
         // socket.send("Hello Server");
