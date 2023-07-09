@@ -16,6 +16,7 @@
     "voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] から削除する",
     "voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
     "voxelaming.setBuildInterval": "ボクセルの作成間隔を [INTERVAL] 秒にする",
+    "voxelaming.setSentences": "[SENTENCES] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B]",
     "voxelaming.clearData": "データを初期化する",
     "voxelaming.sendData": "データを送信する"
   },
@@ -26,6 +27,7 @@
     "voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] からけす",
     "voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
     "voxelaming.setBuildInterval": "ボクセルのつくるかんかくを [INTERVAL] びょうにする",
+    "voxelaming.setSentences": "[SENTENCES] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B]",
     "voxelaming.clearData": "データをけす",
     "voxelaming.sendData": "データをおくる"
   }

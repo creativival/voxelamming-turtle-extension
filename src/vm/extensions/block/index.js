@@ -86,6 +86,7 @@ class ExtensionBlocks {
         this.runtime = runtime;
         this.roomName = '1000';
         this.boxes = [];
+        this.sentences = [];
         this.size = 1.0;
         this.buildInterval = 0.01;
 
@@ -211,6 +212,45 @@ class ExtensionBlocks {
                     }
                 },
                 {
+                    opcode: 'setSentences',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelaming.setSentences',
+                        default: 'Write [SENTENCES] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B]',
+                        description: 'set sentences'
+                    }),
+                    arguments: {
+                        SENTENCES: {
+                            type: ArgumentType.STRING,
+                            defaultValue: 'Hello World'
+                        },
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        Y: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        Z: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        R: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        G: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        B: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        }
+                    }
+                },
+                {
                     opcode: 'clearData',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
@@ -269,8 +309,20 @@ class ExtensionBlocks {
         this.buildInterval = Number(args.INTERVAL);
     }
 
+    setSentences(args) {
+        const sentences = args.SENTENCES;
+        const x = args.X;
+        const y = args.Y;
+        const z = args.Z;
+        const r = args.R;
+        const g = args.G
+        const b = args.B
+        this.sentences.push([sentences, x, y, z, r, g, b]);
+    }
+
     clearData() {
         this.boxes = [];
+        this.sentences = [];
         this.size = 1.0;
         this.buildInterval = 0.01;
     }
@@ -281,6 +333,7 @@ class ExtensionBlocks {
         const self = this;
         const dataToSend = {
             boxes: this.boxes,
+            sentences: this.sentences,
             size: this.size,
             interval: this.buildInterval,
             date: date.toISOString()
