@@ -1,1 +1,236 @@
-hello, world
+<!doctype html>
+<html>
+<head>
+    <title>IntelliJ Markdown Preview</title>
+    <meta charset="UTF-8">
+    <style>/* Reworked by IntelliJ Team The MIT License (MIT) Copyright (c) JetBrains Adapted from https://github.com/sindresorhus/github-markdown-css The MIT License (MIT) Copyright (c) Sindre Sorhus &lt;sindresorhus@gmail.com&gt; (sindresorhus.com) Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ @font-face { font-family: octicons-anchor; src: url(data:font/woff;charset=utf-8;base64,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) format('woff'); } body { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Helvetica, Arial, freesans, sans-serif; font-size: 14px; line-height: 1.6; word-wrap: break-word; margin: 0 2em; } strong { font-weight: bold; } img { border: 0; } input { color: inherit; font: inherit; margin: 0; line-height: normal; } html input[disabled] { cursor: default; } input[type="checkbox"] { box-sizing: border-box; padding: 0; } body * { box-sizing: border-box; } input { font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; } a { text-decoration: none; } a:hover, a:active { text-decoration: underline; } hr { height: 1px; padding: 0; margin: 20px 0; border: 0 none; } hr:before { display: table; content: ""; } hr:after { display: table; clear: both; content: ""; } blockquote { margin: 0; } ul, ol { padding: 0; margin-top: 0; margin-bottom: 0; } ol ol, ul ol { list-style-type: lower-roman; } ul ul ol, ul ol ol, ol ul ol, ol ol ol { list-style-type: lower-alpha; } dd { margin-left: 0; } .octicon { font: normal normal normal 16px/1 octicons-anchor; display: inline-block; text-decoration: none; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .octicon-link:before { content: '\f05c'; } .markdown-body &gt; *:first-child { margin-top: 0 !important; } .markdown-body &gt; *:last-child { margin-bottom: 0 !important; } .anchor { position: absolute; top: 0; left: 0; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; } .anchor:focus { outline: none; } h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; } h1 .octicon-link, h2 .octicon-link, h3 .octicon-link, h4 .octicon-link, h5 .octicon-link, h6 .octicon-link { display: none; color: #000; vertical-align: middle; } h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; } h1:hover .anchor .octicon-link, h2:hover .anchor .octicon-link, h3:hover .anchor .octicon-link, h4:hover .anchor .octicon-link, h5:hover .anchor .octicon-link, h6:hover .anchor .octicon-link { display: inline-block; } h1 { font-size: 2.2em; padding-top: 0.6em; } h1 .anchor { line-height: 1; } h2 { font-size: 1.8em; line-height: 1.2; padding-top: 0.6em; } h2 .anchor { line-height: 1.2; } h3 { font-size: 1.3em; line-height: 1; padding-top: 0.6em; } h3 .anchor { line-height: 1.2; } h4 { font-size: 1em; } h4 .anchor { line-height: 1.2; } h5 { font-size: 1em; } h5 .anchor { line-height: 1.1; } h6 { font-size: 1em; } h6 .anchor { line-height: 1.1; } p, blockquote, ul, ol, dl, table, pre { margin-top: 16px; margin-bottom: 16px; } ul, ol { padding-left: 2em; } ul ul, ul ol, ol ol, ol ul { margin-top: 0; margin-bottom: 0; } li &gt; p { margin-top: 0; margin-bottom: 0; } dl { padding: 0; } dl dt { padding: 0; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; } dl dd { padding: 0 16px; margin-bottom: 16px; } blockquote { padding: 10px 10px 10px 16px; border-left: 2px solid; border-radius: 0 3px 3px 0; } blockquote &gt; :first-child { margin-top: 0; } blockquote &gt; :last-child { margin-bottom: 0; } table { display: block; width: 100%; overflow: auto; word-break: normal; border-collapse: collapse; border-spacing: 0; font-size: 1em; } table th { font-weight: bold; } table th, table td { padding: 6px 13px; background: transparent; } table tr { border-top: 1px solid; } img { max-width: 100%; box-sizing: border-box; } code { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } pre &gt; code { padding: 0; margin: 0; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0; } .highlight { margin-bottom: 16px; } .highlight pre, pre { font: 0.85em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 16px; overflow: auto; line-height: 1.45; border-radius: 3px; } pre code { display: inline; max-width: initial; padding: 0; margin: 0; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0; } pre code:before, pre code:after { content: normal; } kbd { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } .task-list-item { list-style-type: none; } .task-list-item + .task-list-item { margin-top: 3px; } .task-list-item input { margin: 0 0.35em 0.25em -0.6em; vertical-align: middle; } :checked + .radio-label { z-index: 1; position: relative; } span.user-del { text-decoration: line-through; } ::-webkit-scrollbar { width: 6px; height: 6px; } ::-webkit-scrollbar-thumb { -webkit-border-radius: 10px; } ::-webkit-scrollbar-track:vertical { -webkit-box-shadow: -1px 0 0 #ededed; } ::-webkit-scrollbar-track { background-color: transparent; } ::-webkit-scrollbar { width: 6px; }</style>
+    <style>body { background-color: rgba(43, 43, 43, 255.0); font-size: 14px !important; } body, p, blockquote, ul, ol, dl, table, pre, code, tr { color: rgba(169, 183, 198, 255.0); } a { color: rgba(88, 157, 246, 255.0); } table td, table th { border: 1px solid rgba(81, 81, 81, 255.0); } hr { background-color: rgba(81, 81, 81, 255.0); } kbd, tr { border: 1px solid rgba(81, 81, 81, 255.0); } h6 { color: rgba(120, 120, 120, 255.0); } blockquote { border-left: 2px solid rgba(88, 157, 246, 0.4); } blockquote, code, pre { background-color: rgba(212, 222, 231, 0.09803921568627451); } ::-webkit-scrollbar { width: 14.0px; height: 14.0px; background-color: rgba(63, 68, 66, 1.0); } ::-webkit-scrollbar-track { background-color:rgba(128, 128, 128, 0.0); } ::-webkit-scrollbar-track:hover { background-color:rgba(128, 128, 128, 0.0); } ::-webkit-scrollbar-thumb { background-color:rgba(128, 128, 128, 0.34901960784313724); border-radius:14.0px; border-width: 3.0px; border-style: solid; border-color: rgba(128, 128, 128, 0.0); background-clip: padding-box; outline: 1px solid rgba(38, 38, 38, 0.34901960784313724); outline-offset: -3.0px; } ::-webkit-scrollbar-thumb:hover { background-color:rgba(128, 128, 128, 0.5490196078431373); border-radius:14.0px; border-width: 3.0px; border-style: solid; border-color: rgba(128, 128, 128, 0.0); background-clip: padding-box; outline: 1px solid rgba(38, 38, 38, 0.5490196078431373); outline-offset: -3.0px; } ::-webkit-scrollbar-button { display:none; } ::-webkit-scrollbar-corner { background-color: rgba(63, 68, 66, 1.0); }</style>
+    <style>/* Copyright 2000-2021 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. */ .code-fence-highlighter-copy-button { display: flex; position: absolute; float: left; margin-left: -1em; margin-top: -1em; } .code-fence-highlighter-copy-button-icon { max-width: 1em; } .code-fence:hover .code-fence-highlighter-copy-button-icon { /*noinspection CssUnknownTarget*/ content: url("copy-button-copy-icon.png"); } .code-fence:hover .code-fence-highlighter-copy-button:hover .code-fence-highlighter-copy-button-icon { /*noinspection CssUnknownTarget*/ content: url("copy-button-copy-icon-hovered.png"); cursor: pointer; }</style>
+    <style>/* Copyright 2000-2021 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. */ .run-icon &gt; img { max-width: 1em; vertical-align: text-top; margin-right: 0.3em; } .code-block { position: absolute; left: 1em; } .hidden { display: none; }</style>
+</head>
+<body>
+<div md-src-pos="0..5706">
+    <h1 id="ボクセラミング---arkitを使ったプログラミング学習アプリ" md-src-pos="0..33">ボクセラミング - ARKitを使ったプログラミング学習アプリ</h1>
+    <p md-src-pos="35..74"><img src="./image/voxel_ladder.jpeg" alt="VoxelLadder" __idea-generated="true" md-src-pos="35..74" data-original-src="file:/Users/user_name/GitHub/voxelaming/image/voxel_ladder.jpeg"></p>
+    <p md-src-pos="76..149"><em md-src-pos="76..149">Read this in other languages: <a href="./index.en.html" md-src-pos="107..130">English</a>, <a href="./index.html" md-src-pos="132..148">日本語</a></em></p>
+    <h2 id="ボクセラミングとは" md-src-pos="151..163">ボクセラミングとは</h2>
+    <p md-src-pos="165..189"><span md-src-pos="165..172">ボクセラミング</span> <span md-src-pos="173..174">=</span> <span md-src-pos="175..179">ボクセル</span> <span md-src-pos="180..181">+</span> <span md-src-pos="182..189">プログラミング</span></p>
+    <p md-src-pos="191..328"><span md-src-pos="191..328">ボクセラミングは、ARKitを使ったプログラミング学習アプリです。ARKitに対応したiPhone、iPad（iOS13以上）で無料で使用できます。パソコンでプログラムしたボクセル（ピクセルと同様に3D空間における最小単位の立方体）を仮想空間上に配置して遊ぶことができます。</span></p>
+    <h2 id="使い方" md-src-pos="330..336">使い方</h2>
+    <h3 id="パソコンの準備" md-src-pos="338..349">パソコンの準備</h3>
+    <p md-src-pos="351..535"><span md-src-pos="351..535">パソコンは、Windows、Macの両対応です。お使いのパソコンに、プログラミング言語（Python、Node.js、Ruby、Swift）がインストールされていないときは、使いたい言語をインストールしてください。パソコンとデバイス（iPhone、iPad）のデータ通信はインターネット回線を使います（同じ回線に繋がなくてもよい）。以上で、パソコンの準備ができました。</span></p>
+    <h3 id="平面アンカーの設置" md-src-pos="537..550">平面アンカーの設置</h3>
+    <p md-src-pos="552..726"><span md-src-pos="552..726">ボクセラミングアプリを起動します。初回の起動時のみ、カメラの使用許可を求められるので「はい」で許可してください。ガメラが起動すると、ARKitが自動で現実世界の平面を探します。平面検知の印（赤緑青の座標軸）が出たら、画面をタップして平面アンカーを設置します。平面アンカーは白と黒のタイルで構成されています。以上でボクセルを設置する準備が整いました。</span></p>
+    <h3 id="ボクセルの設計プログラミング" md-src-pos="728..748">ボクセルの設計（プログラミング）</h3>
+    <p md-src-pos="750..901"><span md-src-pos="750..877">パソコン（Windows、Mac）でボクセルを設置するための「ボクセルデータ」をプログラミングします。ボクセルデータには、「位置、色、サイズ、設置する間隔など」の情報が含まれます。対応の言語は、Scratch3 MOD、Python、JavaScript</span> (<span md-src-pos="879..886">Node.js</span>)<span md-src-pos="887..901">、Ruby、Swiftです。</span></p>
+    <p md-src-pos="903..1038"><span md-src-pos="903..1038">スクリプトを作成しましょう。初めに、WebSocketサーバーのルームに接続するためにルームネームを設定します。ルームネームは、デバイス（iPhone、iPad）の画面中央に表示されている文字列です。変数room_name（roomName）にルームネームを代入します。</span></p>
+    <p md-src-pos="1040..1295"><span md-src-pos="1040..1295">次に、各言語の繰り返し文や条件式などを使って、ボクセルデータを作成します。ボクセルの位置は、平面アンカーを基準にして、x軸、y軸、z軸の値を指定します。x軸は左右、y軸は上下、z軸は奥行き（手前がプラス）を表します（単位はセンチメートル）。ボクセルの大きさは、1.0cmを基準にして小数で指定します。色はRGB値で0から1までの小数で指定します。そして、ボクセルを設置する間隔を秒で指定します。ボクセルを設置する間隔を指定することで、ボクセルが一気に設置されるのではなく、時間をかけて設置されるようになります。</span></p>
+    <h3 id="ボクセルの配置" md-src-pos="1297..1308">ボクセルの配置</h3>
+    <p md-src-pos="1310..1412"><span md-src-pos="1310..1412">スクリプトを実行すると、WebSocket通信でボクセルデータがデバイス（iPhone、iPad）に送信されます。データが受信できたら、デバイス画面の平面アンカーを基準にして、ARボクセルが設置されます。</span></p>
+    <p md-src-pos="1414..1483"><span md-src-pos="1414..1415">＊</span> <span md-src-pos="1416..1483">WebSocketサーバーが休止しているとき、データ送信が失敗する場合があります。そのときは、しばらく待ってから再度実行してください。</span></p>
+    <h2 id="メソッドの説明" md-src-pos="1485..1495">メソッドの説明</h2>
+    <p md-src-pos="1497..1537"><span md-src-pos="1497..1537">スクリプトで使用するメソッドを説明します。各言語のメソッド名は、以下の通りです。</span></p>
+    <ul md-src-pos="1539..1944">
+        <li md-src-pos="1539..1600">set_box_size(size)：ボクセルの大きさを設定します。単位はセンチメートルです。デフォルトは1.0です。</li>
+        <li md-src-pos="1601..1678">set_build_interval(interval)：ボクセルを設置する間隔（インターバル）を設定します。単位は秒です。デフォルトは0.01です。</li>
+        <li md-src-pos="1679..1765">create_box(x, y, z, r, g, b)：ボクセルを設置します。x軸、y軸、z軸の位置と、色を指定します。色はRGB値で0から1までの小数で指定します。</li>
+        <li md-src-pos="1766..1841">remove_box(x, y, z)：ボクセルを削除します。x軸、y軸、z軸の位置を指定します。（指定位置にボクセルがないときは、何もしません）</li>
+        <li md-src-pos="1842..1888">send_data()：ボクセルデータをデバイス（iPhone、iPad）に送信します。</li>
+        <li md-src-pos="1889..1944">clear_boxes()：設置されているボクセルをすべて削除します。サイズ、インターバルも初期化します。</li>
+    </ul>
+    <p md-src-pos="1946..2002"><span md-src-pos="1946..1947">＊</span> <span md-src-pos="1948..1987">スネークケースとキャメルケースは読み替えてください。（set_box_size</span> <span md-src-pos="1988..1989">-</span>&gt; <span md-src-pos="1991..2002">setBoxSize）</span></p>
+    <h2 id="スクリプトの例" md-src-pos="2004..2014">スクリプトの例</h2>
+    <p md-src-pos="2016..2077"><span md-src-pos="2016..2077">sampleフォルダーに、スクリプトの例を用意しました。以下のスクリプトを実行すると、画像のようなボクセルが設置されます。</span></p>
+    <h3 id="scratch3-mod" md-src-pos="2079..2095">Scratch3 MOD</h3>
+    <p md-src-pos="2097..2130"><span md-src-pos="2097..2130">ボクセラミング拡張機能を読み込んで、スクリプトを作成してください。</span></p>
+    <p md-src-pos="2132..2265"><a href="https://xcratch.github.io/editor/#https://creativival.github.io/voxelaming-extension/projects/example.sb3" md-src-pos="2132..2265">Xcratchで、サンプルプロジェクトを再生する</a></p>
+    <p md-src-pos="2267..2319"><img src="./image/voxelaming_scratch3.png" alt="VoxelamingScratch3" __idea-generated="true" md-src-pos="2267..2319" data-original-src="file:/Users/user_name/GitHub/voxelaming/image/voxelaming_scratch3.png"></p>
+    <h3 id="python-36以上" md-src-pos="2321..2339">Python (3.6以上)</h3>
+    <h4 id="スクリプト" md-src-pos="2341..2351">スクリプト</h4>
+    <pre class="code-fence" md-src-pos="2353..3061">
+    <div class="code-fence-highlighter-copy-button" data-fence-content="IyBQeXRob24KZnJvbSBidWlsZF9ib3ggaW1wb3J0IEJ1aWxkQm94Cgpyb29tX25hbWUgPSAiMTAwMCIKYnVpbGRfYm94ID0gQnVpbGRCb3gocm9vbV9uYW1lKQoKYnVpbGRfYm94LmNsZWFyX2JveGVzKCkKYnVpbGRfYm94LnNldF9ib3hfc2l6ZSgwLjUpCmJ1aWxkX2JveC5zZXRfYnVpbGRfaW50ZXJ2YWwoMC4wMSkKCmZvciBpIGluIHJhbmdlKDEwMCk6CiAgYnVpbGRfYm94LmNyZWF0ZV9ib3goLTEsIGksIDAsIDAsIDEsIDEpCiAgYnVpbGRfYm94LmNyZWF0ZV9ib3goMCwgaSwgMCwgMSwgMCwgMCkKICBidWlsZF9ib3guY3JlYXRlX2JveCgxLCBpLCAwLCAxLCAxLCAwKQogIGJ1aWxkX2JveC5jcmVhdGVfYm94KDIsIGksIDAsIDAsIDEsIDEpCgpmb3IgaSBpbiByYW5nZSg1MCk6CiAgYnVpbGRfYm94LnJlbW92ZV9ib3goMCwgaSAqIDIgKyAxLCAwKQogIGJ1aWxkX2JveC5yZW1vdmVfYm94KDEsIGkgKiAyLCAwKQoKCiMgZm9yIGkgaW4gcmFuZ2UoLTEwLCAxMSk6CiMgICBmb3IgaiBpbiByYW5nZSgwLCAxMSk6CiMgICAgIGZvciBrIGluIHJhbmdlKC0xMCwgMTEpOgojICAgICAgIGlmIGkgKiogMiArIGogKiogMiArIGsgKiogMiA8IDEwICoqIDI6CiMgICAgICAgICBwcmludChpLCBqLCBrKQojICAgICAgICAgYnVpbGRfYm94LmNyZWF0ZV9ib3goaSwgaiwgaywgMCwgMSwgMSkKCmJ1aWxkX2JveC5zZW5kX2RhdGEoKQ==">
+
+
+    </div><code class="language-python" md-src-pos="2353..3061"><span md-src-pos="2353..2363"></span><span md-src-pos="2363..2371"># Python</span>
+<span md-src-pos="2372..2402">from build_box import BuildBox</span>
+<span md-src-pos="2403..2403"></span>
+<span md-src-pos="2404..2432">room_name = "1000"</span>
+<span md-src-pos="2433..2464">build_box = BuildBox(room_name)</span>
+<span md-src-pos="2465..2465"></span>
+<span md-src-pos="2466..2489">build_box.clear_boxes()</span>
+<span md-src-pos="2490..2517">build_box.set_box_size(0.5)</span>
+<span md-src-pos="2518..2552">build_box.set_build_interval(0.01)</span>
+<span md-src-pos="2553..2553"></span>
+<span md-src-pos="2554..2574">for i in range(100):</span>
+<span md-src-pos="2575..2616">  build_box.create_box(-1, i, 0, 0, 1, 1)</span>
+<span md-src-pos="2617..2657">  build_box.create_box(0, i, 0, 1, 0, 0)</span>
+<span md-src-pos="2658..2698">  build_box.create_box(1, i, 0, 1, 1, 0)</span>
+<span md-src-pos="2699..2739">  build_box.create_box(2, i, 0, 0, 1, 1)</span>
+<span md-src-pos="2740..2740"></span>
+<span md-src-pos="2741..2760">for i in range(50):</span>
+<span md-src-pos="2761..2800">  build_box.remove_box(0, i * 2 + 1, 0)</span>
+<span md-src-pos="2801..2836">  build_box.remove_box(1, i * 2, 0)</span>
+<span md-src-pos="2837..2837"></span>
+<span md-src-pos="2838..2838"></span>
+<span md-src-pos="2839..2865"># for i in range(-10, 11):</span>
+<span md-src-pos="2866..2892">#   for j in range(0, 11):</span>
+<span md-src-pos="2893..2923">#     for k in range(-10, 11):</span>
+<span md-src-pos="2924..2973">#       if i ** 2 + j ** 2 + k ** 2 &lt; 10 ** 2:</span>
+<span md-src-pos="2974..2998">#         print(i, j, k)</span>
+<span md-src-pos="2999..3047">#         build_box.create_box(i, j, k, 0, 1, 1)</span>
+<span md-src-pos="3048..3048"></span>
+<span md-src-pos="3049..3070">build_box.send_data()</span>
+<span md-src-pos="3071..3071"></span><span md-src-pos="3058..3061"></span></code></pre>
+    <h4 id="実行方法" md-src-pos="3063..3072">実行方法</h4>
+    <pre class="code-fence" md-src-pos="3074..3127">
+    <div class="code-fence-highlighter-copy-button" data-fence-content="JCBweXRob24gbWFpbi5weQoKb3IgIAoKJCBweXRob24zIG1haW4ucHk=">
+
+
+    </div><code class="language-bash" md-src-pos="3074..3127"><a class="run-icon code-block" href="#" role="button" data-command="Run:4566de43a44b042ffc33e3bd4f013bbf" data-commandtype="block"></a><span md-src-pos="3074..3082"></span><span md-src-pos="3082..3099"><span style="color: rgb(204, 120, 50);">$</span> python main.py</span>
+<span md-src-pos="3099..3100"></span>
+<span md-src-pos="3100..3105">or  </span>
+<span md-src-pos="3105..3106"></span>
+<span md-src-pos="3106..3124"><span style="color: rgb(204, 120, 50);">$</span> python3 main.py</span>
+<span md-src-pos="3124..3125"></span><span md-src-pos="3124..3127"></span></code></pre>
+    <h3 id="javascript-nodejs" md-src-pos="3129..3153">JavaScript (Node.js)</h3>
+    <h4 id="スクリプト" md-src-pos="3155..3165">スクリプト</h4>
+    <pre class="code-fence" md-src-pos="3167..3722">
+    <div class="code-fence-highlighter-copy-button" data-fence-content="Ly8gSmF2YVNjcmlwdCAoTm9kZS5qcykKaW1wb3J0IEJ1aWxkQm94IGZyb20gJy4vYnVpbGRCb3gubWpzJzsKCmNvbnN0IHJvb21OYW1lID0gJzEwMDAnOwpjb25zdCBidWlsZEJveCA9IG5ldyBCdWlsZEJveChyb29tTmFtZSk7CgpidWlsZEJveC5jbGVhckRhdGEoKTsKYnVpbGRCb3guc2V0Qm94U2l6ZSgwLjUpOwpidWlsZEJveC5zZXRCdWlsZEludGVydmFsKDAuMDEpOwoKZm9yIChsZXQgaSA9IDA7IGkgPCAxMDA7IGkrKykgewogIGJ1aWxkQm94LmNyZWF0ZUJveCgtMSwgaSwgMCwgMCwgMSwgMSk7CiAgYnVpbGRCb3guY3JlYXRlQm94KDAsIGksIDAsIDEsIDAsIDApOwogIGJ1aWxkQm94LmNyZWF0ZUJveCgxLCBpLCAwLCAxLCAxLCAwKTsKICBidWlsZEJveC5jcmVhdGVCb3goMiwgaSwgMCwgMCwgMSwgMSk7Cn0KCmZvciAobGV0IGkgPSAwOyBpIDwgNTA7IGkrKykgewogIGJ1aWxkQm94LnJlbW92ZUJveCgwLCBpICogMiwgMCk7CiAgYnVpbGRCb3gucmVtb3ZlQm94KDEsIGkgKiAyICsgMSwgMCk7Cn0KCmJ1aWxkQm94LnNlbmREYXRhKCk7">
+
+
+    </div><code class="language-javascript" md-src-pos="3167..3722"><span md-src-pos="3167..3181"></span><span md-src-pos="3181..3205"><span style="color: rgb(128, 128, 128);">// JavaScript (Node.js)</span></span>
+<span md-src-pos="3205..3244"><span style="color: rgb(204, 120, 50);">import</span> BuildBox from <span style="color: rgb(106, 135, 89);">'./buildBox.mjs'</span><span style="color: rgb(204, 120, 50);">;</span></span>
+<span md-src-pos="3244..3245"></span>
+<span md-src-pos="3245..3270"><span style="color: rgb(204, 120, 50);">const</span> roomName = <span style="color: rgb(106, 135, 89);">'1000'</span><span style="color: rgb(204, 120, 50);">;</span></span>
+<span md-src-pos="3270..3311"><span style="color: rgb(204, 120, 50);">const</span> buildBox = <span style="color: rgb(204, 120, 50);">new</span> BuildBox(roomName)<span style="color: rgb(204, 120, 50);">;</span></span>
+<span md-src-pos="3311..3312"></span>
+<span md-src-pos="3312..3334">buildBox.clearData()<span style="color: rgb(204, 120, 50);">;</span></span>
+<span md-src-pos="3334..3360">buildBox.setBoxSize(<span style="color: rgb(104, 151, 187);">0.5</span>)<span style="color: rgb(204, 120, 50);">;</span></span>
+<span md-src-pos="3360..3393">buildBox.setBuildInterval(<span style="color: rgb(104, 151, 187);">0.01</span>)<span style="color: rgb(204, 120, 50);">;</span></span>
+<span md-src-pos="3393..3394"></span>
+<span md-src-pos="3394..3426"><span style="color: rgb(204, 120, 50);">for</span> (<span style="color: rgb(204, 120, 50);">let</span> i = <span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">;</span> i &lt; <span style="color: rgb(104, 151, 187);">100</span><span style="color: rgb(204, 120, 50);">;</span> i++) {</span>
+<span md-src-pos="3426..3467">  buildBox.createBox(-<span style="color: rgb(104, 151, 187);">1</span><span style="color: rgb(204, 120, 50);">,</span> i<span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">1</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">1</span>)<span style="color: rgb(204, 120, 50);">;</span></span>
+<span md-src-pos="3467..3507">  buildBox.createBox(<span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">,</span> i<span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">1</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">0</span>)<span style="color: rgb(204, 120, 50);">;</span></span>
+<span md-src-pos="3507..3547">  buildBox.createBox(<span style="color: rgb(104, 151, 187);">1</span><span style="color: rgb(204, 120, 50);">,</span> i<span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">1</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">1</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">0</span>)<span style="color: rgb(204, 120, 50);">;</span></span>
+<span md-src-pos="3547..3587">  buildBox.createBox(<span style="color: rgb(104, 151, 187);">2</span><span style="color: rgb(204, 120, 50);">,</span> i<span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">1</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">1</span>)<span style="color: rgb(204, 120, 50);">;</span></span>
+<span md-src-pos="3587..3589">}</span>
+<span md-src-pos="3589..3590"></span>
+<span md-src-pos="3590..3621"><span style="color: rgb(204, 120, 50);">for</span> (<span style="color: rgb(204, 120, 50);">let</span> i = <span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">;</span> i &lt; <span style="color: rgb(104, 151, 187);">50</span><span style="color: rgb(204, 120, 50);">;</span> i++) {</span>
+<span md-src-pos="3621..3656">  buildBox.removeBox(<span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">,</span> i * <span style="color: rgb(104, 151, 187);">2</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">0</span>)<span style="color: rgb(204, 120, 50);">;</span></span>
+<span md-src-pos="3656..3695">  buildBox.removeBox(<span style="color: rgb(104, 151, 187);">1</span><span style="color: rgb(204, 120, 50);">,</span> i * <span style="color: rgb(104, 151, 187);">2</span> + <span style="color: rgb(104, 151, 187);">1</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">0</span>)<span style="color: rgb(204, 120, 50);">;</span></span>
+<span md-src-pos="3695..3697">}</span>
+<span md-src-pos="3697..3698"></span>
+<span md-src-pos="3698..3719">buildBox.sendData()<span style="color: rgb(204, 120, 50);">;</span></span>
+<span md-src-pos="3719..3720"></span><span md-src-pos="3719..3722"></span></code></pre>
+    <h4 id="実行方法" md-src-pos="3724..3733">実行方法</h4>
+    <pre class="code-fence" md-src-pos="3735..3762">
+    <div class="code-fence-highlighter-copy-button" data-fence-content="JCBub2RlIG1haW4ubWpz">
+
+
+    </div><code class="language-bash" md-src-pos="3735..3762"><a class="run-icon code-block" href="#" role="button" data-command="Run:21a5ec5467a9549c1f1bc8a862b3da53" data-commandtype="block"></a><span md-src-pos="3735..3743"></span><span md-src-pos="3743..3759"><span style="color: rgb(204, 120, 50);">$</span> node main.mjs</span>
+<span md-src-pos="3759..3760"></span><span md-src-pos="3759..3762"></span></code></pre>
+    <h3 id="ruby" md-src-pos="3764..3772">Ruby</h3>
+    <h4 id="スクリプト" md-src-pos="3774..3784">スクリプト</h4>
+    <pre class="code-fence" md-src-pos="3786..4282">
+    <div class="code-fence-highlighter-copy-button" data-fence-content="IyBSdWJ5CnJlcXVpcmVfcmVsYXRpdmUgJ2J1aWxkX2JveCcKCnJvb21fbmFtZSA9ICcxMDAwJwpidWlsZF9ib3ggPSBCdWlsZEJveC5uZXcocm9vbV9uYW1lKQoKYnVpbGRfYm94LmNsZWFyX2JveGVzKCkKYnVpbGRfYm94LnNldF9ib3hfc2l6ZSgwLjUpCmJ1aWxkX2JveC5zZXRfYnVpbGRfaW50ZXJ2YWwoMC4wMSkKCmZvciBpIGluIDAuLi4xMDAKICBidWlsZF9ib3guY3JlYXRlX2JveCgtMSwgaSwgMCwgMCwgMSwgMSkKICBidWlsZF9ib3guY3JlYXRlX2JveCgwLCBpLCAwLCAxLCAwLCAwKQogIGJ1aWxkX2JveC5jcmVhdGVfYm94KDEsIGksIDAsIDEsIDEsIDApCiAgYnVpbGRfYm94LmNyZWF0ZV9ib3goMiwgaSwgMCwgMCwgMSwgMSkKZW5kCgpmb3IgaSBpbiAwLi4uNTAKICBidWlsZF9ib3gucmVtb3ZlX2JveCgwLCBpICogMiwgMCkKICBidWlsZF9ib3gucmVtb3ZlX2JveCgxLCBpICogMiArIDEsIDApCmVuZAoKYnVpbGRfYm94LnNlbmRfZGF0YQ==">
+
+
+    </div><code class="language-ruby" md-src-pos="3786..4282"><span md-src-pos="3786..3794"></span><span md-src-pos="3794..3800"># Ruby</span>
+<span md-src-pos="3801..3829">require_relative 'build_box'</span>
+<span md-src-pos="3830..3830"></span>
+<span md-src-pos="3831..3849">room_name = '1000'</span>
+<span md-src-pos="3850..3885">build_box = BuildBox.new(room_name)</span>
+<span md-src-pos="3886..3886"></span>
+<span md-src-pos="3887..3910">build_box.clear_boxes()</span>
+<span md-src-pos="3911..3938">build_box.set_box_size(0.5)</span>
+<span md-src-pos="3939..3973">build_box.set_build_interval(0.01)</span>
+<span md-src-pos="3974..3974"></span>
+<span md-src-pos="3975..3991">for i in 0...100</span>
+<span md-src-pos="3992..4033">  build_box.create_box(-1, i, 0, 0, 1, 1)</span>
+<span md-src-pos="4034..4074">  build_box.create_box(0, i, 0, 1, 0, 0)</span>
+<span md-src-pos="4075..4115">  build_box.create_box(1, i, 0, 1, 1, 0)</span>
+<span md-src-pos="4116..4156">  build_box.create_box(2, i, 0, 0, 1, 1)</span>
+<span md-src-pos="4157..4160">end</span>
+<span md-src-pos="4161..4161"></span>
+<span md-src-pos="4162..4177">for i in 0...50</span>
+<span md-src-pos="4178..4213">  build_box.remove_box(0, i * 2, 0)</span>
+<span md-src-pos="4214..4253">  build_box.remove_box(1, i * 2 + 1, 0)</span>
+<span md-src-pos="4254..4257">end</span>
+<span md-src-pos="4258..4258"></span>
+<span md-src-pos="4259..4278">build_box.send_data</span>
+<span md-src-pos="4279..4279"></span><span md-src-pos="4279..4282"></span></code></pre>
+    <h4 id="実行方法" md-src-pos="4284..4293">実行方法</h4>
+    <pre class="code-fence" md-src-pos="4295..4321">
+    <div class="code-fence-highlighter-copy-button" data-fence-content="JCBydWJ5IG1haW4ucmI=">
+
+
+    </div><code class="language-bash" md-src-pos="4295..4321"><a class="run-icon code-block" href="#" role="button" data-command="Run:4104cc624d21cb596b1d4fa5bffa0afc" data-commandtype="block"></a><span md-src-pos="4295..4303"></span><span md-src-pos="4303..4318"><span style="color: rgb(204, 120, 50);">$</span> ruby main.rb</span>
+<span md-src-pos="4318..4319"></span><span md-src-pos="4318..4321"></span></code></pre>
+    <h3 id="swift" md-src-pos="4323..4332">Swift</h3>
+    <h4 id="スクリプト" md-src-pos="4334..4344">スクリプト</h4>
+    <pre class="code-fence" md-src-pos="4346..5410">
+    <div class="code-fence-highlighter-copy-button" data-fence-content="Ly8gU3dpZnQgKOODquODleOCoeOCr+OCv+ODquODs+OCsOS4rSkKaW1wb3J0IEZvdW5kYXRpb24KCmxldCByb29tTmFtZSA9ICIxMDAwIgoKQGF2YWlsYWJsZShpT1MgMTUuMCwgbWFjT1MgMTIuMCwgKikKZnVuYyBtYWluKCkgYXN5bmMgewogICAgZG8gewogICAgICAgIGxldCBidWlsZEJveCA9IEJ1aWxkQm94KHJvb21OYW1lKQoKICAgICAgICBidWlsZEJveC5zZXRTaXplKDAuNSkKICAgICAgICBidWlsZEJveC5zZXRCdWlsZEludGVydmFsKDAuMDEpCgogICAgICAgIGZvciBpIGluIDAuLjwxMDAgewogICAgICAgICAgICBidWlsZEJveC5jcmVhdGVCb3goLTEsIERvdWJsZShpKSwgMCwgMCwgMSwgMSkKICAgICAgICAgICAgYnVpbGRCb3guY3JlYXRlQm94KDAsIERvdWJsZShpKSwgMCwgMSwgMCwgMCkKICAgICAgICAgICAgYnVpbGRCb3guY3JlYXRlQm94KDEsIERvdWJsZShpKSwgMCwgMSwgMSwgMCkKICAgICAgICAgICAgYnVpbGRCb3guY3JlYXRlQm94KDIsIERvdWJsZShpKSwgMCwgMCwgMSwgMSkKICAgICAgICB9CgogICAgICAgIGZvciBpIGluIDAuLjw1MCB7CiAgICAgICAgICAgIGJ1aWxkQm94LnJlbW92ZUJveCgwLCBEb3VibGUoaSAqIDIpLCAwKQogICAgICAgICAgICBidWlsZEJveC5yZW1vdmVCb3goMSwgRG91YmxlKGkgKiAyICsgMSksIDApCiAgICAgICAgfQogICAgICAgIHRyeSBhd2FpdCBidWlsZEJveC5zZW5kRGF0YSgpCiAgICB9IGNhdGNoIHsKICAgICAgICBwcmludCgiQW4gZXJyb3Igb2NjdXJyZWQ6IFwoZXJyb3IpIikKICAgIH0KfQoKaWYgI2F2YWlsYWJsZShpT1MgMTUuMCwgbWFjT1MgMTIuMCwgKikgewogICAgVGFzay5kZXRhY2hlZChwcmlvcml0eTogLnVzZXJJbml0aWF0ZWQpIHsKICAgICAgICBhd2FpdCBtYWluKCkKICAgIH0KICAgIFJ1bkxvb3AubWFpbi5ydW4odW50aWw6IERhdGUodGltZUludGVydmFsU2luY2VOb3c6IDEwKSkgLy8gT3IgbG9uZ2VyIGRlcGVuZGluZyBvbiB5b3VyIG5lZWRzCn0gZWxzZSB7CiAgICBmYXRhbEVycm9yKCJUaGlzIHNjcmlwdCByZXF1aXJlcyBpT1MgMTUuMCAvIG1hY09TIDEyLjAgb3IgbGF0ZXIuIikKfQ==">
+
+
+    </div><code class="language-swift" md-src-pos="4346..5410"><span md-src-pos="4346..4355"></span><span md-src-pos="4355..4375">// Swift (リファクタリング中)</span>
+<span md-src-pos="4376..4393">import Foundation</span>
+<span md-src-pos="4394..4394"></span>
+<span md-src-pos="4395..4426">let roomName = "1000"</span>
+<span md-src-pos="4427..4427"></span>
+<span md-src-pos="4428..4463">@available(iOS 15.0, macOS 12.0, *)</span>
+<span md-src-pos="4464..4483">func main() async {</span>
+<span md-src-pos="4484..4492">    do {</span>
+<span md-src-pos="4493..4534">        let buildBox = BuildBox(roomName)</span>
+<span md-src-pos="4535..4535"></span>
+<span md-src-pos="4536..4565">        buildBox.setSize(0.5)</span>
+<span md-src-pos="4566..4605">        buildBox.setBuildInterval(0.01)</span>
+<span md-src-pos="4606..4606"></span>
+<span md-src-pos="4607..4636">        for i in 0..&lt;100 {</span>
+<span md-src-pos="4637..4694">            buildBox.createBox(-1, Double(i), 0, 0, 1, 1)</span>
+<span md-src-pos="4695..4751">            buildBox.createBox(0, Double(i), 0, 1, 0, 0)</span>
+<span md-src-pos="4752..4808">            buildBox.createBox(1, Double(i), 0, 1, 1, 0)</span>
+<span md-src-pos="4809..4865">            buildBox.createBox(2, Double(i), 0, 0, 1, 1)</span>
+<span md-src-pos="4866..4875">        }</span>
+<span md-src-pos="4876..4876"></span>
+<span md-src-pos="4877..4905">        for i in 0..&lt;50 {</span>
+<span md-src-pos="4906..4957">            buildBox.removeBox(0, Double(i * 2), 0)</span>
+<span md-src-pos="4958..5013">            buildBox.removeBox(1, Double(i * 2 + 1), 0)</span>
+<span md-src-pos="5014..5023">        }</span>
+<span md-src-pos="5024..5061">        try await buildBox.sendData()</span>
+<span md-src-pos="5062..5075">    } catch {</span>
+<span md-src-pos="5076..5130">        print("An error occurred: \(error)")</span>
+<span md-src-pos="5131..5136">    }</span>
+<span md-src-pos="5137..5138">}</span>
+<span md-src-pos="5139..5139"></span>
+<span md-src-pos="5140..5180">if #available(iOS 15.0, macOS 12.0, *) {</span>
+<span md-src-pos="5181..5226">    Task.detached(priority: .userInitiated) {</span>
+<span md-src-pos="5227..5247">        await main()</span>
+<span md-src-pos="5248..5253">    }</span>
+<span md-src-pos="5254..5350">    RunLoop.main.run(until: Date(timeIntervalSinceNow: 10)) // Or longer depending on your needs</span>
+<span md-src-pos="5351..5359">} else {</span>
+<span md-src-pos="5360..5440">    fatalError("This script requires iOS 15.0 / macOS 12.0 or later.")</span>
+<span md-src-pos="5441..5442">}</span>
+<span md-src-pos="5443..5443"></span><span md-src-pos="5407..5410"></span></code></pre>
+    <h4 id="実行方法" md-src-pos="5412..5421">実行方法</h4>
+    <pre class="code-fence" md-src-pos="5423..5465">
+    <div class="code-fence-highlighter-copy-button" data-fence-content="JCBjZCBzd2lmdC9Tb3VyY2VzCiQgc3dpZnQgcnVu">
+
+
+    </div><code class="language-bash" md-src-pos="5423..5465"><a class="run-icon code-block" href="#" role="button" data-command="Run:29cc9b10ee0ad70dbc82131b457ba45d" data-commandtype="block"></a><span md-src-pos="5423..5431"></span><span md-src-pos="5431..5450"><span style="color: rgb(204, 120, 50);">$</span> cd swift/Sources</span>
+<span md-src-pos="5450..5462"><span style="color: rgb(204, 120, 50);">$</span> swift run</span>
+<span md-src-pos="5462..5463"></span><span md-src-pos="5462..5465"></span></code></pre>
+    <h3 id="ボクセルの削除" md-src-pos="5467..5478">ボクセルの削除</h3>
+    <p md-src-pos="5480..5483"><span md-src-pos="5480..5483">準備中</span></p>
+    <h3 id="ボクセルのアニメーション" md-src-pos="5485..5501">ボクセルのアニメーション</h3>
+    <p md-src-pos="5503..5506"><span md-src-pos="5503..5506">準備中</span></p>
+    <h3 id="ユーザー共有" md-src-pos="5508..5518">ユーザー共有</h3>
+    <p md-src-pos="5520..5523"><span md-src-pos="5520..5523">準備中</span></p>
+    <h2 id="設定" md-src-pos="5525..5530">設定</h2>
+    <p md-src-pos="5532..5595"><span md-src-pos="5532..5595">画面右上の「Settings」ボタンから設定画面に移動できます。デバッグモードをオフにすると、画面の情報表示が無効になrます。</span></p>
+    <h2 id="ライセンス" md-src-pos="5597..5605">ライセンス</h2>
+    <p md-src-pos="5607..5683"><a href="https://github.com/creativival/Voxelaming/blob/master/LICENSE" md-src-pos="5607..5683">MIT License</a></p>
+    <h2 id="作者" md-src-pos="5685..5690">作者</h2>
+    <p md-src-pos="5692..5703"><span md-src-pos="5692..5703">creativival</span></p>
+</div>
+</body>
+</html>
