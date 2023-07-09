@@ -213,6 +213,7 @@ var ja = {
 	"voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] から削除する",
 	"voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
 	"voxelaming.setBuildInterval": "ボクセルの作成間隔を [INTERVAL] 秒にする",
+	"voxelaming.setSentences": "[SENTEMCES] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B]",
 	"voxelaming.clearData": "データを初期化する",
 	"voxelaming.sendData": "データを送信する"
 };
@@ -226,6 +227,7 @@ var translations = {
 	"voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] からけす",
 	"voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
 	"voxelaming.setBuildInterval": "ボクセルのつくるかんかくを [INTERVAL] びょうにする",
+	"voxelaming.setSentences": "[SENTEMCES] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B]",
 	"voxelaming.clearData": "データをけす",
 	"voxelaming.sendData": "データをおくる"
 }
@@ -278,6 +280,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     this.runtime = runtime;
     this.roomName = '1000';
     this.boxes = [];
+    this.characters = [];
     this.size = 1.0;
     this.buildInterval = 0.01;
     if (runtime.formatMessage) {
@@ -398,6 +401,44 @@ var ExtensionBlocks = /*#__PURE__*/function () {
             }
           }
         }, {
+          opcode: 'setSentences',
+          blockType: blockType.COMMAND,
+          text: formatMessage({
+            id: 'voxelaming.setSentences',
+            default: 'Write [SENTEMCES] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B]',
+            description: 'set characters'
+          }),
+          arguments: {
+            SENTEMCES: {
+              type: argumentType.STRING,
+              defaultValue: 'Hello World'
+            },
+            X: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            Y: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            Z: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            R: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            G: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            B: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            }
+          }
+        }, {
           opcode: 'clearData',
           blockType: blockType.COMMAND,
           text: formatMessage({
@@ -456,6 +497,18 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     key: "setBuildInterval",
     value: function setBuildInterval(args) {
       this.buildInterval = Number(args.INTERVAL);
+    }
+  }, {
+    key: "setSentences",
+    value: function setSentences(args) {
+      var characters = args.SENTEMCES;
+      var x = args.X;
+      var y = args.Y;
+      var z = args.Z;
+      var r = args.R;
+      var g = args.G;
+      var b = args.B;
+      this.characters.push([characters, x, y, z, r, g, b]);
     }
   }, {
     key: "clearData",
