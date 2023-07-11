@@ -85,6 +85,8 @@ class ExtensionBlocks {
          */
         this.runtime = runtime;
         this.roomName = '1000';
+        this.node = [0, 0, 0, 0, 0, 0]
+        this.animation = [0, 0, 0, 0, 0, 0, 1, 0]
         this.boxes = [];
         this.sentences = [];
         this.size = 1.0;
@@ -120,6 +122,114 @@ class ExtensionBlocks {
                         ROOMNAME: {
                             type: ArgumentType.STRING,
                             defaultValue: '1000'
+                        }
+                    }
+                },
+                {
+                    opcode: 'setBoxSize',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelaming.setBoxSize',
+                        default: 'Set box size to [BOXSIZE]',
+                        description: 'set box size'
+                    }),
+                    arguments: {
+                        BOXSIZE: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1.0
+                        }
+                    }
+                },
+                {
+                    opcode: 'setBuildInterval',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelaming.setBuildInterval',
+                        default: 'Set build interval to [INTERVAL]',
+                        description: 'set build interval'
+                    }),
+                    arguments: {
+                        INTERVAL: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0.01
+                        }
+                    }
+                },
+                {
+                    opcode: 'setNode',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelaming.setNode',
+                        default: 'Set node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL]',
+                        description: 'set node'
+                    }),
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        Y: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        Z: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        PITCH: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        YAW: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        ROLL: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        }
+                    }
+                },
+                {
+                    opcode: 'animateNode',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelaming.animateNode',
+                        default: 'Animate node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL] scale: [SCALE] interval: [INTERVAL]',
+                        description: 'animate node'
+                    }),
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        Y: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        Z: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        PITCH: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        YAW: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        ROLL: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        SCALE: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1
+                        },
+                        INTERVAL: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 10
                         }
                     }
                 },
@@ -178,36 +288,6 @@ class ExtensionBlocks {
                         Z: {
                             type: ArgumentType.NUMBER,
                             defaultValue: 0
-                        }
-                    }
-                },
-                {
-                    opcode: 'setBoxSize',
-                    blockType: BlockType.COMMAND,
-                    text: formatMessage({
-                        id: 'voxelaming.setBoxSize',
-                        default: 'Set box size to [BOXSIZE]',
-                        description: 'set box size'
-                    }),
-                    arguments: {
-                        BOXSIZE: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 1.0
-                        }
-                    }
-                },
-                {
-                    opcode: 'setBuildInterval',
-                    blockType: BlockType.COMMAND,
-                    text: formatMessage({
-                        id: 'voxelaming.setBuildInterval',
-                        default: 'Set build interval to [INTERVAL]',
-                        description: 'set build interval'
-                    }),
-                    arguments: {
-                        INTERVAL: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0.01
                         }
                     }
                 },
@@ -278,6 +358,28 @@ class ExtensionBlocks {
         this.roomName = args.ROOMNAME;
     }
 
+    setNode(args) {
+        const x = Math.floor(Number(args.X));
+        const y = Math.floor(Number(args.Y));
+        const z = Math.floor(Number(args.Z));
+        const pitch = Number(args.PITCH);
+        const yaw = Number(args.YAW);
+        const roll = Number(args.ROLL);
+        this.node = [x, y, z, pitch, yaw, roll];
+    }
+
+    animateNode(args) {
+        const x = Math.floor(Number(args.X));
+        const y = Math.floor(Number(args.Y));
+        const z = Math.floor(Number(args.Z));
+        const pitch = Number(args.PITCH);
+        const yaw = Number(args.YAW);
+        const roll = Number(args.ROLL);
+        const scale = Number(args.SCALE);
+        const interval = Number(args.INTERVAL);
+        this.animation = [x, y, z, pitch, yaw, roll, scale, interval];
+    }
+
     createBox(args) {
         const x = Math.floor(Number(args.X));
         const y = Math.floor(Number(args.Y));
@@ -321,6 +423,8 @@ class ExtensionBlocks {
     }
 
     clearData() {
+        this.node = [0, 0, 0, 0, 0, 0]
+        this.animation = [0, 0, 0, 0, 0, 0, 1, 0]
         this.boxes = [];
         this.sentences = [];
         this.size = 1.0;
@@ -332,6 +436,8 @@ class ExtensionBlocks {
         const date = new Date();
         const self = this;
         const dataToSend = {
+            node: this.node,
+            animation: this.animation,
             boxes: this.boxes,
             sentences: this.sentences,
             size: this.size,
