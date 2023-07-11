@@ -10,7 +10,7 @@
 
 ボクセラミングはARKitを利用したプログラミング学習アプリです。ARKit互換のiPhoneおよびiPad（iOS 13以上）で無料で使用できます。コンピュータ上でプログラムされたボクセル（3D空間におけるピクセルの立方体相当）を仮想空間に配置して楽しむことができます。
 
-詳細については、以下のサイトを参照してください。https://github.com/creativival/Voxelaming
+詳細については、以下のサイトを参照してください。https://creativival.github.io/Voxelaming
 
 ## ✨ この拡張機能で何ができるのか
 
