@@ -205,6 +205,7 @@ var en = {
 	"voxelaming.removeBox": "Remove voxel at x: [X] y: [Y] z: [Z]",
 	"voxelaming.setBoxSize": "Set voxel size to [BOXSIZE]",
 	"voxelaming.setBuildInterval": "Set build interval to [INTERVAL]",
+	"voxelaming.writeSentence": "Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]",
 	"voxelaming.clearData": "Clear data",
 	"voxelaming.sendData": "Send data"
 };
@@ -217,7 +218,7 @@ var ja = {
 	"voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] から削除する",
 	"voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
 	"voxelaming.setBuildInterval": "ボクセルの作成間隔を [INTERVAL] 秒にする",
-	"voxelaming.setSentences": "[SENTENCES] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B]",
+	"voxelaming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B]",
 	"voxelaming.clearData": "データを初期化する",
 	"voxelaming.sendData": "データを送信する"
 };
@@ -233,7 +234,7 @@ var translations = {
 	"voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] からけす",
 	"voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
 	"voxelaming.setBuildInterval": "ボクセルのつくるかんかくを [INTERVAL] びょうにする",
-	"voxelaming.setSentences": "[SENTENCES] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B]",
+	"voxelaming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B]",
 	"voxelaming.clearData": "データをけす",
 	"voxelaming.sendData": "データをおくる"
 }
@@ -433,7 +434,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelaming.createBox',
-            default: 'Create box at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B]',
+            default: 'Create box at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]',
             description: 'create box'
           }),
           arguments: {
@@ -460,6 +461,10 @@ var ExtensionBlocks = /*#__PURE__*/function () {
             B: {
               type: argumentType.NUMBER,
               defaultValue: 0
+            },
+            ALPHA: {
+              type: argumentType.NUMBER,
+              defaultValue: 1
             }
           }
         }, {
@@ -485,15 +490,15 @@ var ExtensionBlocks = /*#__PURE__*/function () {
             }
           }
         }, {
-          opcode: 'setSentences',
+          opcode: 'writeSentence',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelaming.setSentences',
-            default: 'Write [SENTENCES] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B]',
-            description: 'set sentences'
+            id: 'voxelaming.writeSentence',
+            default: 'Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]',
+            description: 'set sentence'
           }),
           arguments: {
-            SENTENCES: {
+            SENTENCE: {
               type: argumentType.STRING,
               defaultValue: 'Hello World'
             },
@@ -520,6 +525,10 @@ var ExtensionBlocks = /*#__PURE__*/function () {
             B: {
               type: argumentType.NUMBER,
               defaultValue: 0
+            },
+            ALPHA: {
+              type: argumentType.NUMBER,
+              defaultValue: 1
             }
           }
         }, {
@@ -580,7 +589,8 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       var r = Number(args.R);
       var g = Number(args.G);
       var b = Number(args.B);
-      this.boxes.push([x, y, z, r, g, b]);
+      var alpha = Number(args.ALPHA);
+      this.boxes.push([x, y, z, r, g, b, alpha]);
     }
   }, {
     key: "removeBox",
@@ -607,16 +617,17 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       this.buildInterval = Number(args.INTERVAL);
     }
   }, {
-    key: "setSentences",
-    value: function setSentences(args) {
-      var sentences = args.SENTENCES;
+    key: "writeSentence",
+    value: function writeSentence(args) {
+      var sentence = args.SENTENCE;
       var x = args.X;
       var y = args.Y;
       var z = args.Z;
       var r = args.R;
       var g = args.G;
       var b = args.B;
-      this.sentences.push([sentences, x, y, z, r, g, b]);
+      var alpha = args.ALPHA;
+      this.sentences.push([sentence, x, y, z, r, g, b, alpha]);
     }
   }, {
     key: "clearData",
