@@ -201,7 +201,7 @@ var en = {
 	"voxelaming.setRoomName": "Set room name to [ROOMNAME]",
 	"voxelaming.setNode": "Set node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL]",
 	"voxelaming.animateNode": "Animate node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL] scale: [SCALE] interval: [INTERVAL]",
-	"voxelaming.createBox": "Create voxel at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B]",
+	"voxelaming.createBox": "Create voxel at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]",
 	"voxelaming.removeBox": "Remove voxel at x: [X] y: [Y] z: [Z]",
 	"voxelaming.setBoxSize": "Set voxel size to [BOXSIZE]",
 	"voxelaming.setBuildInterval": "Set build interval to [INTERVAL]",
@@ -214,11 +214,11 @@ var ja = {
 	"voxelaming.setRoomName": "ルームネームを [ROOMNAME] にする",
 	"voxelaming.setNode": "ノードを x: [X] y: [Y] z: [Z] に配置する。角度を pitch: [PITCH] yaw: [YAW] roll: [ROLL] にする",
 	"voxelaming.animateNode": "アニメーション移動 x: [X] y: [Y] z: [Z] 。回転 pitch: [PITCH] yaw: [YAW] roll: [ROLL] 。拡大: [SCALE] 移動時間: [INTERVAL]",
-	"voxelaming.createBox": "ボクセルを x: [X] y: [Y] z: [Z] に作成する。色 r: [R] g: [G] b: [B]",
+	"voxelaming.createBox": "ボクセルを x: [X] y: [Y] z: [Z] に作成する。色 r: [R] g: [G] b: [B] alpha: [ALPHA]",
 	"voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] から削除する",
 	"voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
 	"voxelaming.setBuildInterval": "ボクセルの作成間隔を [INTERVAL] 秒にする",
-	"voxelaming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B]",
+	"voxelaming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B] alpha: [ALPHA]",
 	"voxelaming.clearData": "データを初期化する",
 	"voxelaming.sendData": "データを送信する"
 };
@@ -230,11 +230,11 @@ var translations = {
 	"voxelaming.setRoomName": "ルームネームを [ROOMNAME] にする",
 	"voxelaming.setNode": "ノードを x: [X] y: [Y] z: [Z] におく。かくどを pitch: [PITCH] yaw: [YAW] roll: [ROLL] にする",
 	"voxelaming.animateNode": "アニメーションいどう x: [X] y: [Y] z: [Z] 。かいてん pitch: [PITCH] yaw: [YAW] roll: [ROLL] 。かくだい: [SCALE] じかん: [INTERVAL]",
-	"voxelaming.createBox": "ボクセルを x: [X] y: [Y] z: [Z] につくる。いろ r: [R] g: [G] b: [B]",
+	"voxelaming.createBox": "ボクセルを x: [X] y: [Y] z: [Z] につくる。いろ r: [R] g: [G] b: [B] alpha: [ALPHA]",
 	"voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] からけす",
 	"voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
 	"voxelaming.setBuildInterval": "ボクセルのつくるかんかくを [INTERVAL] びょうにする",
-	"voxelaming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B]",
+	"voxelaming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B] alpha: [ALPHA]",
 	"voxelaming.clearData": "データをけす",
 	"voxelaming.sendData": "データをおくる"
 }
@@ -495,7 +495,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           text: formatMessage({
             id: 'voxelaming.writeSentence',
             default: 'Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]',
-            description: 'set sentence'
+            description: 'write sentence'
           }),
           arguments: {
             SENTENCE: {
@@ -664,7 +664,9 @@ var ExtensionBlocks = /*#__PURE__*/function () {
         console.log("Joined room: ".concat(self.roomName));
         socket.send(JSON.stringify(dataToSend));
         console.log("Sent data: ", JSON.stringify(dataToSend));
-        self.clearData();
+
+        // Not clear data after sending because we want to keep the data for the next sending
+        // self.clearData();  // clear data after sending
 
         // Close the WebSocket connection after sending data
         socket.close();
