@@ -238,7 +238,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelaming.createBox',
-                        default: 'Create box at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B]',
+                        default: 'Create box at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]',
                         description: 'create box'
                     }),
                     arguments: {
@@ -265,6 +265,10 @@ class ExtensionBlocks {
                         B: {
                             type: ArgumentType.NUMBER,
                             defaultValue: 0
+                        },
+                        ALPHA: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1
                         }
                     }
                 },
@@ -292,15 +296,15 @@ class ExtensionBlocks {
                     }
                 },
                 {
-                    opcode: 'setSentences',
+                    opcode: 'writeSentence',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelaming.setSentences',
-                        default: 'Write [SENTENCES] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B]',
-                        description: 'set sentences'
+                        id: 'voxelaming.writeSentence',
+                        default: 'Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]',
+                        description: 'write sentence'
                     }),
                     arguments: {
-                        SENTENCES: {
+                        SENTENCE: {
                             type: ArgumentType.STRING,
                             defaultValue: 'Hello World'
                         },
@@ -327,6 +331,10 @@ class ExtensionBlocks {
                         B: {
                             type: ArgumentType.NUMBER,
                             defaultValue: 0
+                        },
+                        ALPHA: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1
                         }
                     }
                 },
@@ -387,7 +395,8 @@ class ExtensionBlocks {
         const r = Number(args.R);
         const g = Number(args.G);
         const b = Number(args.B);
-        this.boxes.push([x, y, z, r, g, b]);
+        const alpha = Number(args.ALPHA);
+        this.boxes.push([x, y, z, r, g, b, alpha]);
     }
 
     removeBox(args) {
@@ -411,15 +420,16 @@ class ExtensionBlocks {
         this.buildInterval = Number(args.INTERVAL);
     }
 
-    setSentences(args) {
-        const sentences = args.SENTENCES;
+    writeSentence(args) {
+        const sentence = args.SENTENCE;
         const x = args.X;
         const y = args.Y;
         const z = args.Z;
         const r = args.R;
         const g = args.G
         const b = args.B
-        this.sentences.push([sentences, x, y, z, r, g, b]);
+        const alpha = args.ALPHA
+        this.sentences.push([sentence, x, y, z, r, g, b, alpha]);
     }
 
     clearData() {
