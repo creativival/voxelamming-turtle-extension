@@ -466,7 +466,8 @@ class ExtensionBlocks {
             socket.send(JSON.stringify(dataToSend));
             console.log("Sent data: ", JSON.stringify(dataToSend));
 
-            self.clearData();
+            // Not clear data after sending because we want to keep the data for the next sending
+            // self.clearData();  // clear data after sending
 
             // Close the WebSocket connection after sending data
             socket.close();
