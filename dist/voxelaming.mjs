@@ -289,7 +289,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     this.node = [0, 0, 0, 0, 0, 0];
     this.animation = [0, 0, 0, 0, 0, 0, 1, 0];
     this.boxes = [];
-    this.sentences = [];
+    this.sentence = [];
     this.size = 1.0;
     this.buildInterval = 0.01;
     if (runtime.formatMessage) {
@@ -627,7 +627,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       var g = args.G;
       var b = args.B;
       var alpha = args.ALPHA;
-      this.sentences.push([sentence, x, y, z, r, g, b, alpha]);
+      this.sentence = [sentence, x, y, z, r, g, b, alpha];
     }
   }, {
     key: "clearData",
@@ -635,7 +635,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       this.node = [0, 0, 0, 0, 0, 0];
       this.animation = [0, 0, 0, 0, 0, 0, 1, 0];
       this.boxes = [];
-      this.sentences = [];
+      this.sentence = [];
       this.size = 1.0;
       this.buildInterval = 0.01;
     }
@@ -649,7 +649,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
         node: this.node,
         animation: this.animation,
         boxes: this.boxes,
-        sentences: this.sentences,
+        sentence: this.sentence,
         size: this.size,
         interval: this.buildInterval,
         date: date.toISOString()
