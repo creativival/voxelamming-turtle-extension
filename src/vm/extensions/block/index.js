@@ -88,7 +88,7 @@ class ExtensionBlocks {
         this.node = [0, 0, 0, 0, 0, 0]
         this.animation = [0, 0, 0, 0, 0, 0, 1, 0]
         this.boxes = [];
-        this.sentences = [];
+        this.sentence = [];
         this.size = 1.0;
         this.buildInterval = 0.01;
 
@@ -429,14 +429,14 @@ class ExtensionBlocks {
         const g = args.G
         const b = args.B
         const alpha = args.ALPHA
-        this.sentences.push([sentence, x, y, z, r, g, b, alpha]);
+        this.sentence = [sentence, x, y, z, r, g, b, alpha];
     }
 
     clearData() {
         this.node = [0, 0, 0, 0, 0, 0]
         this.animation = [0, 0, 0, 0, 0, 0, 1, 0]
         this.boxes = [];
-        this.sentences = [];
+        this.sentence = [];
         this.size = 1.0;
         this.buildInterval = 0.01;
     }
@@ -449,7 +449,7 @@ class ExtensionBlocks {
             node: this.node,
             animation: this.animation,
             boxes: this.boxes,
-            sentences: this.sentences,
+            sentence: this.sentence,
             size: this.size,
             interval: this.buildInterval,
             date: date.toISOString()
