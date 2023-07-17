@@ -10,7 +10,7 @@ Voxelamming = Voxel + Programming
 
 Voxelamming is a programming learning app utilizing ARKit. It can be used for free on ARKit-compatible iPhones and iPads (iOS 13 and above). You can have fun by arranging voxels (cubical equivalent to pixels in 3D space), programmed on a computer, in a virtual space.
 
-For details, please refer to the following site. https://github.com/creativival/Voxelamming
+For details, please refer to the following site. https://github.com/creativival/voxelamming/index.en.html
 
 ## ✨ What You Can Do With This Extension
 
