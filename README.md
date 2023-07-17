@@ -10,15 +10,15 @@
 
 ボクセラミングはARKitを利用したプログラミング学習アプリです。ARKit互換のiPhoneおよびiPad（iOS 13以上）で無料で使用できます。コンピュータ上でプログラムされたボクセル（3D空間におけるピクセルの立方体相当）を仮想空間に配置して楽しむことができます。
 
-詳細については、以下のサイトを参照してください。https://creativival.github.io/Voxelaming
+詳細については、以下のサイトを参照してください。https://creativival.github.io/Voxelamming
 
 ## ✨ この拡張機能で何ができるのか
 
 ボクセラミング拡張機能で何ができるのかを確認するために、サンプルプロジェクトを再生してみてください。
 
-[サンプルプロジェクト](https://xcratch.github.io/editor/#https://creativival.github.io/voxelaming-extension/projects/example.sb3)
+[サンプルプロジェクト](https://xcratch.github.io/editor/#https://creativival.github.io/voxelamming-extension/projects/example.sb3)
 
-<iframe src="https://xcratch.github.io/editor/player#https://creativival.github.io/voxelaming-extension/projects/example.sb3" width="540px" height="460px"></iframe>
+<iframe src="https://xcratch.github.io/editor/player#https://creativival.github.io/voxelamming-extension/projects/example.sb3" width="540px" height="460px"></iframe>
 
 ## Xcratchでの使用方法
 
@@ -28,7 +28,7 @@
 3. '拡張機能を読み込む' エクステンションを選択する
 4. 入力フィールドにモジュールURLを入力する
 ```
-https://creativival.github.io/voxelaming-extension/dist/voxelaming.mjs
+https://creativival.github.io/voxelamming-extension/dist/voxelamming.mjs
 ```
 
 ## 開発
@@ -53,8 +53,8 @@ npm run build
 
 ## 🏠 ホームページ
 
-このページはここから開けます https://creativival.github.io/voxelaming-extension/
+このページはここから開けます https://creativival.github.io/voxelamming-extension/
 
 ## 🤝 貢献
 
-貢献、問題、機能リクエストは大歓迎です！<br />お気軽に[issues page](https://github.com/https://creativival/voxelaming-extension/issues)をチェックしてみてください。
+貢献、問題、機能リクエストは大歓迎です！<br />お気軽に[issues page](https://github.com/https://creativival/voxelamming-extension/issues)をチェックしてみてください。

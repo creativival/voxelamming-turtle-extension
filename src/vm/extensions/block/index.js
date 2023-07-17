@@ -2,7 +2,7 @@ import BlockType from '../../extension-support/block-type';
 import ArgumentType from '../../extension-support/argument-type';
 import Cast from '../../util/cast';
 import translations from './translations.json';
-import blockIcon from './voxelaming_40x40_transparent.png';
+import blockIcon from './voxelamming_40x40_transparent.png';
 
 /**
  * Formatter which is used for translation.
@@ -25,14 +25,14 @@ const setupTranslations = () => {
     }
 };
 
-const EXTENSION_ID = 'voxelaming';
+const EXTENSION_ID = 'voxelamming';
 
 /**
  * URL to get this extension as a module.
  * When it was loaded as a module, 'extensionURL' will be replaced a URL which is retrieved from.
  * @type {string}
  */
-let extensionURL = 'https://creativival.github.io/voxelaming-extension/dist/voxelaming.mjs';
+let extensionURL = 'https://creativival.github.io/voxelamming-extension/dist/voxelamming.mjs';
 
 /**
  * Scratch 3.0 blocks for example of Xcratch.
@@ -44,8 +44,8 @@ class ExtensionBlocks {
      */
     static get EXTENSION_NAME () {
         return formatMessage({
-            id: 'voxelaming.name',
-            default: 'Voxelaming',
+            id: 'voxelamming.name',
+            default: 'Voxelamming',
             description: 'name of the extension'
         });
     }
@@ -75,7 +75,7 @@ class ExtensionBlocks {
     }
 
     /**
-     * Construct a set of blocks for Voxelaming.
+     * Construct a set of blocks for Voxelamming.
      * @param {Runtime} runtime - the Scratch 3.0 runtime.
      */
     constructor (runtime) {
@@ -114,7 +114,7 @@ class ExtensionBlocks {
                     opcode: 'setRoomName',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelaming.setRoomName',
+                        id: 'voxelamming.setRoomName',
                         default: 'Set room name to [ROOMNAME]',
                         description: 'set room name'
                     }),
@@ -129,7 +129,7 @@ class ExtensionBlocks {
                     opcode: 'setBoxSize',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelaming.setBoxSize',
+                        id: 'voxelamming.setBoxSize',
                         default: 'Set box size to [BOXSIZE]',
                         description: 'set box size'
                     }),
@@ -144,7 +144,7 @@ class ExtensionBlocks {
                     opcode: 'setBuildInterval',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelaming.setBuildInterval',
+                        id: 'voxelamming.setBuildInterval',
                         default: 'Set build interval to [INTERVAL]',
                         description: 'set build interval'
                     }),
@@ -159,7 +159,7 @@ class ExtensionBlocks {
                     opcode: 'setNode',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelaming.setNode',
+                        id: 'voxelamming.setNode',
                         default: 'Set node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL]',
                         description: 'set node'
                     }),
@@ -194,7 +194,7 @@ class ExtensionBlocks {
                     opcode: 'animateNode',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelaming.animateNode',
+                        id: 'voxelamming.animateNode',
                         default: 'Animate node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL] scale: [SCALE] interval: [INTERVAL]',
                         description: 'animate node'
                     }),
@@ -237,7 +237,7 @@ class ExtensionBlocks {
                     opcode: 'createBox',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelaming.createBox',
+                        id: 'voxelamming.createBox',
                         default: 'Create box at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]',
                         description: 'create box'
                     }),
@@ -276,7 +276,7 @@ class ExtensionBlocks {
                     opcode: 'removeBox',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelaming.removeBox',
+                        id: 'voxelamming.removeBox',
                         default: 'Remove box at x: [X] y: [Y] z: [Z]',
                         description: 'remove box'
                     }),
@@ -299,7 +299,7 @@ class ExtensionBlocks {
                     opcode: 'writeSentence',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelaming.writeSentence',
+                        id: 'voxelamming.writeSentence',
                         default: 'Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]',
                         description: 'write sentence'
                     }),
@@ -342,7 +342,7 @@ class ExtensionBlocks {
                     opcode: 'clearData',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelaming.clearData',
+                        id: 'voxelamming.clearData',
                         default: 'Clear data',
                         description: 'clear data'
                     }),
@@ -351,7 +351,7 @@ class ExtensionBlocks {
                     opcode: 'sendData',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelaming.sendData',
+                        id: 'voxelamming.sendData',
                         default: 'Send data',
                         description: 'send data to server'
                     }),

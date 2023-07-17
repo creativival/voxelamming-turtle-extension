@@ -2,8 +2,8 @@
  * This is an extension for Xcratch.
  */
 
-import iconURL from './voxelaming_600x372.png';
-import insetIconURL from './voxelaming_80x80.png';
+import iconURL from './voxelamming_600x372.png';
+import insetIconURL from './voxelamming_80x80.png';
 import translations from './translations.json';
 
 /**
@@ -17,13 +17,13 @@ let formatMessage = messageData => messageData.defaultMessage;
 const entry = {
     get name () {
         return formatMessage({
-            id: 'voxelaming.entry.name',
-            default: 'Voxelaming',
+            id: 'voxelamming.entry.name',
+            default: 'Voxelamming',
             description: 'name of the extension'
         });
     },
-    extensionId: 'voxelaming',
-    extensionURL: 'https://creativival.github.io/voxelaming-extension/dist/voxelaming.mjs',
+    extensionId: 'voxelamming',
+    extensionURL: 'https://creativival.github.io/voxelamming-extension/dist/voxelamming.mjs',
     collaborator: 'creativival',
     iconURL: iconURL,
     insetIconURL: insetIconURL,
@@ -31,14 +31,14 @@ const entry = {
         return formatMessage({
             defaultMessage: 'Enjoy creating AR voxel art!',
             description: 'Description for this extension',
-            id: 'voxelaming.entry.description'
+            id: 'voxelamming.entry.description'
         });
     },
     featured: true,
     disabled: false,
     bluetoothRequired: false,
     internetConnectionRequired: true,
-    helpLink: 'https://creativival.github.io/voxelaming-extension/',
+    helpLink: 'https://creativival.github.io/voxelamming-extension/',
     setFormatMessage: formatter => {
         formatMessage = formatter;
     },
