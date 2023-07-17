@@ -3,19 +3,19 @@ var img$2 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAFHCAIAAADybKVYA
 var img$1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAFXWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iCiAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIKICAgIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIKICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgdGlmZjpJbWFnZUxlbmd0aD0iODAiCiAgIHRpZmY6SW1hZ2VXaWR0aD0iODAiCiAgIHRpZmY6UmVzb2x1dGlvblVuaXQ9IjIiCiAgIHRpZmY6WFJlc29sdXRpb249IjcyLzEiCiAgIHRpZmY6WVJlc29sdXRpb249IjcyLzEiCiAgIGV4aWY6UGl4ZWxYRGltZW5zaW9uPSI4MCIKICAgZXhpZjpQaXhlbFlEaW1lbnNpb249IjgwIgogICBleGlmOkNvbG9yU3BhY2U9IjY1NTM1IgogICBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIgogICBwaG90b3Nob3A6SUNDUHJv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";
 
 var en$1 = {
-	"voxelaming.entry.name": "Voxelaming",
-	"voxelaming.entry.description": "Enjoy creating AR voxel art!"
+	"voxelamming.entry.name": "Voxelamming",
+	"voxelamming.entry.description": "Enjoy creating AR voxel art!"
 };
 var ja$1 = {
-	"voxelaming.entry.name": "ボクセラミング",
-	"voxelaming.entry.description": "ARボクセルアートを作って遊ぼう！"
+	"voxelamming.entry.name": "ボクセラミング",
+	"voxelamming.entry.description": "ARボクセルアートを作って遊ぼう！"
 };
 var translations$1 = {
 	en: en$1,
 	ja: ja$1,
 	"ja-Hira": {
-	"voxelaming.entry.name": "ボクセラミング",
-	"voxelaming.entry.description": "ARボクセルアートをつくってあそぼう！"
+	"voxelamming.entry.name": "ボクセラミング",
+	"voxelamming.entry.description": "ARボクセルアートをつくってあそぼう！"
 }
 };
 
@@ -35,13 +35,13 @@ var formatMessage$1 = function formatMessage(messageData) {
 var entry = {
   get name() {
     return formatMessage$1({
-      id: 'voxelaming.entry.name',
-      default: 'Voxelaming',
+      id: 'voxelamming.entry.name',
+      default: 'Voxelamming',
       description: 'name of the extension'
     });
   },
-  extensionId: 'voxelaming',
-  extensionURL: 'https://creativival.github.io/voxelaming-extension/dist/voxelaming.mjs',
+  extensionId: 'voxelamming',
+  extensionURL: 'https://creativival.github.io/voxelamming-extension/dist/voxelamming.mjs',
   collaborator: 'creativival',
   iconURL: img$2,
   insetIconURL: img$1,
@@ -49,14 +49,14 @@ var entry = {
     return formatMessage$1({
       defaultMessage: 'Enjoy creating AR voxel art!',
       description: 'Description for this extension',
-      id: 'voxelaming.entry.description'
+      id: 'voxelamming.entry.description'
     });
   },
   featured: true,
   disabled: false,
   bluetoothRequired: false,
   internetConnectionRequired: true,
-  helpLink: 'https://creativival.github.io/voxelaming-extension/',
+  helpLink: 'https://creativival.github.io/voxelamming-extension/',
   setFormatMessage: function setFormatMessage(formatter) {
     formatMessage$1 = formatter;
   },
@@ -197,46 +197,46 @@ var ArgumentType = {
 var argumentType = ArgumentType;
 
 var en = {
-	"voxelaming.name": "Voxelaming",
-	"voxelaming.setRoomName": "Set room name to [ROOMNAME]",
-	"voxelaming.setNode": "Set node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL]",
-	"voxelaming.animateNode": "Animate node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL] scale: [SCALE] interval: [INTERVAL]",
-	"voxelaming.createBox": "Create voxel at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]",
-	"voxelaming.removeBox": "Remove voxel at x: [X] y: [Y] z: [Z]",
-	"voxelaming.setBoxSize": "Set voxel size to [BOXSIZE]",
-	"voxelaming.setBuildInterval": "Set build interval to [INTERVAL]",
-	"voxelaming.writeSentence": "Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]",
-	"voxelaming.clearData": "Clear data",
-	"voxelaming.sendData": "Send data"
+	"voxelamming.name": "Voxelamming",
+	"voxelamming.setRoomName": "Set room name to [ROOMNAME]",
+	"voxelamming.setNode": "Set node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL]",
+	"voxelamming.animateNode": "Animate node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL] scale: [SCALE] interval: [INTERVAL]",
+	"voxelamming.createBox": "Create voxel at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.removeBox": "Remove voxel at x: [X] y: [Y] z: [Z]",
+	"voxelamming.setBoxSize": "Set voxel size to [BOXSIZE]",
+	"voxelamming.setBuildInterval": "Set build interval to [INTERVAL]",
+	"voxelamming.writeSentence": "Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.clearData": "Clear data",
+	"voxelamming.sendData": "Send data"
 };
 var ja = {
-	"voxelaming.name": "ボクセラミング",
-	"voxelaming.setRoomName": "ルームネームを [ROOMNAME] にする",
-	"voxelaming.setNode": "ノードを x: [X] y: [Y] z: [Z] に配置する。角度を pitch: [PITCH] yaw: [YAW] roll: [ROLL] にする",
-	"voxelaming.animateNode": "アニメーション移動 x: [X] y: [Y] z: [Z] 。回転 pitch: [PITCH] yaw: [YAW] roll: [ROLL] 。拡大: [SCALE] 移動時間: [INTERVAL]",
-	"voxelaming.createBox": "ボクセルを x: [X] y: [Y] z: [Z] に作成する。色 r: [R] g: [G] b: [B] alpha: [ALPHA]",
-	"voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] から削除する",
-	"voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
-	"voxelaming.setBuildInterval": "ボクセルの作成間隔を [INTERVAL] 秒にする",
-	"voxelaming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B] alpha: [ALPHA]",
-	"voxelaming.clearData": "データを初期化する",
-	"voxelaming.sendData": "データを送信する"
+	"voxelamming.name": "ボクセラミング",
+	"voxelamming.setRoomName": "ルームネームを [ROOMNAME] にする",
+	"voxelamming.setNode": "ノードを x: [X] y: [Y] z: [Z] に配置する。角度を pitch: [PITCH] yaw: [YAW] roll: [ROLL] にする",
+	"voxelamming.animateNode": "アニメーション移動 x: [X] y: [Y] z: [Z] 。回転 pitch: [PITCH] yaw: [YAW] roll: [ROLL] 。拡大: [SCALE] 移動時間: [INTERVAL]",
+	"voxelamming.createBox": "ボクセルを x: [X] y: [Y] z: [Z] に作成する。色 r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] から削除する",
+	"voxelamming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
+	"voxelamming.setBuildInterval": "ボクセルの作成間隔を [INTERVAL] 秒にする",
+	"voxelamming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.clearData": "データを初期化する",
+	"voxelamming.sendData": "データを送信する"
 };
 var translations = {
 	en: en,
 	ja: ja,
 	"ja-Hira": {
-	"voxelaming.name": "ボクセラミング",
-	"voxelaming.setRoomName": "ルームネームを [ROOMNAME] にする",
-	"voxelaming.setNode": "ノードを x: [X] y: [Y] z: [Z] におく。かくどを pitch: [PITCH] yaw: [YAW] roll: [ROLL] にする",
-	"voxelaming.animateNode": "アニメーションいどう x: [X] y: [Y] z: [Z] 。かいてん pitch: [PITCH] yaw: [YAW] roll: [ROLL] 。かくだい: [SCALE] じかん: [INTERVAL]",
-	"voxelaming.createBox": "ボクセルを x: [X] y: [Y] z: [Z] につくる。いろ r: [R] g: [G] b: [B] alpha: [ALPHA]",
-	"voxelaming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] からけす",
-	"voxelaming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
-	"voxelaming.setBuildInterval": "ボクセルのつくるかんかくを [INTERVAL] びょうにする",
-	"voxelaming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B] alpha: [ALPHA]",
-	"voxelaming.clearData": "データをけす",
-	"voxelaming.sendData": "データをおくる"
+	"voxelamming.name": "ボクセラミング",
+	"voxelamming.setRoomName": "ルームネームを [ROOMNAME] にする",
+	"voxelamming.setNode": "ノードを x: [X] y: [Y] z: [Z] におく。かくどを pitch: [PITCH] yaw: [YAW] roll: [ROLL] にする",
+	"voxelamming.animateNode": "アニメーションいどう x: [X] y: [Y] z: [Z] 。かいてん pitch: [PITCH] yaw: [YAW] roll: [ROLL] 。かくだい: [SCALE] じかん: [INTERVAL]",
+	"voxelamming.createBox": "ボクセルを x: [X] y: [Y] z: [Z] につくる。いろ r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] からけす",
+	"voxelamming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
+	"voxelamming.setBuildInterval": "ボクセルのつくるかんかくを [INTERVAL] びょうにする",
+	"voxelamming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.clearData": "データをけす",
+	"voxelamming.sendData": "データをおくる"
 }
 };
 
@@ -261,21 +261,21 @@ var setupTranslations = function setupTranslations() {
     Object.assign(localeSetup.translations[localeSetup.locale], translations[localeSetup.locale]);
   }
 };
-var EXTENSION_ID = 'voxelaming';
+var EXTENSION_ID = 'voxelamming';
 
 /**
  * URL to get this extension as a module.
  * When it was loaded as a module, 'extensionURL' will be replaced a URL which is retrieved from.
  * @type {string}
  */
-var extensionURL = 'https://creativival.github.io/voxelaming-extension/dist/voxelaming.mjs';
+var extensionURL = 'https://creativival.github.io/voxelamming-extension/dist/voxelamming.mjs';
 
 /**
  * Scratch 3.0 blocks for example of Xcratch.
  */
 var ExtensionBlocks = /*#__PURE__*/function () {
   /**
-   * Construct a set of blocks for Voxelaming.
+   * Construct a set of blocks for Voxelamming.
    * @param {Runtime} runtime - the Scratch 3.0 runtime.
    */
   function ExtensionBlocks(runtime) {
@@ -315,7 +315,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           opcode: 'setRoomName',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelaming.setRoomName',
+            id: 'voxelamming.setRoomName',
             default: 'Set room name to [ROOMNAME]',
             description: 'set room name'
           }),
@@ -329,7 +329,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           opcode: 'setBoxSize',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelaming.setBoxSize',
+            id: 'voxelamming.setBoxSize',
             default: 'Set box size to [BOXSIZE]',
             description: 'set box size'
           }),
@@ -343,7 +343,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           opcode: 'setBuildInterval',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelaming.setBuildInterval',
+            id: 'voxelamming.setBuildInterval',
             default: 'Set build interval to [INTERVAL]',
             description: 'set build interval'
           }),
@@ -357,7 +357,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           opcode: 'setNode',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelaming.setNode',
+            id: 'voxelamming.setNode',
             default: 'Set node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL]',
             description: 'set node'
           }),
@@ -391,7 +391,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           opcode: 'animateNode',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelaming.animateNode',
+            id: 'voxelamming.animateNode',
             default: 'Animate node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL] scale: [SCALE] interval: [INTERVAL]',
             description: 'animate node'
           }),
@@ -433,7 +433,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           opcode: 'createBox',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelaming.createBox',
+            id: 'voxelamming.createBox',
             default: 'Create box at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]',
             description: 'create box'
           }),
@@ -471,7 +471,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           opcode: 'removeBox',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelaming.removeBox',
+            id: 'voxelamming.removeBox',
             default: 'Remove box at x: [X] y: [Y] z: [Z]',
             description: 'remove box'
           }),
@@ -493,7 +493,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           opcode: 'writeSentence',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelaming.writeSentence',
+            id: 'voxelamming.writeSentence',
             default: 'Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]',
             description: 'write sentence'
           }),
@@ -535,7 +535,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           opcode: 'clearData',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelaming.clearData',
+            id: 'voxelamming.clearData',
             default: 'Clear data',
             description: 'clear data'
           })
@@ -543,7 +543,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           opcode: 'sendData',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelaming.sendData',
+            id: 'voxelamming.sendData',
             default: 'Send data',
             description: 'send data to server'
           })
@@ -689,8 +689,8 @@ var ExtensionBlocks = /*#__PURE__*/function () {
      */
     function get() {
       return formatMessage({
-        id: 'voxelaming.name',
-        default: 'Voxelaming',
+        id: 'voxelamming.name',
+        default: 'Voxelamming',
         description: 'name of the extension'
       });
     }
