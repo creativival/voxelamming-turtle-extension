@@ -763,26 +763,51 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       var g = Number(args.G);
       var b = Number(args.B);
       var alpha = Number(args.ALPHA);
+      var maxLength = Math.max(Math.abs(diff_x), Math.abs(diff_y), Math.abs(diff_z));
       if (diff_x === 0 && diff_y === 0 && diff_z === 0) {
         return false;
       }
-      if (diff_x === Math.max(diff_x, diff_y, diff_z)) {
-        for (var x = x1; x <= x2; x++) {
-          var y = y1 + (x - x1) * diff_y / diff_x;
-          var z = z1 + (x - x1) * diff_z / diff_x;
-          this.boxes.push([x, y, z, r, g, b, alpha]);
+      if (Math.abs(diff_x) === maxLength) {
+        if (x2 > x1) {
+          for (var x = x1; x <= x2; x++) {
+            var y = y1 + (x - x1) * diff_y / diff_x;
+            var z = z1 + (x - x1) * diff_z / diff_x;
+            this.boxes.push([x, y, z, r, g, b, alpha]);
+          }
+        } else {
+          for (var _x = x1; _x >= x2; _x--) {
+            var _y = y1 + (_x - x1) * diff_y / diff_x;
+            var _z = z1 + (_x - x1) * diff_z / diff_x;
+            this.boxes.push([_x, _y, _z, r, g, b, alpha]);
+          }
         }
-      } else if (diff_y === Math.max(diff_x, diff_y, diff_z)) {
-        for (var _y = y1; _y <= y2; _y++) {
-          var _x = x1 + (_y - y1) * diff_x / diff_y;
-          var _z = z1 + (_y - y1) * diff_z / diff_y;
-          this.boxes.push([_x, _y, _z, r, g, b, alpha]);
+      } else if (Math.abs(diff_y) === maxLength) {
+        if (y2 > y1) {
+          for (var _y2 = y1; _y2 <= y2; _y2++) {
+            var _x2 = x1 + (_y2 - y1) * diff_x / diff_y;
+            var _z2 = z1 + (_y2 - y1) * diff_z / diff_y;
+            this.boxes.push([_x2, _y2, _z2, r, g, b, alpha]);
+          }
+        } else {
+          for (var _y3 = y1; _y3 >= y2; _y3--) {
+            var _x3 = x1 + (_y3 - y1) * diff_x / diff_y;
+            var _z3 = z1 + (_y3 - y1) * diff_z / diff_y;
+            this.boxes.push([_x3, _y3, _z3, r, g, b, alpha]);
+          }
         }
-      } else if (diff_z === Math.max(diff_x, diff_y, diff_z)) {
-        for (var _z2 = z1; _z2 <= z2; _z2++) {
-          var _x2 = x1 + (_z2 - z1) * diff_x / diff_z;
-          var _y2 = y1 + (_z2 - z1) * diff_y / diff_z;
-          this.boxes.push([_x2, _y2, _z2, r, g, b, alpha]);
+      } else if (Math.abs(diff_z) === maxLength) {
+        if (z2 > z1) {
+          for (var _z4 = z1; _z4 <= z2; _z4++) {
+            var _x4 = x1 + (_z4 - z1) * diff_x / diff_z;
+            var _y4 = y1 + (_z4 - z1) * diff_y / diff_z;
+            this.boxes.push([_x4, _y4, _z4, r, g, b, alpha]);
+          }
+        } else {
+          for (var _z5 = z1; _z5 >= z2; _z5--) {
+            var _x5 = x1 + (_z5 - z1) * diff_x / diff_z;
+            var _y5 = y1 + (_z5 - z1) * diff_y / diff_z;
+            this.boxes.push([_x5, _y5, _z5, r, g, b, alpha]);
+          }
         }
       }
     }
