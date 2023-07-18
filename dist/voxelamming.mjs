@@ -205,9 +205,14 @@ var en = {
 	"voxelamming.removeBox": "Remove voxel at x: [X] y: [Y] z: [Z]",
 	"voxelamming.setBoxSize": "Set voxel size to [BOXSIZE]",
 	"voxelamming.setBuildInterval": "Set build interval to [INTERVAL]",
-	"voxelamming.writeSentence": "Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]",
 	"voxelamming.clearData": "Clear data",
-	"voxelamming.sendData": "Send data"
+	"voxelamming.writeSentence": "Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.drawLine": "Draw line x1: [X1] y1: [Y1] z1: [Z1] x2: [X2] y2: [Y2] z2: [Z2] r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.changeShape": "Change shape: [SHAPE]",
+	"voxelamming.sendData": "Send data",
+	"voxelamming.box": "box",
+	"voxelamming.sphere": "sphere",
+	"voxelamming.plane": "plane"
 };
 var ja = {
 	"voxelamming.name": "ボクセラミング",
@@ -218,9 +223,14 @@ var ja = {
 	"voxelamming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] から削除する",
 	"voxelamming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
 	"voxelamming.setBuildInterval": "ボクセルの作成間隔を [INTERVAL] 秒にする",
-	"voxelamming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B] alpha: [ALPHA]",
 	"voxelamming.clearData": "データを初期化する",
-	"voxelamming.sendData": "データを送信する"
+	"voxelamming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.drawLine": "線を引く x1: [X1] y1: [Y1] z1: [Z1] x2: [X2] y2: [Y2] z2: [Z2] r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.changeShape": "形状を変更する [SHAPE]",
+	"voxelamming.sendData": "データを送信する",
+	"voxelamming.box": "立方体",
+	"voxelamming.sphere": "球体",
+	"voxelamming.plane": "平面"
 };
 var translations = {
 	en: en,
@@ -234,9 +244,14 @@ var translations = {
 	"voxelamming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] からけす",
 	"voxelamming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
 	"voxelamming.setBuildInterval": "ボクセルのつくるかんかくを [INTERVAL] びょうにする",
-	"voxelamming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B] alpha: [ALPHA]",
 	"voxelamming.clearData": "データをけす",
-	"voxelamming.sendData": "データをおくる"
+	"voxelamming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.drawLine": "せんをひく x1: [X1] y1: [Y1] z1: [Z1] x2: [X2] y2: [Y2] z2: [Z2] r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.changeShape": "かたちをかえる [SHAPE]",
+	"voxelamming.sendData": "データをおくる",
+	"voxelamming.box": "はこ",
+	"voxelamming.sphere": "きゅう",
+	"voxelamming.plane": "いた"
 }
 };
 
@@ -291,6 +306,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     this.boxes = [];
     this.sentence = [];
     this.size = 1.0;
+    this.shape = 'box';
     this.buildInterval = 0.01;
     if (runtime.formatMessage) {
       // Replace 'formatMessage' to a formatter which is used in the runtime.
@@ -490,6 +506,14 @@ var ExtensionBlocks = /*#__PURE__*/function () {
             }
           }
         }, {
+          opcode: 'clearData',
+          blockType: blockType.COMMAND,
+          text: formatMessage({
+            id: 'voxelamming.clearData',
+            default: 'Clear data',
+            description: 'clear data'
+          })
+        }, {
           opcode: 'writeSentence',
           blockType: blockType.COMMAND,
           text: formatMessage({
@@ -532,13 +556,70 @@ var ExtensionBlocks = /*#__PURE__*/function () {
             }
           }
         }, {
-          opcode: 'clearData',
+          opcode: 'drawLine',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelamming.clearData',
-            default: 'Clear data',
-            description: 'clear data'
-          })
+            id: 'voxelamming.drawLine',
+            default: 'Draw line x1: [X1] y1: [Y1] z1: [Z1] x2: [X2] y2: [Y2] z2: [Z2] r: [R] g: [G] b: [B] alpha: [ALPHA]',
+            description: 'draw line'
+          }),
+          arguments: {
+            X1: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            Y1: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            Z1: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            X2: {
+              type: argumentType.NUMBER,
+              defaultValue: 5
+            },
+            Y2: {
+              type: argumentType.NUMBER,
+              defaultValue: 10
+            },
+            Z2: {
+              type: argumentType.NUMBER,
+              defaultValue: 20
+            },
+            R: {
+              type: argumentType.NUMBER,
+              defaultValue: 1
+            },
+            G: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            B: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            ALPHA: {
+              type: argumentType.NUMBER,
+              defaultValue: 1
+            }
+          }
+        }, {
+          opcode: 'changeShape',
+          blockType: blockType.COMMAND,
+          text: formatMessage({
+            id: 'voxelamming.changeShape',
+            default: 'Change shape: [SHAPE]',
+            description: 'change shape'
+          }),
+          arguments: {
+            SHAPE: {
+              type: argumentType.STRING,
+              defaultValue: 'box',
+              menu: 'shapeTypeMenu'
+            }
+          }
         }, {
           opcode: 'sendData',
           blockType: blockType.COMMAND,
@@ -548,7 +629,33 @@ var ExtensionBlocks = /*#__PURE__*/function () {
             description: 'send data to server'
           })
         }],
-        menus: {}
+        menus: {
+          shapeTypeMenu: {
+            acceptReporters: false,
+            items: [{
+              text: formatMessage({
+                id: 'voxelamming.box',
+                default: 'box',
+                description: 'Menu item for box'
+              }),
+              value: 'box'
+            }, {
+              text: formatMessage({
+                id: 'voxelamming.sphere',
+                default: 'sphere',
+                description: 'Menu item for sphere'
+              }),
+              value: 'sphere'
+            }, {
+              text: formatMessage({
+                id: 'voxelamming.plane',
+                default: 'plane',
+                description: 'Menu item for plane'
+              }),
+              value: 'plane'
+            }]
+          }
+        }
       };
     }
   }, {
@@ -617,6 +724,17 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       this.buildInterval = Number(args.INTERVAL);
     }
   }, {
+    key: "clearData",
+    value: function clearData() {
+      this.node = [0, 0, 0, 0, 0, 0];
+      this.animation = [0, 0, 0, 0, 0, 0, 1, 0];
+      this.boxes = [];
+      this.sentence = [];
+      this.size = 1.0;
+      this.shape = 'box';
+      this.buildInterval = 0.01;
+    }
+  }, {
     key: "writeSentence",
     value: function writeSentence(args) {
       var sentence = args.SENTENCE;
@@ -630,14 +748,48 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       this.sentence = [sentence, x, y, z, r, g, b, alpha];
     }
   }, {
-    key: "clearData",
-    value: function clearData() {
-      this.node = [0, 0, 0, 0, 0, 0];
-      this.animation = [0, 0, 0, 0, 0, 0, 1, 0];
-      this.boxes = [];
-      this.sentence = [];
-      this.size = 1.0;
-      this.buildInterval = 0.01;
+    key: "drawLine",
+    value: function drawLine(args) {
+      var x1 = Math.floor(Number(args.X1));
+      var y1 = Math.floor(Number(args.Y1));
+      var z1 = Math.floor(Number(args.Z1));
+      var x2 = Math.floor(Number(args.X2));
+      var y2 = Math.floor(Number(args.Y2));
+      var z2 = Math.floor(Number(args.Z2));
+      var diff_x = x2 - x1;
+      var diff_y = y2 - y1;
+      var diff_z = z2 - z1;
+      var r = Number(args.R);
+      var g = Number(args.G);
+      var b = Number(args.B);
+      var alpha = Number(args.ALPHA);
+      if (diff_x === 0 && diff_y === 0 && diff_z === 0) {
+        return false;
+      }
+      if (diff_x === Math.max(diff_x, diff_y, diff_z)) {
+        for (var x = x1; x <= x2; x++) {
+          var y = y1 + (x - x1) * diff_y / diff_x;
+          var z = z1 + (x - x1) * diff_z / diff_x;
+          this.boxes.push([x, y, z, r, g, b, alpha]);
+        }
+      } else if (diff_y === Math.max(diff_x, diff_y, diff_z)) {
+        for (var _y = y1; _y <= y2; _y++) {
+          var _x = x1 + (_y - y1) * diff_x / diff_y;
+          var _z = z1 + (_y - y1) * diff_z / diff_y;
+          this.boxes.push([_x, _y, _z, r, g, b, alpha]);
+        }
+      } else if (diff_z === Math.max(diff_x, diff_y, diff_z)) {
+        for (var _z2 = z1; _z2 <= z2; _z2++) {
+          var _x2 = x1 + (_z2 - z1) * diff_x / diff_z;
+          var _y2 = y1 + (_z2 - z1) * diff_y / diff_z;
+          this.boxes.push([_x2, _y2, _z2, r, g, b, alpha]);
+        }
+      }
+    }
+  }, {
+    key: "changeShape",
+    value: function changeShape(args) {
+      this.shape = args.SHAPE;
     }
   }, {
     key: "sendData",
@@ -651,6 +803,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
         boxes: this.boxes,
         sentence: this.sentence,
         size: this.size,
+        shape: this.shape,
         interval: this.buildInterval,
         date: date.toISOString()
       };

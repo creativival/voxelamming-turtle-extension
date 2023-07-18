@@ -8,9 +8,14 @@
     "voxelamming.removeBox": "Remove voxel at x: [X] y: [Y] z: [Z]",
     "voxelamming.setBoxSize": "Set voxel size to [BOXSIZE]",
     "voxelamming.setBuildInterval": "Set build interval to [INTERVAL]",
-    "voxelamming.writeSentence": "Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]",
     "voxelamming.clearData": "Clear data",
-    "voxelamming.sendData": "Send data"
+    "voxelamming.writeSentence": "Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]",
+    "voxelamming.drawLine": "Draw line x1: [X1] y1: [Y1] z1: [Z1] x2: [X2] y2: [Y2] z2: [Z2] r: [R] g: [G] b: [B] alpha: [ALPHA]",
+    "voxelamming.changeShape": "Change shape: [SHAPE]",
+    "voxelamming.sendData": "Send data",
+    "voxelamming.box": "box",
+    "voxelamming.sphere": "sphere",
+    "voxelamming.plane": "plane"
   },
   "ja": {
     "voxelamming.name": "ボクセラミング",
@@ -21,9 +26,14 @@
     "voxelamming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] から削除する",
     "voxelamming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
     "voxelamming.setBuildInterval": "ボクセルの作成間隔を [INTERVAL] 秒にする",
-    "voxelamming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B] alpha: [ALPHA]",
     "voxelamming.clearData": "データを初期化する",
-    "voxelamming.sendData": "データを送信する"
+    "voxelamming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B] alpha: [ALPHA]",
+    "voxelamming.drawLine": "線を引く x1: [X1] y1: [Y1] z1: [Z1] x2: [X2] y2: [Y2] z2: [Z2] r: [R] g: [G] b: [B] alpha: [ALPHA]",
+    "voxelamming.changeShape": "形状を変更する [SHAPE]",
+    "voxelamming.sendData": "データを送信する",
+    "voxelamming.box": "立方体",
+    "voxelamming.sphere": "球体",
+    "voxelamming.plane": "平面"
   },
   "ja-Hira": {
     "voxelamming.name": "ボクセラミング",
@@ -34,8 +44,13 @@
     "voxelamming.removeBox": "ボクセルを x: [X] y: [Y] z: [Z] からけす",
     "voxelamming.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
     "voxelamming.setBuildInterval": "ボクセルのつくるかんかくを [INTERVAL] びょうにする",
-    "voxelamming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B] alpha: [ALPHA]",
     "voxelamming.clearData": "データをけす",
-    "voxelamming.sendData": "データをおくる"
+    "voxelamming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B] alpha: [ALPHA]",
+    "voxelamming.drawLine": "せんをひく x1: [X1] y1: [Y1] z1: [Z1] x2: [X2] y2: [Y2] z2: [Z2] r: [R] g: [G] b: [B] alpha: [ALPHA]",
+    "voxelamming.changeShape": "かたちをかえる [SHAPE]",
+    "voxelamming.sendData": "データをおくる",
+    "voxelamming.box": "はこ",
+    "voxelamming.sphere": "きゅう",
+    "voxelamming.plane": "いた"
   }
 }

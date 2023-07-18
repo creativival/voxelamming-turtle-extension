@@ -90,6 +90,7 @@ class ExtensionBlocks {
         this.boxes = [];
         this.sentence = [];
         this.size = 1.0;
+        this.shape = 'box';
         this.buildInterval = 0.01;
 
         if (runtime.formatMessage) {
@@ -296,6 +297,15 @@ class ExtensionBlocks {
                     }
                 },
                 {
+                    opcode: 'clearData',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelamming.clearData',
+                        default: 'Clear data',
+                        description: 'clear data'
+                    }),
+                },
+                {
                     opcode: 'writeSentence',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
@@ -339,13 +349,71 @@ class ExtensionBlocks {
                     }
                 },
                 {
-                    opcode: 'clearData',
+                    opcode: 'drawLine',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelamming.clearData',
-                        default: 'Clear data',
-                        description: 'clear data'
+                        id: 'voxelamming.drawLine',
+                        default: 'Draw line x1: [X1] y1: [Y1] z1: [Z1] x2: [X2] y2: [Y2] z2: [Z2] r: [R] g: [G] b: [B] alpha: [ALPHA]',
+                        description: 'draw line'
                     }),
+                    arguments: {
+                        X1: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        Y1: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        Z1: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        X2: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 5
+                        },
+                        Y2: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 10
+                        },
+                        Z2: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 20
+                        },
+                        R: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1
+                        },
+                        G: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        B: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        ALPHA: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1
+                        }
+                    }
+                },
+                {
+                    opcode: 'changeShape',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelamming.changeShape',
+                        default: 'Change shape: [SHAPE]',
+                        description: 'change shape'
+                    }),
+                    arguments: {
+                        SHAPE: {
+                            type: ArgumentType.STRING,
+                            defaultValue: 'box',
+                            menu: 'shapeTypeMenu'
+                        }
+                    }
                 },
                 {
                     opcode: 'sendData',
@@ -358,6 +426,35 @@ class ExtensionBlocks {
                 }
             ],
             menus: {
+                shapeTypeMenu: {
+                    acceptReporters: false,
+                    items: [
+                        {
+                            text: formatMessage({
+                                id: 'voxelamming.box',
+                                default: 'box',
+                                description: 'Menu item for box'
+                            }),
+                            value: 'box'
+                        },
+                        {
+                            text: formatMessage({
+                                id: 'voxelamming.sphere',
+                                default: 'sphere',
+                                description: 'Menu item for sphere'
+                            }),
+                            value: 'sphere'
+                        },
+                        {
+                            text: formatMessage({
+                                id: 'voxelamming.plane',
+                                default: 'plane',
+                                description: 'Menu item for plane'
+                            }),
+                            value: 'plane'
+                        }
+                    ]
+                }
             }
         };
     }
@@ -420,6 +517,16 @@ class ExtensionBlocks {
         this.buildInterval = Number(args.INTERVAL);
     }
 
+    clearData() {
+        this.node = [0, 0, 0, 0, 0, 0]
+        this.animation = [0, 0, 0, 0, 0, 0, 1, 0]
+        this.boxes = [];
+        this.sentence = [];
+        this.size = 1.0;
+        this.shape = 'box';
+        this.buildInterval = 0.01;
+    }
+
     writeSentence(args) {
         const sentence = args.SENTENCE;
         const x = args.X;
@@ -432,13 +539,48 @@ class ExtensionBlocks {
         this.sentence = [sentence, x, y, z, r, g, b, alpha];
     }
 
-    clearData() {
-        this.node = [0, 0, 0, 0, 0, 0]
-        this.animation = [0, 0, 0, 0, 0, 0, 1, 0]
-        this.boxes = [];
-        this.sentence = [];
-        this.size = 1.0;
-        this.buildInterval = 0.01;
+    drawLine(args) {
+        const x1 = Math.floor(Number(args.X1));
+        const y1 = Math.floor(Number(args.Y1));
+        const z1 = Math.floor(Number(args.Z1));
+        const x2 = Math.floor(Number(args.X2));
+        const y2 = Math.floor(Number(args.Y2));
+        const z2 = Math.floor(Number(args.Z2));
+        const diff_x = x2 - x1;
+        const diff_y = y2 - y1;
+        const diff_z = z2 - z1;
+        const r = Number(args.R);
+        const g = Number(args.G);
+        const b = Number(args.B);
+        const alpha = Number(args.ALPHA);
+
+        if (diff_x === 0 && diff_y === 0 && diff_z === 0) {
+            return false;
+        }
+
+        if (diff_x === Math.max(diff_x, diff_y, diff_z)) {
+            for (let x = x1; x <= x2; x++) {
+                const y = y1 + (x - x1) * diff_y / diff_x;
+                const z = z1 + (x - x1) * diff_z / diff_x;
+                this.boxes.push([x, y, z, r, g, b, alpha]);
+            }
+        } else if (diff_y === Math.max(diff_x, diff_y, diff_z)) {
+            for (let y = y1; y <= y2; y++) {
+                const x = x1 + (y - y1) * diff_x / diff_y;
+                const z = z1 + (y - y1) * diff_z / diff_y;
+                this.boxes.push([x, y, z, r, g, b, alpha]);
+            }
+        } else if (diff_z === Math.max(diff_x, diff_y, diff_z)) {
+            for (let z = z1; z <= z2; z++) {
+                const x = x1 + (z - z1) * diff_x / diff_z;
+                const y = y1 + (z - z1) * diff_y / diff_z;
+                this.boxes.push([x, y, z, r, g, b, alpha]);
+            }
+        }
+    }
+
+    changeShape(args) {
+        this.shape = args.SHAPE
     }
 
     sendData () {
@@ -451,6 +593,7 @@ class ExtensionBlocks {
             boxes: this.boxes,
             sentence: this.sentence,
             size: this.size,
+            shape: this.shape,
             interval: this.buildInterval,
             date: date.toISOString()
         };
