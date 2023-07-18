@@ -553,28 +553,53 @@ class ExtensionBlocks {
         const g = Number(args.G);
         const b = Number(args.B);
         const alpha = Number(args.ALPHA);
+        const maxLength = Math.max(Math.abs(diff_x), Math.abs(diff_y), Math.abs(diff_z));
 
         if (diff_x === 0 && diff_y === 0 && diff_z === 0) {
             return false;
         }
 
-        if (diff_x === Math.max(diff_x, diff_y, diff_z)) {
-            for (let x = x1; x <= x2; x++) {
-                const y = y1 + (x - x1) * diff_y / diff_x;
-                const z = z1 + (x - x1) * diff_z / diff_x;
-                this.boxes.push([x, y, z, r, g, b, alpha]);
+        if (Math.abs(diff_x) === maxLength) {
+            if (x2 > x1) {
+                for (let x = x1; x <= x2; x++) {
+                    const y = y1 + (x - x1) * diff_y / diff_x;
+                    const z = z1 + (x - x1) * diff_z / diff_x;
+                    this.boxes.push([x, y, z, r, g, b, alpha]);
+                }
+            } else{
+                for (let x = x1; x >= x2; x--) {
+                    const y = y1 + (x - x1) * diff_y / diff_x;
+                    const z = z1 + (x - x1) * diff_z / diff_x;
+                    this.boxes.push([x, y, z, r, g, b, alpha]);
+                }
             }
-        } else if (diff_y === Math.max(diff_x, diff_y, diff_z)) {
-            for (let y = y1; y <= y2; y++) {
-                const x = x1 + (y - y1) * diff_x / diff_y;
-                const z = z1 + (y - y1) * diff_z / diff_y;
-                this.boxes.push([x, y, z, r, g, b, alpha]);
+        } else if (Math.abs(diff_y) === maxLength) {
+            if (y2 > y1) {
+                for (let y = y1; y <= y2; y++) {
+                    const x = x1 + (y - y1) * diff_x / diff_y;
+                    const z = z1 + (y - y1) * diff_z / diff_y;
+                    this.boxes.push([x, y, z, r, g, b, alpha]);
+                }
+            } else {
+                for (let y = y1; y >= y2; y--) {
+                    const x = x1 + (y - y1) * diff_x / diff_y;
+                    const z = z1 + (y - y1) * diff_z / diff_y;
+                    this.boxes.push([x, y, z, r, g, b, alpha]);
+                }
             }
-        } else if (diff_z === Math.max(diff_x, diff_y, diff_z)) {
-            for (let z = z1; z <= z2; z++) {
-                const x = x1 + (z - z1) * diff_x / diff_z;
-                const y = y1 + (z - z1) * diff_y / diff_z;
-                this.boxes.push([x, y, z, r, g, b, alpha]);
+        } else if (Math.abs(diff_z) === maxLength) {
+            if (z2 > z1) {
+                for (let z = z1; z <= z2; z++) {
+                    const x = x1 + (z - z1) * diff_x / diff_z;
+                    const y = y1 + (z - z1) * diff_y / diff_z;
+                    this.boxes.push([x, y, z, r, g, b, alpha]);
+                }
+            } else {
+                for (let z = z1; z >= z2; z--) {
+                    const x = x1 + (z - z1) * diff_x / diff_z;
+                    const y = y1 + (z - z1) * diff_y / diff_z;
+                    this.boxes.push([x, y, z, r, g, b, alpha]);
+                }
             }
         }
     }
