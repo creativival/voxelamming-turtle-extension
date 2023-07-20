@@ -697,6 +697,8 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       var g = Number(args.G);
       var b = Number(args.B);
       var alpha = Number(args.ALPHA);
+      // 重ねて置くことを防止するために、同じ座標の箱があれば削除する
+      this.removeBox(x, y, z);
       this.boxes.push([x, y, z, r, g, b, alpha]);
     }
   }, {
