@@ -89,6 +89,8 @@ class ExtensionBlocks {
         this.animation = [0, 0, 0, 0, 0, 0, 1, 0]
         this.boxes = [];
         this.sentence = [];
+        this.lights = [];
+        this.commands = []
         this.size = 1.0;
         this.shape = 'box';
         this.buildInterval = 0.01;
@@ -349,6 +351,68 @@ class ExtensionBlocks {
                     }
                 },
                 {
+                    opcode: 'setLight',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelamming.setLight',
+                        default: 'Set light at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA] intensity: [INTENSITY] interval: [INTERVAL]',
+                        description: 'set light'
+                    }),
+                    arguments: {
+                        X: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1
+                        },
+                        Y: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1
+                        },
+                        Z: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1
+                        },
+                        R: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1
+                        },
+                        G: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        B: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 0
+                        },
+                        ALPHA: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1
+                        },
+                        INTENSITY: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1000
+                        },
+                        INTERVAL: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: 1
+                        }
+                    }
+                },
+                {
+                    opcode: 'setCommand',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelamming.setCommand',
+                        default: 'Set command [COMMAND]',
+                        description: 'set command'
+                    }),
+                    arguments: {
+                        COMMAND: {
+                            type: ArgumentType.STRING,
+                            defaultValue: 'axis'
+                        }
+                    }
+                },
+                {
                     opcode: 'drawLine',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
@@ -524,6 +588,8 @@ class ExtensionBlocks {
         this.animation = [0, 0, 0, 0, 0, 0, 1, 0]
         this.boxes = [];
         this.sentence = [];
+        this.lights = [];
+        this.commands = []
         this.size = 1.0;
         this.shape = 'box';
         this.buildInterval = 0.01;
@@ -539,6 +605,24 @@ class ExtensionBlocks {
         const b = args.B
         const alpha = args.ALPHA
         this.sentence = [sentence, x, y, z, r, g, b, alpha];
+    }
+
+    setLight(args) {
+        const x = Math.floor(Number(args.X));
+        const y = Math.floor(Number(args.Y));
+        const z = Math.floor(Number(args.Z));
+        const r = Number(args.R);
+        const g = Number(args.G);
+        const b = Number(args.B);
+        const alpha = Number(args.ALPHA);
+        const intensity = Number(args.INTENSITY);
+        const interval = Number(args.INTERVAL);
+        this.lights.push([x, y, z, r, g, b, alpha, intensity, interval]);
+    }
+
+    setCommand(args) {
+        const command = args.COMMAND;
+        this.commands.push(command);
     }
 
     drawLine(args) {
@@ -619,6 +703,8 @@ class ExtensionBlocks {
             animation: this.animation,
             boxes: this.boxes,
             sentence: this.sentence,
+            lights: this.lights,
+            commands: this.commands,
             size: this.size,
             shape: this.shape,
             interval: this.buildInterval,
