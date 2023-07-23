@@ -207,6 +207,8 @@ var en = {
 	"voxelamming.setBuildInterval": "Set build interval to [INTERVAL]",
 	"voxelamming.clearData": "Clear data",
 	"voxelamming.writeSentence": "Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.setLight": "Set light at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA] intensity: [INTENSITY] interval: [INTERVAL]",
+	"voxelamming.setCommand": "Set command [COMMAND]",
 	"voxelamming.drawLine": "Draw line x1: [X1] y1: [Y1] z1: [Z1] x2: [X2] y2: [Y2] z2: [Z2] r: [R] g: [G] b: [B] alpha: [ALPHA]",
 	"voxelamming.changeShape": "Change shape: [SHAPE]",
 	"voxelamming.sendData": "Send data",
@@ -225,6 +227,8 @@ var ja = {
 	"voxelamming.setBuildInterval": "ボクセルの作成間隔を [INTERVAL] 秒にする",
 	"voxelamming.clearData": "データを初期化する",
 	"voxelamming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] に書く。色 r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.setLight": "ライトを配置する x: [X] y: [Y] z: [Z] 色 r: [R] g: [G] b: [B] alpha: [ALPHA] 強さ: [INTENSITY] 点滅: [INTERVAL] 秒",
+	"voxelamming.setCommand": "コマンドをセットする [COMMAND]",
 	"voxelamming.drawLine": "線を引く x1: [X1] y1: [Y1] z1: [Z1] x2: [X2] y2: [Y2] z2: [Z2] r: [R] g: [G] b: [B] alpha: [ALPHA]",
 	"voxelamming.changeShape": "形状を変更する [SHAPE]",
 	"voxelamming.sendData": "データを送信する",
@@ -246,6 +250,8 @@ var translations = {
 	"voxelamming.setBuildInterval": "ボクセルのつくるかんかくを [INTERVAL] びょうにする",
 	"voxelamming.clearData": "データをけす",
 	"voxelamming.writeSentence": "[SENTENCE] を x: [X] y: [Y] z: [Z] にかく。いろ r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelamming.setLight": "ライトをおく x: [X] y: [Y] z: [Z] いろ r: [R] g: [G] b: [B] alpha: [ALPHA] つよさ: [INTENSITY] てんめつ: [INTERVAL] びょう",
+	"voxelamming.setCommand": "コマンドをセットする [COMMAND]",
 	"voxelamming.drawLine": "せんをひく x1: [X1] y1: [Y1] z1: [Z1] x2: [X2] y2: [Y2] z2: [Z2] r: [R] g: [G] b: [B] alpha: [ALPHA]",
 	"voxelamming.changeShape": "かたちをかえる [SHAPE]",
 	"voxelamming.sendData": "データをおくる",
@@ -305,6 +311,8 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     this.animation = [0, 0, 0, 0, 0, 0, 1, 0];
     this.boxes = [];
     this.sentence = [];
+    this.lights = [];
+    this.commands = [];
     this.size = 1.0;
     this.shape = 'box';
     this.buildInterval = 0.01;
@@ -556,6 +564,66 @@ var ExtensionBlocks = /*#__PURE__*/function () {
             }
           }
         }, {
+          opcode: 'setLight',
+          blockType: blockType.COMMAND,
+          text: formatMessage({
+            id: 'voxelamming.setLight',
+            default: 'Set light at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA] intensity: [INTENSITY] interval: [INTERVAL]',
+            description: 'set light'
+          }),
+          arguments: {
+            X: {
+              type: argumentType.NUMBER,
+              defaultValue: 1
+            },
+            Y: {
+              type: argumentType.NUMBER,
+              defaultValue: 1
+            },
+            Z: {
+              type: argumentType.NUMBER,
+              defaultValue: 1
+            },
+            R: {
+              type: argumentType.NUMBER,
+              defaultValue: 1
+            },
+            G: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            B: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            ALPHA: {
+              type: argumentType.NUMBER,
+              defaultValue: 1
+            },
+            INTENSITY: {
+              type: argumentType.NUMBER,
+              defaultValue: 1000
+            },
+            INTERVAL: {
+              type: argumentType.NUMBER,
+              defaultValue: 1
+            }
+          }
+        }, {
+          opcode: 'setCommand',
+          blockType: blockType.COMMAND,
+          text: formatMessage({
+            id: 'voxelamming.setCommand',
+            default: 'Set command [COMMAND]',
+            description: 'set command'
+          }),
+          arguments: {
+            COMMAND: {
+              type: argumentType.STRING,
+              defaultValue: 'axis'
+            }
+          }
+        }, {
           opcode: 'drawLine',
           blockType: blockType.COMMAND,
           text: formatMessage({
@@ -732,6 +800,8 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       this.animation = [0, 0, 0, 0, 0, 0, 1, 0];
       this.boxes = [];
       this.sentence = [];
+      this.lights = [];
+      this.commands = [];
       this.size = 1.0;
       this.shape = 'box';
       this.buildInterval = 0.01;
@@ -748,6 +818,26 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       var b = args.B;
       var alpha = args.ALPHA;
       this.sentence = [sentence, x, y, z, r, g, b, alpha];
+    }
+  }, {
+    key: "setLight",
+    value: function setLight(args) {
+      var x = Math.floor(Number(args.X));
+      var y = Math.floor(Number(args.Y));
+      var z = Math.floor(Number(args.Z));
+      var r = Number(args.R);
+      var g = Number(args.G);
+      var b = Number(args.B);
+      var alpha = Number(args.ALPHA);
+      var intensity = Number(args.INTENSITY);
+      var interval = Number(args.INTERVAL);
+      this.lights.push([x, y, z, r, g, b, alpha, intensity, interval]);
+    }
+  }, {
+    key: "setCommand",
+    value: function setCommand(args) {
+      var command = args.COMMAND;
+      this.commands.push(command);
     }
   }, {
     key: "drawLine",
@@ -829,6 +919,8 @@ var ExtensionBlocks = /*#__PURE__*/function () {
         animation: this.animation,
         boxes: this.boxes,
         sentence: this.sentence,
+        lights: this.lights,
+        commands: this.commands,
         size: this.size,
         shape: this.shape,
         interval: this.buildInterval,
