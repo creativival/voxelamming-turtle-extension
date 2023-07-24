@@ -1,14 +1,14 @@
 {
   "en": {
-    "voxelamming.entry.name": "Voxelamming",
-    "voxelamming.entry.description": "Enjoy creating AR voxel art!"
+    "voxelammingTurtle.entry.name": "Voxelamming Turtle",
+    "voxelammingTurtle.entry.description": "Turtle programing AR voxel art!"
   },
   "ja": {
-    "voxelamming.entry.name": "ボクセラミング",
-    "voxelamming.entry.description": "ARボクセルアートを作って遊ぼう！"
+    "voxelammingTurtle.entry.name": "ボクセラミングタートル",
+    "voxelammingTurtle.entry.description": "タートルプログラミングでARボクセルアート"
   },
   "ja-Hira": {
-    "voxelamming.entry.name": "ボクセラミング",
-    "voxelamming.entry.description": "ARボクセルアートをつくってあそぼう！"
+    "voxelammingTurtle.entry.name": "ボクセラミングタートル",
+    "voxelammingTurtle.entry.description": "タートルプログラミングでARボクセルアート"
   }
 }

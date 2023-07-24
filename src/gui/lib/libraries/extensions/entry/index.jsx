@@ -17,28 +17,28 @@ let formatMessage = messageData => messageData.defaultMessage;
 const entry = {
     get name () {
         return formatMessage({
-            id: 'voxelamming.entry.name',
-            default: 'Voxelamming',
+            id: 'voxelammingTurtle.entry.name',
+            default: 'Voxelamming Turtle',
             description: 'name of the extension'
         });
     },
-    extensionId: 'voxelamming',
-    extensionURL: 'https://creativival.github.io/voxelamming-extension/dist/voxelamming.mjs',
+    extensionId: 'voxelammingTurtle',
+    extensionURL: 'https://creativival.github.io/voxelamming-turtle-extension/dist/voxelammingTurtle.mjs',
     collaborator: 'creativival',
     iconURL: iconURL,
     insetIconURL: insetIconURL,
     get description () {
         return formatMessage({
-            defaultMessage: 'Enjoy creating AR voxel art!',
+            defaultMessage: 'Turtle programming AR voxel art!',
             description: 'Description for this extension',
-            id: 'voxelamming.entry.description'
+            id: 'voxelammingTurtle.entry.description'
         });
     },
     featured: true,
     disabled: false,
     bluetoothRequired: false,
     internetConnectionRequired: true,
-    helpLink: 'https://creativival.github.io/voxelamming-extension/',
+    helpLink: 'https://creativival.github.io/voxelamming-turtle-extension/',
     setFormatMessage: formatter => {
         formatMessage = formatter;
     },

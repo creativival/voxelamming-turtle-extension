@@ -1,4 +1,4 @@
-# ボクセラミング拡張機能
+# ボクセラミングタートル拡張機能
 
 [Xcratch](https://xcratch.github.io/)用のボクセラミング拡張機能
 
@@ -12,13 +12,17 @@
 
 詳細については、以下のサイトを参照してください。https://creativival.github.io/voxelamming
 
+## ボクセラミングタートルとは
+
+ボクセラミングタートルは、ボクセラミングのプログラミングを簡単にするためのプログラミングブロックです。直感的に理解しやすいタートルプログラミングで、タートル（カメ）を前進後進、上下左右に動かして、ボクセルを設置していきます。
+
 ## ✨ この拡張機能で何ができるのか
 
-ボクセラミング拡張機能で何ができるのかを確認するために、サンプルプロジェクトを再生してみてください。
+ボクセラミングタートル拡張機能で何ができるのかを確認するために、サンプルプロジェクトを再生してみてください。
 
-[サンプルプロジェクト](https://xcratch.github.io/editor/#https://creativival.github.io/voxelamming-extension/projects/example.sb3)
+[サンプルプロジェクト](https://xcratch.github.io/editor/#https://creativival.github.io/voxelamming-turtle-extension/projects/example.sb3)
 
-<iframe src="https://xcratch.github.io/editor/player#https://creativival.github.io/voxelamming-extension/projects/example.sb3" width="540px" height="460px"></iframe>
+<iframe src="https://xcratch.github.io/editor/player#https://creativival.github.io/voxelamming-turtle-extension/projects/example.sb3" width="540px" height="460px"></iframe>
 
 ## Xcratchでの使用方法
 
@@ -28,7 +32,7 @@
 3. '拡張機能を読み込む' エクステンションを選択する
 4. 入力フィールドにモジュールURLを入力する
 ```
-https://creativival.github.io/voxelamming-extension/dist/voxelamming.mjs
+https://creativival.github.io/voxelamming-turtle-extension/dist/voxelammingTurtle.mjs
 ```
 
 ## 開発
@@ -53,8 +57,8 @@ npm run build
 
 ## 🏠 ホームページ
 
-このページはここから開けます https://creativival.github.io/voxelamming-extension/
+このページはここから開けます https://creativival.github.io/voxelamming-turtle-extension/
 
 ## 🤝 貢献
 
-貢献、問題、機能リクエストは大歓迎です！<br />お気軽に[issues page](https://github.com/https://creativival/voxelamming-extension/issues)をチェックしてみてください。
+貢献、問題、機能リクエストは大歓迎です！<br />お気軽に[issues page](https://github.com/https://creativival/voxelamming-turtle-extension/issues)をチェックしてみてください。

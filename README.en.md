@@ -1,4 +1,4 @@
-# Voxelamming extension
+# Voxelamming Turtle extension
 
 Voxelamming extension for [Xcratch](https://xcratch.github.io/)
 
@@ -12,10 +12,14 @@ Voxelamming is a programming learning app utilizing ARKit. It can be used for fr
 
 For details, please refer to the following site. https://github.com/creativival/voxelamming/index.en.html
 
+## What is Voxelamming Turtle?
+
+Voxelamming Turtle is programming blocks designed to simplify Voxelamming. With intuitive and user-friendly Turtle programming, it allows the Turtle (a turtle-like object) to move forward, backward, right, left, up, and down, while placing voxels as it goes.
+
 ## ✨ What You Can Do With This Extension
 
-Play [Example Project](https://xcratch.github.io/editor/#https://creativival.github.io/voxelamming-extension/projects/example.sb3) to look at what you can do with "Voxelamming" extension. 
-<iframe src="https://xcratch.github.io/editor/player#https://creativival.github.io/voxelamming-extension/projects/example.sb3" width="540px" height="460px"></iframe>
+Play [Example Project](https://xcratch.github.io/editor/#https://creativival.github.io/voxelamming-turtle-extension/projects/example.sb3) to look at what you can do with "Voxelamming Turtle" extension. 
+<iframe src="https://xcratch.github.io/editor/player#https://creativival.github.io/voxelamming-turtle-extension/projects/example.sb3" width="540px" height="460px"></iframe>
 
 
 ## How to Use in Xcratch
@@ -26,7 +30,7 @@ This extension can be used with other extension in [Xcratch](https://xcratch.git
 3. Select 'Extension Loader' extension
 4. Type the module URL in the input field 
 ```
-https://creativival.github.io/voxelamming-extension/dist/voxelamming.mjs
+https://creativival.github.io/voxelamming-turtle-extension/dist/voxelammingTurtle.mjs
 ```
 
 ## Development
@@ -51,9 +55,9 @@ npm run build
 
 ## 🏠 Home Page
 
-Open this page from [https://creativival.github.io/voxelamming-extension/](https://creativival.github.io/voxelamming-extension/)
+Open this page from [https://creativival.github.io/voxelamming-turtle-extension/](https://creativival.github.io/voxelamming-turtle-extension/)
 
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/https://creativival/voxelamming-extension/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/https://creativival/voxelamming-turtle-extension/issues). 

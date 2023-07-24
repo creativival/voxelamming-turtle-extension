@@ -25,14 +25,14 @@ const setupTranslations = () => {
     }
 };
 
-const EXTENSION_ID = 'voxelamming';
+const EXTENSION_ID = 'voxelammingTurtle';
 
 /**
  * URL to get this extension as a module.
  * When it was loaded as a module, 'extensionURL' will be replaced a URL which is retrieved from.
  * @type {string}
  */
-let extensionURL = 'https://creativival.github.io/voxelamming-extension/dist/voxelamming.mjs';
+let extensionURL = 'https://creativival.github.io/voxelamming-turtle-extension/dist/voxelammingTurtle.mjs';
 
 /**
  * Scratch 3.0 blocks for example of Xcratch.
@@ -44,7 +44,7 @@ class ExtensionBlocks {
      */
     static get EXTENSION_NAME () {
         return formatMessage({
-            id: 'voxelamming.name',
+            id: 'voxelammingTurtle.name',
             default: 'Voxelamming',
             description: 'name of the extension'
         });
@@ -94,6 +94,14 @@ class ExtensionBlocks {
         this.size = 1.0;
         this.shape = 'box';
         this.buildInterval = 0.01;
+        // Turtle
+        this.x = 0;
+        this.y = 0;
+        this.z = 0;
+        this.polarTheta = 90;
+        this.polarPhi = 0;
+        this.drawable = true;
+        this.color = [1, 0, 0, 1];
 
         if (runtime.formatMessage) {
             // Replace 'formatMessage' to a formatter which is used in the runtime.
@@ -117,7 +125,7 @@ class ExtensionBlocks {
                     opcode: 'setRoomName',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelamming.setRoomName',
+                        id: 'voxelammingTurtle.setRoomName',
                         default: 'Set room name to [ROOMNAME]',
                         description: 'set room name'
                     }),
@@ -132,7 +140,7 @@ class ExtensionBlocks {
                     opcode: 'setBoxSize',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelamming.setBoxSize',
+                        id: 'voxelammingTurtle.setBoxSize',
                         default: 'Set box size to [BOXSIZE]',
                         description: 'set box size'
                     }),
@@ -147,7 +155,7 @@ class ExtensionBlocks {
                     opcode: 'setBuildInterval',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelamming.setBuildInterval',
+                        id: 'voxelammingTurtle.setBuildInterval',
                         default: 'Set build interval to [INTERVAL]',
                         description: 'set build interval'
                     }),
@@ -159,107 +167,107 @@ class ExtensionBlocks {
                     }
                 },
                 {
-                    opcode: 'setNode',
+                    opcode: 'forward',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelamming.setNode',
-                        default: 'Set node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL]',
-                        description: 'set node'
+                        id: 'voxelammingTurtle.forward',
+                        default: 'Move forward [LENGTH]',
+                        description: 'forward'
                     }),
                     arguments: {
-                        X: {
+                        LENGTH: {
                             type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        Y: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        Z: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        PITCH: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        YAW: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        ROLL: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
+                            defaultValue: '10'
                         }
                     }
                 },
                 {
-                    opcode: 'animateNode',
+                    opcode: 'backward',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelamming.animateNode',
-                        default: 'Animate node at x: [X] y: [Y] z: [Z] pitch: [PITCH] yaw: [YAW] roll: [ROLL] scale: [SCALE] interval: [INTERVAL]',
-                        description: 'animate node'
+                        id: 'voxelammingTurtle.backward',
+                        default: 'Move backward [LENGTH]',
+                        description: 'backward'
                     }),
                     arguments: {
-                        X: {
+                        LENGTH: {
                             type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        Y: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        Z: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        PITCH: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        YAW: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        ROLL: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        SCALE: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 1
-                        },
-                        INTERVAL: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 10
+                            defaultValue: '10'
                         }
                     }
                 },
                 {
-                    opcode: 'createBox',
+                    opcode: 'up',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelamming.createBox',
-                        default: 'Create box at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]',
-                        description: 'create box'
+                        id: 'voxelammingTurtle.up',
+                        default: 'Head up [ANGLE]',
+                        description: 'up'
                     }),
                     arguments: {
-                        X: {
+                        ANGLE: {
                             type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        Y: {
+                            defaultValue: '0'
+                        }
+                    }
+                },
+                {
+                    opcode: 'down',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelammingTurtle.down',
+                        default: 'Head down [ANGLE]',
+                        description: 'down'
+                    }),
+                    arguments: {
+                        ANGLE: {
                             type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        Z: {
+                            defaultValue: '0'
+                        }
+                    }
+                },
+                {
+                    opcode: 'right',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelammingTurtle.right',
+                        default: 'Turn right [ANGLE]',
+                        description: 'right'
+                    }),
+                    arguments: {
+                        ANGLE: {
                             type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
+                            defaultValue: '0'
+                        }
+                    }
+                },
+                {
+                    opcode: 'left',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelammingTurtle.left',
+                        default: 'Turn left [ANGLE]',
+                        description: 'left'
+                    }),
+                    arguments: {
+                        ANGLE: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: '0'
+                        }
+                    }
+                },
+                {
+                    opcode: 'setColor',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelammingTurtle.setColor',
+                        default: 'Set color r: [R] g: [G] b: [B] alpha: [ALPHA]',
+                        description: 'set color'
+                    }),
+                    arguments: {
                         R: {
                             type: ArgumentType.NUMBER,
-                            defaultValue: 0
+                            defaultValue: 1
                         },
                         G: {
                             type: ArgumentType.NUMBER,
@@ -276,12 +284,30 @@ class ExtensionBlocks {
                     }
                 },
                 {
-                    opcode: 'removeBox',
+                    opcode: 'penDown',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelamming.removeBox',
-                        default: 'Remove box at x: [X] y: [Y] z: [Z]',
-                        description: 'remove box'
+                        id: 'voxelammingTurtle.penDown',
+                        default: 'Pen down',
+                        description: 'pen down'
+                    }),
+                },
+                {
+                    opcode: 'penUp',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelammingTurtle.penUp',
+                        default: 'Pen up',
+                        description: 'pen up'
+                    }),
+                },
+                {
+                    opcode: 'setPos',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelammingTurtle.setPos',
+                        default: 'Set position x: [X] y: [Y] z: [Z]',
+                        description: 'set position'
                     }),
                     arguments: {
                         X: {
@@ -297,229 +323,36 @@ class ExtensionBlocks {
                             defaultValue: 0
                         }
                     }
+                },
+                {
+                    opcode: 'reset',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelammingTurtle.reset',
+                        default: 'Reset turtle',
+                        description: 'reset'
+                    }),
                 },
                 {
                     opcode: 'clearData',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelamming.clearData',
+                        id: 'voxelammingTurtle.clearData',
                         default: 'Clear data',
                         description: 'clear data'
                     }),
                 },
                 {
-                    opcode: 'writeSentence',
-                    blockType: BlockType.COMMAND,
-                    text: formatMessage({
-                        id: 'voxelamming.writeSentence',
-                        default: 'Write [SENTENCE] at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA]',
-                        description: 'write sentence'
-                    }),
-                    arguments: {
-                        SENTENCE: {
-                            type: ArgumentType.STRING,
-                            defaultValue: 'Hello World'
-                        },
-                        X: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        Y: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        Z: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        R: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        G: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        B: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        ALPHA: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 1
-                        }
-                    }
-                },
-                {
-                    opcode: 'setLight',
-                    blockType: BlockType.COMMAND,
-                    text: formatMessage({
-                        id: 'voxelamming.setLight',
-                        default: 'Set light at x: [X] y: [Y] z: [Z] r: [R] g: [G] b: [B] alpha: [ALPHA] intensity: [INTENSITY] interval: [INTERVAL]',
-                        description: 'set light'
-                    }),
-                    arguments: {
-                        X: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 1
-                        },
-                        Y: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 1
-                        },
-                        Z: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 1
-                        },
-                        R: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 1
-                        },
-                        G: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        B: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        ALPHA: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 1
-                        },
-                        INTENSITY: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 1000
-                        },
-                        INTERVAL: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 1
-                        }
-                    }
-                },
-                {
-                    opcode: 'setCommand',
-                    blockType: BlockType.COMMAND,
-                    text: formatMessage({
-                        id: 'voxelamming.setCommand',
-                        default: 'Set command [COMMAND]',
-                        description: 'set command'
-                    }),
-                    arguments: {
-                        COMMAND: {
-                            type: ArgumentType.STRING,
-                            defaultValue: 'axis'
-                        }
-                    }
-                },
-                {
-                    opcode: 'drawLine',
-                    blockType: BlockType.COMMAND,
-                    text: formatMessage({
-                        id: 'voxelamming.drawLine',
-                        default: 'Draw line x1: [X1] y1: [Y1] z1: [Z1] x2: [X2] y2: [Y2] z2: [Z2] r: [R] g: [G] b: [B] alpha: [ALPHA]',
-                        description: 'draw line'
-                    }),
-                    arguments: {
-                        X1: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        Y1: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        Z1: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        X2: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 5
-                        },
-                        Y2: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 10
-                        },
-                        Z2: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 20
-                        },
-                        R: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 1
-                        },
-                        G: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        B: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 0
-                        },
-                        ALPHA: {
-                            type: ArgumentType.NUMBER,
-                            defaultValue: 1
-                        }
-                    }
-                },
-                {
-                    opcode: 'changeShape',
-                    blockType: BlockType.COMMAND,
-                    text: formatMessage({
-                        id: 'voxelamming.changeShape',
-                        default: 'Change shape: [SHAPE]',
-                        description: 'change shape'
-                    }),
-                    arguments: {
-                        SHAPE: {
-                            type: ArgumentType.STRING,
-                            defaultValue: 'box',
-                            menu: 'shapeTypeMenu'
-                        }
-                    }
-                },
-                {
                     opcode: 'sendData',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelamming.sendData',
+                        id: 'voxelammingTurtle.sendData',
                         default: 'Send data',
                         description: 'send data to server'
                     }),
                 }
             ],
-            menus: {
-                shapeTypeMenu: {
-                    acceptReporters: false,
-                    items: [
-                        {
-                            text: formatMessage({
-                                id: 'voxelamming.box',
-                                default: 'box',
-                                description: 'Menu item for box'
-                            }),
-                            value: 'box'
-                        },
-                        {
-                            text: formatMessage({
-                                id: 'voxelamming.sphere',
-                                default: 'sphere',
-                                description: 'Menu item for sphere'
-                            }),
-                            value: 'sphere'
-                        },
-                        {
-                            text: formatMessage({
-                                id: 'voxelamming.plane',
-                                default: 'plane',
-                                description: 'Menu item for plane'
-                            }),
-                            value: 'plane'
-                        }
-                    ]
-                }
-            }
+            menus: {}
         };
     }
 
@@ -527,45 +360,19 @@ class ExtensionBlocks {
         this.roomName = args.ROOMNAME;
     }
 
-    setNode(args) {
-        const x = Math.floor(Number(args.X));
-        const y = Math.floor(Number(args.Y));
-        const z = Math.floor(Number(args.Z));
-        const pitch = Number(args.PITCH);
-        const yaw = Number(args.YAW);
-        const roll = Number(args.ROLL);
-        this.node = [x, y, z, pitch, yaw, roll];
-    }
-
-    animateNode(args) {
-        const x = Math.floor(Number(args.X));
-        const y = Math.floor(Number(args.Y));
-        const z = Math.floor(Number(args.Z));
-        const pitch = Number(args.PITCH);
-        const yaw = Number(args.YAW);
-        const roll = Number(args.ROLL);
-        const scale = Number(args.SCALE);
-        const interval = Number(args.INTERVAL);
-        this.animation = [x, y, z, pitch, yaw, roll, scale, interval];
-    }
-
-    createBox(args) {
-        const x = Math.floor(Number(args.X));
-        const y = Math.floor(Number(args.Y));
-        const z = Math.floor(Number(args.Z));
-        const r = Number(args.R);
-        const g = Number(args.G);
-        const b = Number(args.B);
-        const alpha = Number(args.ALPHA);
+    createBox(x, y, z, r, g, b, alpha) {
+        x = Math.floor(x);
+        y = Math.floor(y);
+        z = Math.floor(z);
         // 重ねて置くことを防止するために、同じ座標の箱があれば削除する
         this.removeBox(x, y, z);
         this.boxes.push([x, y, z, r, g, b, alpha]);
     }
 
-    removeBox(args) {
-        const x = Math.floor(Number(args.X));
-        const y = Math.floor(Number(args.Y));
-        const z = Math.floor(Number(args.Z));
+    removeBox(x, y, z) {
+        x = Math.floor(x);
+        y = Math.floor(y);
+        z = Math.floor(z);
         for (let i = 0; i < this.boxes.length; i++) {
             const box = this.boxes[i];
             if (box[0] === x && box[1] === y && box[2] === z) {
@@ -595,50 +402,94 @@ class ExtensionBlocks {
         this.buildInterval = 0.01;
     }
 
-    writeSentence(args) {
-        const sentence = args.SENTENCE;
-        const x = args.X;
-        const y = args.Y;
-        const z = args.Z;
-        const r = args.R;
-        const g = args.G
-        const b = args.B
-        const alpha = args.ALPHA
-        this.sentence = [sentence, x, y, z, r, g, b, alpha];
+    forward(args) {
+        const length = Number(args.LENGTH);
+        let z = this.z + length * Math.sin(this.degToRad(this.polarTheta)) * Math.cos(this.degToRad(this.polarPhi));
+        let x = this.x + length * Math.sin(this.degToRad(this.polarTheta)) * Math.sin(this.degToRad(this.polarPhi));
+        let y = this.y + length * Math.cos(this.degToRad(this.polarTheta));
+
+        x = this.roundToThreeDecimalPlaces(x);
+        y = this.roundToThreeDecimalPlaces(y);
+        z = this.roundToThreeDecimalPlaces(z);
+
+        if (this.drawable) {
+            this.drawLine(this.x, this.y, this.z, x, y, z, ...this.color);
+        }
+
+        this.x = x;
+        this.y = y;
+        this.z = z;
+
     }
 
-    setLight(args) {
-        const x = Math.floor(Number(args.X));
-        const y = Math.floor(Number(args.Y));
-        const z = Math.floor(Number(args.Z));
+    backward(args) {
+        const length = Number(args.LENGTH);
+        this.forward({LENGTH: -length})
+    }
+
+    up(args) {
+        const angle = Number(args.ANGLE);
+        this.polarTheta -= angle;
+    }
+
+    down(args) {
+        const angle = Number(args.ANGLE);
+        this.polarTheta += angle;
+    }
+
+    right(args) {
+        const angle = Number(args.ANGLE);
+        this.polarPhi -= angle;
+    }
+
+    left(args) {
+        const angle = Number(args.ANGLE);
+        this.polarPhi += angle;
+    }
+
+    setColor(args) {
         const r = Number(args.R);
         const g = Number(args.G);
         const b = Number(args.B);
         const alpha = Number(args.ALPHA);
-        const intensity = Number(args.INTENSITY);
-        const interval = Number(args.INTERVAL);
-        this.lights.push([x, y, z, r, g, b, alpha, intensity, interval]);
+        this.color = [r, g, b, alpha];
     }
 
-    setCommand(args) {
-        const command = args.COMMAND;
-        this.commands.push(command);
+    penDown() {
+        this.drawable = true;
     }
 
-    drawLine(args) {
-        const x1 = Math.floor(Number(args.X1));
-        const y1 = Math.floor(Number(args.Y1));
-        const z1 = Math.floor(Number(args.Z1));
-        const x2 = Math.floor(Number(args.X2));
-        const y2 = Math.floor(Number(args.Y2));
-        const z2 = Math.floor(Number(args.Z2));
+    penUp() {
+        this.drawable = false;
+    }
+
+    setPos(args) {
+        this.x = Number(args.X);
+        this.y = Number(args.Y);
+        this.z = Number(args.Z);
+    }
+
+    reset() {
+        // Turtle
+        this.x = 0;
+        this.y = 0;
+        this.z = 0;
+        this.polarTheta = 90;
+        this.polarPhi = 0;
+        this.drawable = true;
+        this.color = [1, 0, 0, 1];
+    }
+
+    drawLine(x1, y1, z1, x2, y2, z2, r, g, b, alpha) {
+        x1 = Math.floor(x1);
+        y1 = Math.floor(y1);
+        z1 = Math.floor(z1);
+        x2 = Math.floor(x2);
+        y2 = Math.floor(y2);
+        z2 = Math.floor(z2);
         const diff_x = x2 - x1;
         const diff_y = y2 - y1;
         const diff_z = z2 - z1;
-        const r = Number(args.R);
-        const g = Number(args.G);
-        const b = Number(args.B);
-        const alpha = Number(args.ALPHA);
         const maxLength = Math.max(Math.abs(diff_x), Math.abs(diff_y), Math.abs(diff_z));
 
         if (diff_x === 0 && diff_y === 0 && diff_z === 0) {
@@ -650,13 +501,13 @@ class ExtensionBlocks {
                 for (let x = x1; x <= x2; x++) {
                     const y = y1 + (x - x1) * diff_y / diff_x;
                     const z = z1 + (x - x1) * diff_z / diff_x;
-                    this.boxes.push([x, y, z, r, g, b, alpha]);
+                    this.createBox(x, y, z, r, g, b, alpha);
                 }
             } else{
                 for (let x = x1; x >= x2; x--) {
                     const y = y1 + (x - x1) * diff_y / diff_x;
                     const z = z1 + (x - x1) * diff_z / diff_x;
-                    this.boxes.push([x, y, z, r, g, b, alpha]);
+                    this.createBox(x, y, z, r, g, b, alpha);
                 }
             }
         } else if (Math.abs(diff_y) === maxLength) {
@@ -664,13 +515,13 @@ class ExtensionBlocks {
                 for (let y = y1; y <= y2; y++) {
                     const x = x1 + (y - y1) * diff_x / diff_y;
                     const z = z1 + (y - y1) * diff_z / diff_y;
-                    this.boxes.push([x, y, z, r, g, b, alpha]);
+                    this.createBox(x, y, z, r, g, b, alpha);
                 }
             } else {
                 for (let y = y1; y >= y2; y--) {
                     const x = x1 + (y - y1) * diff_x / diff_y;
                     const z = z1 + (y - y1) * diff_z / diff_y;
-                    this.boxes.push([x, y, z, r, g, b, alpha]);
+                    this.createBox(x, y, z, r, g, b, alpha);
                 }
             }
         } else if (Math.abs(diff_z) === maxLength) {
@@ -678,20 +529,16 @@ class ExtensionBlocks {
                 for (let z = z1; z <= z2; z++) {
                     const x = x1 + (z - z1) * diff_x / diff_z;
                     const y = y1 + (z - z1) * diff_y / diff_z;
-                    this.boxes.push([x, y, z, r, g, b, alpha]);
+                    this.createBox(x, y, z, r, g, b, alpha);
                 }
             } else {
                 for (let z = z1; z >= z2; z--) {
                     const x = x1 + (z - z1) * diff_x / diff_z;
                     const y = y1 + (z - z1) * diff_y / diff_z;
-                    this.boxes.push([x, y, z, r, g, b, alpha]);
+                    this.createBox(x, y, z, r, g, b, alpha);
                 }
             }
         }
-    }
-
-    changeShape(args) {
-        this.shape = args.SHAPE
     }
 
     sendData () {
@@ -740,6 +587,14 @@ class ExtensionBlocks {
         socket.onerror = function(error) {
             console.error("WebSocket Error: ", error);
         };
+    }
+
+    degToRad(degrees) {
+        return degrees * (Math.PI / 180);
+    }
+
+    roundToThreeDecimalPlaces(num) {
+        return Math.round(num * 1000) / 1000;
     }
 }
 
