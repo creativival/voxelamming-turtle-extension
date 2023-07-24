@@ -35,6 +35,8 @@
 https://creativival.github.io/voxelamming-turtle-extension/dist/voxelammingTurtle.mjs
 ```
 
+* この拡張機能は「ボクセラミング」拡張機能と同時には使えません。
+
 ## 開発
 
 [README.md](README.md)
