@@ -229,67 +229,67 @@ var argumentType = ArgumentType;
 
 var en = {
 	"voxelammingTurtle.name": "Voxelamming Turtle",
-	"voxelammingTurtle.setRoomName": "Set room name to [ROOMNAME]",
-	"voxelammingTurtle.setBoxSize": "Set voxel size to [BOXSIZE]",
-	"voxelammingTurtle.setBuildInterval": "Set build interval to [INTERVAL]",
-	"voxelammingTurtle.forward": "Move forward [LENGTH]",
-	"voxelammingTurtle.backward": "Move backward [LENGTH]",
-	"voxelammingTurtle.right": "Turn right [ANGLE]",
-	"voxelammingTurtle.left": "Turn left [ANGLE]",
-	"voxelammingTurtle.up": "Head up [ANGLE]",
-	"voxelammingTurtle.down": "Head down [ANGLE]",
-	"voxelammingTurtle.setColor": "Set color r: [R] g: [G] b: [B] alpha: [ALPHA]",
-	"voxelammingTurtle.penDown": "Pen down",
-	"voxelammingTurtle.penUp": "Pen up",
-	"voxelammingTurtle.setPos": "Set position x: [X] y: [Y] z: [Z]",
-	"voxelammingTurtle.reset": "Reset turtle",
-	"voxelammingTurtle.clearData": "Clear data",
-	"voxelammingTurtle.sendData": "Send data"
+	"voxelammingTurtle.setRoomName": "(VT) Set room name to [ROOMNAME]",
+	"voxelammingTurtle.setBoxSize": "(VT) Set voxel size to [BOXSIZE]",
+	"voxelammingTurtle.setBuildInterval": "(VT) Set build interval to [INTERVAL]",
+	"voxelammingTurtle.forward": "(VT) Move forward [LENGTH]",
+	"voxelammingTurtle.backward": "(VT) Move backward [LENGTH]",
+	"voxelammingTurtle.right": "(VT) Turn right [ANGLE]",
+	"voxelammingTurtle.left": "(VT) Turn left [ANGLE]",
+	"voxelammingTurtle.up": "(VT) Head up [ANGLE]",
+	"voxelammingTurtle.down": "(VT) Head down [ANGLE]",
+	"voxelammingTurtle.setColor": "(VT) Set color r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelammingTurtle.penDown": "(VT) Pen down",
+	"voxelammingTurtle.penUp": "(VT) Pen up",
+	"voxelammingTurtle.setPos": "(VT) Set position x: [X] y: [Y] z: [Z]",
+	"voxelammingTurtle.reset": "(VT) Reset turtle",
+	"voxelammingTurtle.clearData": "(VT) Clear data",
+	"voxelammingTurtle.sendData": "(VT) Send data"
 };
 var ja = {
 	"voxelammingTurtle.name": "ボクセラミングタートル",
-	"voxelammingTurtle.setRoomName": "ルームネームを [ROOMNAME] にする",
-	"voxelammingTurtle.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
-	"voxelammingTurtle.setBuildInterval": "ボクセルの作成間隔を [INTERVAL] 秒にする",
-	"voxelammingTurtle.forward": "前に [LENGTH] 進む",
-	"voxelammingTurtle.backward": "後ろに [LENGTH] 進む",
-	"voxelammingTurtle.right": "右に [ANGLE] 度回転する",
-	"voxelammingTurtle.left": "左に [ANGLE] 度回転する",
-	"voxelammingTurtle.up": "頭を [ANGLE] 度上げる",
-	"voxelammingTurtle.down": "頭を [ANGLE] 度下げる",
-	"voxelammingTurtle.setColor": "色を設定する r: [R] g: [G] b: [B] alpha: [ALPHA]",
-	"voxelammingTurtle.penDown": "ペンを下ろす",
-	"voxelammingTurtle.penUp": "ペンを上げる",
-	"voxelammingTurtle.setPos": "位置を移動する x: [X] y: [Y] z: [Z]",
-	"voxelammingTurtle.reset": "タートルをリセットする",
-	"voxelammingTurtle.clearData": "データを初期化する",
-	"voxelammingTurtle.sendData": "データを送信する"
+	"voxelammingTurtle.setRoomName": "(VT) ルームネームを [ROOMNAME] にする",
+	"voxelammingTurtle.setBoxSize": "(VT) ボクセルサイズを [BOXSIZE] にする",
+	"voxelammingTurtle.setBuildInterval": "(VT) ボクセルの作成間隔を [INTERVAL] 秒にする",
+	"voxelammingTurtle.forward": "(VT) 前に [LENGTH] 進む",
+	"voxelammingTurtle.backward": "(VT) 後ろに [LENGTH] 進む",
+	"voxelammingTurtle.right": "(VT) 右に [ANGLE] 度回転する",
+	"voxelammingTurtle.left": "(VT) 左に [ANGLE] 度回転する",
+	"voxelammingTurtle.up": "(VT) 頭を [ANGLE] 度上げる",
+	"voxelammingTurtle.down": "(VT) 頭を [ANGLE] 度下げる",
+	"voxelammingTurtle.setColor": "(VT) 色を設定する r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelammingTurtle.penDown": "(VT) ペンを下ろす",
+	"voxelammingTurtle.penUp": "(VT) ペンを上げる",
+	"voxelammingTurtle.setPos": "(VT) 位置を移動する x: [X] y: [Y] z: [Z]",
+	"voxelammingTurtle.reset": "(VT) タートルをリセットする",
+	"voxelammingTurtle.clearData": "(VT) データを初期化する",
+	"voxelammingTurtle.sendData": "(VT) データを送信する"
 };
 var translations = {
 	en: en,
 	ja: ja,
 	"ja-Hira": {
 	"voxelammingTurtle.name": "ボクセラミングタートル",
-	"voxelammingTurtle.setRoomName": "ルームネームを [ROOMNAME] にする",
-	"voxelammingTurtle.setBoxSize": "ボクセルサイズを [BOXSIZE] にする",
-	"voxelammingTurtle.setBuildInterval": "ボクセルのつくるかんかくを [INTERVAL] びょうにする",
-	"voxelammingTurtle.forward": "まえに [LENGTH] すすむ",
-	"voxelammingTurtle.backward": "うしろに [LENGTH] すすむ",
-	"voxelammingTurtle.right": "みぎに [ANGLE] どまわる",
-	"voxelammingTurtle.left": "ひだりに [ANGLE] どまわる",
-	"voxelammingTurtle.up": "あたまを [ANGLE] どあげる",
-	"voxelammingTurtle.down": "あたまを [ANGLE] どさげる",
-	"voxelammingTurtle.setColor": "いろをきめる r: [R] g: [G] b: [B] alpha: [ALPHA]",
-	"voxelammingTurtle.penDown": "ペンをおろす",
-	"voxelammingTurtle.penUp": "ペンをあげる",
-	"voxelammingTurtle.setPos": "いちをいどうする x: [X] y: [Y] z: [Z]",
-	"voxelammingTurtle.reset": "タートルをリセットする",
-	"voxelammingTurtle.clearData": "データをけす",
-	"voxelammingTurtle.sendData": "データをおくる"
+	"voxelammingTurtle.setRoomName": "(VT) ルームネームを [ROOMNAME] にする",
+	"voxelammingTurtle.setBoxSize": "(VT) ボクセルサイズを [BOXSIZE] にする",
+	"voxelammingTurtle.setBuildInterval": "(VT) ボクセルのつくるかんかくを [INTERVAL] びょうにする",
+	"voxelammingTurtle.forward": "(VT) まえに [LENGTH] すすむ",
+	"voxelammingTurtle.backward": "(VT) うしろに [LENGTH] すすむ",
+	"voxelammingTurtle.right": "(VT) みぎに [ANGLE] どまわる",
+	"voxelammingTurtle.left": "(VT) ひだりに [ANGLE] どまわる",
+	"voxelammingTurtle.up": "(VT) あたまを [ANGLE] どあげる",
+	"voxelammingTurtle.down": "(VT) あたまを [ANGLE] どさげる",
+	"voxelammingTurtle.setColor": "(VT) いろをきめる r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelammingTurtle.penDown": "(VT) ペンをおろす",
+	"voxelammingTurtle.penUp": "(VT) ペンをあげる",
+	"voxelammingTurtle.setPos": "(VT) いちをいどうする x: [X] y: [Y] z: [Z]",
+	"voxelammingTurtle.reset": "(VT) タートルをリセットする",
+	"voxelammingTurtle.clearData": "(VT) データをけす",
+	"voxelammingTurtle.sendData": "(VT) データをおくる"
 }
 };
 
-var img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAFymlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iCiAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iCiAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgdGlmZjpJbWFnZUxlbmd0aD0iNDAiCiAgIHRpZmY6SW1hZ2VXaWR0aD0iNDAiCiAgIHRpZmY6UmVzb2x1dGlvblVuaXQ9IjIiCiAgIHRpZmY6WFJlc29sdXRpb249IjcyLzEiCiAgIHRpZmY6WVJlc29sdXRpb249IjcyLzEiCiAgIHhtcDpDcmVhdGVEYXRlPSIyMDIzLTA3LTA4VDIyOjQxOjU4KzA5MDAiCiAgIHhtcDpNb2RpZnlEYXRlPSIyMDIzLTA3LTA4VDIyOjQyOjA4KzA5OjAwIgogICB4bXA6TWV0YWRhdGFEYXRlPSIyMDIzLTA3LTA4VDIyOjQyOjA4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";
+var img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAFxGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iCiAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iCiAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgdGlmZjpJbWFnZUxlbmd0aD0iNDAiCiAgIHRpZmY6SW1hZ2VXaWR0aD0iNDAiCiAgIHRpZmY6UmVzb2x1dGlvblVuaXQ9IjIiCiAgIHRpZmY6WFJlc29sdXRpb249IjcyLzEiCiAgIHRpZmY6WVJlc29sdXRpb249IjcyLzEiCiAgIHhtcDpDcmVhdGVEYXRlPSIyMDIzLTA3LTI1VDE5OjEwOjI4KzA5MDAiCiAgIHhtcDpNb2RpZnlEYXRlPSIyMDIzLTA3LTI1VDE5OjEwOjM4KzA5OjAwIgogICB4bXA6TWV0YWRhdGFEYXRlPSIyMDIzLTA3LTI1VDE5OjEwOjM4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";
 
 /**
  * Formatter which is used for translation.
@@ -376,7 +376,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.setRoomName',
-            default: 'Set room name to [ROOMNAME]',
+            default: '(VT) Set room name to [ROOMNAME]',
             description: 'set room name'
           }),
           arguments: {
@@ -390,7 +390,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.setBoxSize',
-            default: 'Set box size to [BOXSIZE]',
+            default: '(VT) Set box size to [BOXSIZE]',
             description: 'set box size'
           }),
           arguments: {
@@ -404,7 +404,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.setBuildInterval',
-            default: 'Set build interval to [INTERVAL]',
+            default: '(VT) Set build interval to [INTERVAL]',
             description: 'set build interval'
           }),
           arguments: {
@@ -418,7 +418,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.forward',
-            default: 'Move forward [LENGTH]',
+            default: '(VT) Move forward [LENGTH]',
             description: 'forward'
           }),
           arguments: {
@@ -432,7 +432,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.backward',
-            default: 'Move backward [LENGTH]',
+            default: '(VT) Move backward [LENGTH]',
             description: 'backward'
           }),
           arguments: {
@@ -446,7 +446,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.up',
-            default: 'Head up [ANGLE]',
+            default: '(VT) Head up [ANGLE]',
             description: 'up'
           }),
           arguments: {
@@ -460,7 +460,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.down',
-            default: 'Head down [ANGLE]',
+            default: '(VT) Head down [ANGLE]',
             description: 'down'
           }),
           arguments: {
@@ -474,7 +474,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.right',
-            default: 'Turn right [ANGLE]',
+            default: '(VT) Turn right [ANGLE]',
             description: 'right'
           }),
           arguments: {
@@ -488,7 +488,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.left',
-            default: 'Turn left [ANGLE]',
+            default: '(VT) Turn left [ANGLE]',
             description: 'left'
           }),
           arguments: {
@@ -502,7 +502,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.setColor',
-            default: 'Set color r: [R] g: [G] b: [B] alpha: [ALPHA]',
+            default: '(VT) Set color r: [R] g: [G] b: [B] alpha: [ALPHA]',
             description: 'set color'
           }),
           arguments: {
@@ -528,7 +528,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.penDown',
-            default: 'Pen down',
+            default: '(VT) Pen down',
             description: 'pen down'
           })
         }, {
@@ -536,7 +536,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.penUp',
-            default: 'Pen up',
+            default: '(VT) Pen up',
             description: 'pen up'
           })
         }, {
@@ -544,7 +544,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.setPos',
-            default: 'Set position x: [X] y: [Y] z: [Z]',
+            default: '(VT) Set position x: [X] y: [Y] z: [Z]',
             description: 'set position'
           }),
           arguments: {
@@ -574,7 +574,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.clearData',
-            default: 'Clear data',
+            default: '(VT) Clear data',
             description: 'clear data'
           })
         }, {
@@ -582,7 +582,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.sendData',
-            default: 'Send data',
+            default: '(VT) Send data',
             description: 'send data to server'
           })
         }],
