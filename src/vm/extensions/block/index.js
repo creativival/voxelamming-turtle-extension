@@ -2,7 +2,7 @@ import BlockType from '../../extension-support/block-type';
 import ArgumentType from '../../extension-support/argument-type';
 import Cast from '../../util/cast';
 import translations from './translations.json';
-import blockIcon from './voxelamming_40x40_transparent.png';
+import blockIcon from './voxelamming_40x40_green.png';
 
 /**
  * Formatter which is used for translation.
@@ -126,7 +126,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.setRoomName',
-                        default: 'Set room name to [ROOMNAME]',
+                        default: '(VT) Set room name to [ROOMNAME]',
                         description: 'set room name'
                     }),
                     arguments: {
@@ -141,7 +141,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.setBoxSize',
-                        default: 'Set box size to [BOXSIZE]',
+                        default: '(VT) Set box size to [BOXSIZE]',
                         description: 'set box size'
                     }),
                     arguments: {
@@ -156,7 +156,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.setBuildInterval',
-                        default: 'Set build interval to [INTERVAL]',
+                        default: '(VT) Set build interval to [INTERVAL]',
                         description: 'set build interval'
                     }),
                     arguments: {
@@ -171,7 +171,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.forward',
-                        default: 'Move forward [LENGTH]',
+                        default: '(VT) Move forward [LENGTH]',
                         description: 'forward'
                     }),
                     arguments: {
@@ -186,7 +186,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.backward',
-                        default: 'Move backward [LENGTH]',
+                        default: '(VT) Move backward [LENGTH]',
                         description: 'backward'
                     }),
                     arguments: {
@@ -201,7 +201,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.up',
-                        default: 'Head up [ANGLE]',
+                        default: '(VT) Head up [ANGLE]',
                         description: 'up'
                     }),
                     arguments: {
@@ -216,7 +216,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.down',
-                        default: 'Head down [ANGLE]',
+                        default: '(VT) Head down [ANGLE]',
                         description: 'down'
                     }),
                     arguments: {
@@ -231,7 +231,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.right',
-                        default: 'Turn right [ANGLE]',
+                        default: '(VT) Turn right [ANGLE]',
                         description: 'right'
                     }),
                     arguments: {
@@ -246,7 +246,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.left',
-                        default: 'Turn left [ANGLE]',
+                        default: '(VT) Turn left [ANGLE]',
                         description: 'left'
                     }),
                     arguments: {
@@ -261,7 +261,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.setColor',
-                        default: 'Set color r: [R] g: [G] b: [B] alpha: [ALPHA]',
+                        default: '(VT) Set color r: [R] g: [G] b: [B] alpha: [ALPHA]',
                         description: 'set color'
                     }),
                     arguments: {
@@ -288,7 +288,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.penDown',
-                        default: 'Pen down',
+                        default: '(VT) Pen down',
                         description: 'pen down'
                     }),
                 },
@@ -297,7 +297,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.penUp',
-                        default: 'Pen up',
+                        default: '(VT) Pen up',
                         description: 'pen up'
                     }),
                 },
@@ -306,7 +306,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.setPos',
-                        default: 'Set position x: [X] y: [Y] z: [Z]',
+                        default: '(VT) Set position x: [X] y: [Y] z: [Z]',
                         description: 'set position'
                     }),
                     arguments: {
@@ -338,7 +338,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.clearData',
-                        default: 'Clear data',
+                        default: '(VT) Clear data',
                         description: 'clear data'
                     }),
                 },
@@ -347,7 +347,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.sendData',
-                        default: 'Send data',
+                        default: '(VT) Send data',
                         description: 'send data to server'
                     }),
                 }
