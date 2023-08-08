@@ -335,6 +335,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
      */
     this.runtime = runtime;
     this.roomName = '1000';
+    this.globalAnimation = [0, 0, 0, 0, 0, 0, 1, 0];
     this.node = [0, 0, 0, 0, 0, 0];
     this.animation = [0, 0, 0, 0, 0, 0, 1, 0];
     this.boxes = [];
@@ -414,6 +415,32 @@ var ExtensionBlocks = /*#__PURE__*/function () {
             }
           }
         }, {
+          opcode: 'setColor',
+          blockType: blockType.COMMAND,
+          text: formatMessage({
+            id: 'voxelammingTurtle.setColor',
+            default: '(VT) Set color r: [R] g: [G] b: [B] alpha: [ALPHA]',
+            description: 'set color'
+          }),
+          arguments: {
+            R: {
+              type: argumentType.NUMBER,
+              defaultValue: 1
+            },
+            G: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            B: {
+              type: argumentType.NUMBER,
+              defaultValue: 0
+            },
+            ALPHA: {
+              type: argumentType.NUMBER,
+              defaultValue: 1
+            }
+          }
+        }, {
           opcode: 'forward',
           blockType: blockType.COMMAND,
           text: formatMessage({
@@ -452,7 +479,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           arguments: {
             ANGLE: {
               type: argumentType.NUMBER,
-              defaultValue: '0'
+              defaultValue: '90'
             }
           }
         }, {
@@ -466,7 +493,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           arguments: {
             ANGLE: {
               type: argumentType.NUMBER,
-              defaultValue: '0'
+              defaultValue: '90'
             }
           }
         }, {
@@ -480,7 +507,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           arguments: {
             ANGLE: {
               type: argumentType.NUMBER,
-              defaultValue: '0'
+              defaultValue: '90'
             }
           }
         }, {
@@ -494,36 +521,28 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           arguments: {
             ANGLE: {
               type: argumentType.NUMBER,
-              defaultValue: '0'
+              defaultValue: '90'
             }
           }
         }, {
-          opcode: 'setColor',
+          opcode: 'sendData',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelammingTurtle.setColor',
-            default: '(VT) Set color r: [R] g: [G] b: [B] alpha: [ALPHA]',
-            description: 'set color'
-          }),
-          arguments: {
-            R: {
-              type: argumentType.NUMBER,
-              defaultValue: 1
-            },
-            G: {
-              type: argumentType.NUMBER,
-              defaultValue: 0
-            },
-            B: {
-              type: argumentType.NUMBER,
-              defaultValue: 0
-            },
-            ALPHA: {
-              type: argumentType.NUMBER,
-              defaultValue: 1
-            }
-          }
-        }, {
+            id: 'voxelammingTurtle.sendData',
+            default: '(VT) Send data',
+            description: 'send data to server'
+          })
+        },
+        // {
+        //     opcode: 'clearData',
+        //     blockType: BlockType.COMMAND,
+        //     text: formatMessage({
+        //         id: 'voxelammingTurtle.clearData',
+        //         default: '(VT) Clear data',
+        //         description: 'clear data'
+        //     }),
+        // },
+        {
           opcode: 'penDown',
           blockType: blockType.COMMAND,
           text: formatMessage({
@@ -568,22 +587,6 @@ var ExtensionBlocks = /*#__PURE__*/function () {
             id: 'voxelammingTurtle.reset',
             default: 'Reset turtle',
             description: 'reset'
-          })
-        }, {
-          opcode: 'clearData',
-          blockType: blockType.COMMAND,
-          text: formatMessage({
-            id: 'voxelammingTurtle.clearData',
-            default: '(VT) Clear data',
-            description: 'clear data'
-          })
-        }, {
-          opcode: 'sendData',
-          blockType: blockType.COMMAND,
-          text: formatMessage({
-            id: 'voxelammingTurtle.sendData',
-            default: '(VT) Send data',
-            description: 'send data to server'
           })
         }],
         menus: {}
@@ -631,6 +634,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
   }, {
     key: "clearData",
     value: function clearData() {
+      this.globalAnimation = [0, 0, 0, 0, 0, 0, 1, 0];
       this.node = [0, 0, 0, 0, 0, 0];
       this.animation = [0, 0, 0, 0, 0, 0, 1, 0];
       this.boxes = [];
@@ -795,6 +799,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       var date = new Date();
       var self = this;
       var dataToSend = {
+        globalAnimation: this.globalAnimation,
         node: this.node,
         animation: this.animation,
         boxes: this.boxes,
@@ -806,7 +811,11 @@ var ExtensionBlocks = /*#__PURE__*/function () {
         interval: this.buildInterval,
         date: date.toISOString()
       };
-      var socket = new WebSocket("wss://render-nodejs-server.onrender.com");
+
+      // Clear data after sending
+      // Different implementation from Voxelamming-extension for children
+      this.clearData();
+      var socket = new WebSocket("wss://websocket.voxelamming.com");
       // console.log(socket);
 
       socket.onopen = function () {
@@ -816,9 +825,6 @@ var ExtensionBlocks = /*#__PURE__*/function () {
         console.log("Joined room: ".concat(self.roomName));
         socket.send(JSON.stringify(dataToSend));
         console.log("Sent data: ", JSON.stringify(dataToSend));
-
-        // Not clear data after sending because we want to keep the data for the next sending
-        // self.clearData();  // clear data after sending
 
         // Close the WebSocket connection after sending data
         socket.close();
