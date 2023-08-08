@@ -564,6 +564,7 @@ class ExtensionBlocks {
         // Clear data after sending
         // Different implementation from Voxelamming-extension for children
         this.clearData();
+        this.reset();
 
         let socket = new WebSocket("wss://websocket.voxelamming.com");
         // console.log(socket);

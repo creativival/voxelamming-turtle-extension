@@ -815,6 +815,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       // Clear data after sending
       // Different implementation from Voxelamming-extension for children
       this.clearData();
+      this.reset();
       var socket = new WebSocket("wss://websocket.voxelamming.com");
       // console.log(socket);
 
