@@ -324,7 +324,7 @@ var extensionURL = 'https://creativival.github.io/voxelamming-turtle-extension/d
  */
 var ExtensionBlocks = /*#__PURE__*/function () {
   /**
-   * Construct a set of blocks for Voxelamming.
+   * Construct a set of blocks for VoxelammingTurtle.
    * @param {Runtime} runtime - the Scratch 3.0 runtime.
    */
   function ExtensionBlocks(runtime) {
@@ -344,6 +344,8 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     this.commands = [];
     this.size = 1.0;
     this.shape = 'box';
+    this.isMetallic = 0;
+    this.roughness = 0.5;
     this.buildInterval = 0.01;
     // Turtle
     this.x = 0;
@@ -643,6 +645,8 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       this.commands = [];
       this.size = 1.0;
       this.shape = 'box';
+      this.isMetallic = 0;
+      this.roughness = 0.5;
       this.buildInterval = 0.01;
     }
   }, {
@@ -808,6 +812,8 @@ var ExtensionBlocks = /*#__PURE__*/function () {
         commands: this.commands,
         size: this.size,
         shape: this.shape,
+        isMetallic: this.isMetallic,
+        roughness: this.roughness,
         interval: this.buildInterval,
         date: date.toISOString()
       };
@@ -859,7 +865,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     function get() {
       return formatMessage({
         id: 'voxelammingTurtle.name',
-        default: 'Voxelamming',
+        default: 'Voxelamming Turtle',
         description: 'name of the extension'
       });
     }
