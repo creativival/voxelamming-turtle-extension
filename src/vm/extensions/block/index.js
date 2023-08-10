@@ -45,7 +45,7 @@ class ExtensionBlocks {
     static get EXTENSION_NAME () {
         return formatMessage({
             id: 'voxelammingTurtle.name',
-            default: 'Voxelamming',
+            default: 'Voxelamming Turtle',
             description: 'name of the extension'
         });
     }
@@ -75,7 +75,7 @@ class ExtensionBlocks {
     }
 
     /**
-     * Construct a set of blocks for Voxelamming.
+     * Construct a set of blocks for VoxelammingTurtle.
      * @param {Runtime} runtime - the Scratch 3.0 runtime.
      */
     constructor (runtime) {
@@ -94,6 +94,8 @@ class ExtensionBlocks {
         this.commands = []
         this.size = 1.0;
         this.shape = 'box';
+        this.isMetallic = 0;
+        this.roughness = 0.5;
         this.buildInterval = 0.01;
         // Turtle
         this.x = 0;
@@ -401,6 +403,8 @@ class ExtensionBlocks {
         this.commands = []
         this.size = 1.0;
         this.shape = 'box';
+        this.isMetallic = 0;
+        this.roughness = 0.5;
         this.buildInterval = 0.01;
     }
 
@@ -557,6 +561,8 @@ class ExtensionBlocks {
             commands: this.commands,
             size: this.size,
             shape: this.shape,
+            isMetallic: this.isMetallic,
+            roughness: this.roughness,
             interval: this.buildInterval,
             date: date.toISOString()
         };
