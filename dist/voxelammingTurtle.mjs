@@ -94,6 +94,46 @@ function _toConsumableArray(arr) {
   return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
 
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArrayLimit(arr, i) {
+  var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"];
+  if (null != _i) {
+    var _s,
+      _e,
+      _x,
+      _r,
+      _arr = [],
+      _n = !0,
+      _d = !1;
+    try {
+      if (_x = (_i = _i.call(arr)).next, 0 === i) {
+        if (Object(_i) !== _i) return;
+        _n = !1;
+      } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0);
+    } catch (err) {
+      _d = !0, _e = err;
+    } finally {
+      try {
+        if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return;
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+    return _arr;
+  }
+}
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -335,26 +375,31 @@ var ExtensionBlocks = /*#__PURE__*/function () {
      */
     this.runtime = runtime;
     this.roomName = '1000';
+    this.isAllowedMatrix = 0;
+    this.savedMatrices = [];
+    this.translation = [0, 0, 0, 0, 0, 0];
     this.globalAnimation = [0, 0, 0, 0, 0, 0, 1, 0];
-    this.node = [0, 0, 0, 0, 0, 0];
     this.animation = [0, 0, 0, 0, 0, 0, 1, 0];
     this.boxes = [];
     this.sentence = [];
     this.lights = [];
-    this.commands = [];
+    this.commands = ['float']; // default: 'float mode'
     this.size = 1.0;
     this.shape = 'box';
     this.isMetallic = 0;
     this.roughness = 0.5;
+    this.isAllowedFloat = 1; // default: 'float mode'
     this.buildInterval = 0.01;
+    this.dataQueue = [];
     // Turtle
     this.x = 0;
     this.y = 0;
     this.z = 0;
     this.polarTheta = 90;
-    this.polarPhi = 0;
+    this.polarPhi = 90;
     this.drawable = true;
-    this.color = [1, 0, 0, 1];
+    this.color = [0, 0, 0, 1];
+    setInterval(this.sendQueuedData.bind(this), 1000);
     if (runtime.formatMessage) {
       // Replace 'formatMessage' to a formatter which is used in the runtime.
       formatMessage = runtime.formatMessage;
@@ -602,19 +647,23 @@ var ExtensionBlocks = /*#__PURE__*/function () {
   }, {
     key: "createBox",
     value: function createBox(x, y, z, r, g, b, alpha) {
-      x = Math.floor(x);
-      y = Math.floor(y);
-      z = Math.floor(z);
       // 重ねて置くことを防止するために、同じ座標の箱があれば削除する
+      var _this$roundNumbers = this.roundNumbers([x, y, z]);
+      var _this$roundNumbers2 = _slicedToArray(_this$roundNumbers, 3);
+      x = _this$roundNumbers2[0];
+      y = _this$roundNumbers2[1];
+      z = _this$roundNumbers2[2];
       this.removeBox(x, y, z);
       this.boxes.push([x, y, z, r, g, b, alpha]);
     }
   }, {
     key: "removeBox",
     value: function removeBox(x, y, z) {
-      x = Math.floor(x);
-      y = Math.floor(y);
-      z = Math.floor(z);
+      var _this$roundNumbers3 = this.roundNumbers([x, y, z]);
+      var _this$roundNumbers4 = _slicedToArray(_this$roundNumbers3, 3);
+      x = _this$roundNumbers4[0];
+      y = _this$roundNumbers4[1];
+      z = _this$roundNumbers4[2];
       for (var i = 0; i < this.boxes.length; i++) {
         var box = this.boxes[i];
         if (box[0] === x && box[1] === y && box[2] === z) {
@@ -636,17 +685,18 @@ var ExtensionBlocks = /*#__PURE__*/function () {
   }, {
     key: "clearData",
     value: function clearData() {
+      this.translation = [0, 0, 0, 0, 0, 0];
       this.globalAnimation = [0, 0, 0, 0, 0, 0, 1, 0];
-      this.node = [0, 0, 0, 0, 0, 0];
       this.animation = [0, 0, 0, 0, 0, 0, 1, 0];
       this.boxes = [];
       this.sentence = [];
       this.lights = [];
-      this.commands = [];
+      this.commands = ['float']; // default: 'float mode'
       this.size = 1.0;
       this.shape = 'box';
       this.isMetallic = 0;
       this.roughness = 0.5;
+      this.isAllowedFloat = 1; // default: 'float mode'
       this.buildInterval = 0.01;
     }
   }, {
@@ -656,9 +706,11 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       var z = this.z + length * Math.sin(this.degToRad(this.polarTheta)) * Math.cos(this.degToRad(this.polarPhi));
       var x = this.x + length * Math.sin(this.degToRad(this.polarTheta)) * Math.sin(this.degToRad(this.polarPhi));
       var y = this.y + length * Math.cos(this.degToRad(this.polarTheta));
-      x = this.roundToThreeDecimalPlaces(x);
-      y = this.roundToThreeDecimalPlaces(y);
-      z = this.roundToThreeDecimalPlaces(z);
+      var _this$roundNumbers5 = this.roundNumbers([x, y, z]);
+      var _this$roundNumbers6 = _slicedToArray(_this$roundNumbers5, 3);
+      x = _this$roundNumbers6[0];
+      y = _this$roundNumbers6[1];
+      z = _this$roundNumbers6[2];
       if (this.drawable) {
         this.drawLine.apply(this, [this.x, this.y, this.z, x, y, z].concat(_toConsumableArray(this.color)));
       }
@@ -732,9 +784,9 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       this.y = 0;
       this.z = 0;
       this.polarTheta = 90;
-      this.polarPhi = 0;
+      this.polarPhi = 90;
       this.drawable = true;
-      this.color = [1, 0, 0, 1];
+      this.color = [0, 0, 0, 1];
     }
   }, {
     key: "drawLine",
@@ -796,15 +848,16 @@ var ExtensionBlocks = /*#__PURE__*/function () {
         }
       }
     }
+
+    // 連続してデータを送信するときに、データをキューに入れる
   }, {
     key: "sendData",
     value: function sendData() {
       console.log('Sending data...');
       var date = new Date();
-      var self = this;
       var dataToSend = {
+        translation: this.translation,
         globalAnimation: this.globalAnimation,
-        node: this.node,
         animation: this.animation,
         boxes: this.boxes,
         sentence: this.sentence,
@@ -815,13 +868,26 @@ var ExtensionBlocks = /*#__PURE__*/function () {
         isMetallic: this.isMetallic,
         roughness: this.roughness,
         interval: this.buildInterval,
+        isAllowedFloat: this.isAllowedFloat,
         date: date.toISOString()
       };
+      this.dataQueue.push(dataToSend);
 
       // Clear data after sending
       // Different implementation from Voxelamming-extension for children
       this.clearData();
       this.reset();
+    }
+
+    // 定期的にキューに入れたデータを送信する
+  }, {
+    key: "sendQueuedData",
+    value: function sendQueuedData() {
+      var self = this;
+      if (this.dataQueue.length === 0) return; // If there's no data in queue, skip
+
+      var dataToSend = this.dataQueue.shift(); // Dequeue the data
+      console.log('Sending data...', dataToSend);
       var socket = new WebSocket("wss://websocket.voxelamming.com");
       // console.log(socket);
 
@@ -832,6 +898,9 @@ var ExtensionBlocks = /*#__PURE__*/function () {
         console.log("Joined room: ".concat(self.roomName));
         socket.send(JSON.stringify(dataToSend));
         console.log("Sent data: ", JSON.stringify(dataToSend));
+
+        // Not clear data after sending because we want to keep the data for the next sending
+        // self.clearData();  // clear data after sending
 
         // Close the WebSocket connection after sending data
         socket.close();
@@ -852,9 +921,17 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       return degrees * (Math.PI / 180);
     }
   }, {
-    key: "roundToThreeDecimalPlaces",
-    value: function roundToThreeDecimalPlaces(num) {
-      return Math.round(num * 1000) / 1000;
+    key: "roundNumbers",
+    value: function roundNumbers(num_list) {
+      if (this.isAllowedFloat) {
+        return num_list.map(function (val) {
+          return parseFloat(val.toFixed(2));
+        });
+      } else {
+        return num_list.map(function (val) {
+          return Math.floor(parseFloat(val.toFixed(1)));
+        });
+      }
     }
   }], [{
     key: "EXTENSION_NAME",
