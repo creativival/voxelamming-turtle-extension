@@ -34,6 +34,12 @@ https://creativival.github.io/voxelamming-turtle-extension/dist/voxelammingTurtl
 ```
 
 * This extension cannot be used at the same time as the "Voxelamming" extension.
+* 
+* ## About Voxelamming Extension
+
+The Voxelamming Extension provides advanced features not available in the Turtle version. Use the Voxelamming Extension for more complex programming.
+
+For more information about the Voxelamming Extension, please visit the following site: https://creativival.github.io/voxelamming-extension/
 
 ## Development
 

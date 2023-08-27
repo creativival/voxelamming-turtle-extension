@@ -37,6 +37,12 @@ https://creativival.github.io/voxelamming-turtle-extension/dist/voxelammingTurtl
 
 * この拡張機能は「ボクセラミング」拡張機能と同時には使えません。
 
+## ボクセラミング拡張機能について
+
+ボクセラミング拡張機能は、タートルバージョンにはない高度な機能を提供します。より複雑なプログラミングを行うために、ボクセラミング拡張機能を使用してください。
+
+ボクセラミング拡張機能については、以下のサイトを参照してください。https://creativival.github.io/voxelamming-extension/
+
 ## 開発
 
 [README.md](README.md)
