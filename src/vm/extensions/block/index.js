@@ -85,26 +85,31 @@ class ExtensionBlocks {
          */
         this.runtime = runtime;
         this.roomName = '1000';
+        this.isAllowedMatrix = 0;
+        this.savedMatrices = [];
+        this.translation = [0, 0, 0, 0, 0, 0];
         this.globalAnimation = [0, 0, 0, 0, 0, 0, 1, 0]
-        this.node = [0, 0, 0, 0, 0, 0]
         this.animation = [0, 0, 0, 0, 0, 0, 1, 0]
         this.boxes = [];
-        this.sentence = [];
+        this.sentence = []
         this.lights = [];
-        this.commands = []
+        this.commands = ['float']  // default: 'float mode'
         this.size = 1.0;
-        this.shape = 'box';
-        this.isMetallic = 0;
-        this.roughness = 0.5;
+        this.shape = 'box'
+        this.isMetallic = 0
+        this.roughness = 0.5
+        this.isAllowedFloat = 1  // default: 'float mode'
         this.buildInterval = 0.01;
+        this.dataQueue = [];
         // Turtle
         this.x = 0;
         this.y = 0;
         this.z = 0;
         this.polarTheta = 90;
-        this.polarPhi = 0;
+        this.polarPhi = 90;
         this.drawable = true;
-        this.color = [1, 0, 0, 1];
+        this.color = [0, 0, 0, 1];
+        setInterval(this.sendQueuedData.bind(this), 1000);
 
         if (runtime.formatMessage) {
             // Replace 'formatMessage' to a formatter which is used in the runtime.
@@ -364,18 +369,14 @@ class ExtensionBlocks {
     }
 
     createBox(x, y, z, r, g, b, alpha) {
-        x = Math.floor(x);
-        y = Math.floor(y);
-        z = Math.floor(z);
+        [x, y, z] = this.roundNumbers([x, y, z]);
         // 重ねて置くことを防止するために、同じ座標の箱があれば削除する
         this.removeBox(x, y, z);
         this.boxes.push([x, y, z, r, g, b, alpha]);
     }
 
     removeBox(x, y, z) {
-        x = Math.floor(x);
-        y = Math.floor(y);
-        z = Math.floor(z);
+        [x, y, z] = this.roundNumbers([x, y, z]);
         for (let i = 0; i < this.boxes.length; i++) {
             const box = this.boxes[i];
             if (box[0] === x && box[1] === y && box[2] === z) {
@@ -394,17 +395,18 @@ class ExtensionBlocks {
     }
 
     clearData() {
+        this.translation = [0, 0, 0, 0, 0, 0];
         this.globalAnimation = [0, 0, 0, 0, 0, 0, 1, 0]
-        this.node = [0, 0, 0, 0, 0, 0]
         this.animation = [0, 0, 0, 0, 0, 0, 1, 0]
         this.boxes = [];
-        this.sentence = [];
+        this.sentence = []
         this.lights = [];
-        this.commands = []
+        this.commands = ['float']  // default: 'float mode'
         this.size = 1.0;
-        this.shape = 'box';
-        this.isMetallic = 0;
-        this.roughness = 0.5;
+        this.shape = 'box'
+        this.isMetallic = 0
+        this.roughness = 0.5
+        this.isAllowedFloat = 1  // default: 'float mode'
         this.buildInterval = 0.01;
     }
 
@@ -413,10 +415,7 @@ class ExtensionBlocks {
         let z = this.z + length * Math.sin(this.degToRad(this.polarTheta)) * Math.cos(this.degToRad(this.polarPhi));
         let x = this.x + length * Math.sin(this.degToRad(this.polarTheta)) * Math.sin(this.degToRad(this.polarPhi));
         let y = this.y + length * Math.cos(this.degToRad(this.polarTheta));
-
-        x = this.roundToThreeDecimalPlaces(x);
-        y = this.roundToThreeDecimalPlaces(y);
-        z = this.roundToThreeDecimalPlaces(z);
+        [x, y, z] = this.roundNumbers([x, y, z]);
 
         if (this.drawable) {
             this.drawLine(this.x, this.y, this.z, x, y, z, ...this.color);
@@ -481,9 +480,9 @@ class ExtensionBlocks {
         this.y = 0;
         this.z = 0;
         this.polarTheta = 90;
-        this.polarPhi = 0;
+        this.polarPhi = 90;
         this.drawable = true;
-        this.color = [1, 0, 0, 1];
+        this.color = [0, 0, 0, 1];
     }
 
     drawLine(x1, y1, z1, x2, y2, z2, r, g, b, alpha) {
@@ -547,13 +546,14 @@ class ExtensionBlocks {
         }
     }
 
+    // 連続してデータを送信するときに、データをキューに入れる
     sendData () {
         console.log('Sending data...');
         const date = new Date();
         const self = this;
         const dataToSend = {
+            translation: this.translation,
             globalAnimation: this.globalAnimation,
-            node: this.node,
             animation: this.animation,
             boxes: this.boxes,
             sentence: this.sentence,
@@ -564,13 +564,26 @@ class ExtensionBlocks {
             isMetallic: this.isMetallic,
             roughness: this.roughness,
             interval: this.buildInterval,
+            isAllowedFloat: this.isAllowedFloat,
             date: date.toISOString()
         };
+
+        this.dataQueue.push(dataToSend);
 
         // Clear data after sending
         // Different implementation from Voxelamming-extension for children
         this.clearData();
         this.reset();
+    }
+
+    // 定期的にキューに入れたデータを送信する
+    sendQueuedData() {
+        const self = this;
+        if (this.dataQueue.length === 0) return; // If there's no data in queue, skip
+
+        const dataToSend = this.dataQueue.shift(); // Dequeue the data
+        console.log('Sending data...', dataToSend);
+
 
         let socket = new WebSocket("wss://websocket.voxelamming.com");
         // console.log(socket);
@@ -582,6 +595,9 @@ class ExtensionBlocks {
             console.log(`Joined room: ${self.roomName}`);
             socket.send(JSON.stringify(dataToSend));
             console.log("Sent data: ", JSON.stringify(dataToSend));
+
+            // Not clear data after sending because we want to keep the data for the next sending
+            // self.clearData();  // clear data after sending
 
             // Close the WebSocket connection after sending data
             socket.close();
@@ -604,8 +620,12 @@ class ExtensionBlocks {
         return degrees * (Math.PI / 180);
     }
 
-    roundToThreeDecimalPlaces(num) {
-        return Math.round(num * 1000) / 1000;
+    roundNumbers(num_list) {
+        if (this.isAllowedFloat) {
+            return num_list.map(val => parseFloat(val.toFixed(2)));
+        } else {
+            return num_list.map(val => Math.floor(parseFloat(val.toFixed(1))));
+        }
     }
 }
 
