@@ -1,5 +1,7 @@
 # ボクセラミングタートル拡張機能
 
+<p align="center"><img src="https://creativival.github.io/voxelamming/image/turtle_two_hexagons.png" alt="turtle_two_hexagons" width="50%"/></p>
+
 [Xcratch](https://xcratch.github.io/)用のボクセラミング拡張機能
 
 *Read this in other languages: [English](README.en.md), [日本語](README.md)*

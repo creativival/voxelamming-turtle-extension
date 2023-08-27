@@ -1,5 +1,7 @@
 # Voxelamming Turtle extension
 
+<p align="center"><img src="https://creativival.github.io/voxelamming/image/turtle_two_hexagons.png" alt="turtle_two_hexagons" width="50%"/></p>
+
 Voxelamming extension for [Xcratch](https://xcratch.github.io/)
 
 *Read this in other languages: [English](README.en.md), [日本語](README.md)*
