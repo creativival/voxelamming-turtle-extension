@@ -571,9 +571,8 @@ class ExtensionBlocks {
         this.dataQueue.push(dataToSend);
 
         // Clear data after sending
-        // Different implementation from Voxelamming-extension for children
+        // Different implementation from Voxelamming-extension
         this.clearData();
-        this.reset();
     }
 
     // 定期的にキューに入れたデータを送信する
