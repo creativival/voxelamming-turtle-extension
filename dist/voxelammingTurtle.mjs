@@ -654,7 +654,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       y = _this$roundNumbers2[1];
       z = _this$roundNumbers2[2];
       this.removeBox(x, y, z);
-      this.boxes.push([x, y, z, r, g, b, alpha]);
+      this.boxes.push([x, y, z, r, g, b, alpha, -1]);
     }
   }, {
     key: "removeBox",

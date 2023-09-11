@@ -372,7 +372,7 @@ class ExtensionBlocks {
         [x, y, z] = this.roundNumbers([x, y, z]);
         // 重ねて置くことを防止するために、同じ座標の箱があれば削除する
         this.removeBox(x, y, z);
-        this.boxes.push([x, y, z, r, g, b, alpha]);
+        this.boxes.push([x, y, z, r, g, b, alpha, -1]);
     }
 
     removeBox(x, y, z) {
