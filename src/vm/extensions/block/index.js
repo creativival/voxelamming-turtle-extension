@@ -93,7 +93,7 @@ class ExtensionBlocks {
         this.boxes = [];
         this.sentence = []
         this.lights = [];
-        this.commands = ['float']  // default: 'float mode'
+        this.commands = ['float', 'liteRender']  // default: 'float mode' 'liteRender'
         this.size = 1.0;
         this.shape = 'box'
         this.isMetallic = 0
@@ -401,7 +401,7 @@ class ExtensionBlocks {
         this.boxes = [];
         this.sentence = []
         this.lights = [];
-        this.commands = ['float']  // default: 'float mode'
+        this.commands = ['float', 'liteRender']  // default: 'float mode', 'liteRender'
         this.size = 1.0;
         this.shape = 'box'
         this.isMetallic = 0
