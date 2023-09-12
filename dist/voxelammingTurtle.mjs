@@ -269,63 +269,63 @@ var argumentType = ArgumentType;
 
 var en = {
 	"voxelammingTurtle.name": "Voxelamming Turtle",
-	"voxelammingTurtle.setRoomName": "(VT) Set room name to [ROOMNAME]",
-	"voxelammingTurtle.setBoxSize": "(VT) Set voxel size to [BOXSIZE]",
-	"voxelammingTurtle.setBuildInterval": "(VT) Set build interval to [INTERVAL]",
-	"voxelammingTurtle.forward": "(VT) Move forward [LENGTH]",
-	"voxelammingTurtle.backward": "(VT) Move backward [LENGTH]",
-	"voxelammingTurtle.right": "(VT) Turn right [ANGLE]",
-	"voxelammingTurtle.left": "(VT) Turn left [ANGLE]",
-	"voxelammingTurtle.up": "(VT) Head up [ANGLE]",
-	"voxelammingTurtle.down": "(VT) Head down [ANGLE]",
-	"voxelammingTurtle.setColor": "(VT) Set color r: [R] g: [G] b: [B] alpha: [ALPHA]",
-	"voxelammingTurtle.penDown": "(VT) Pen down",
-	"voxelammingTurtle.penUp": "(VT) Pen up",
-	"voxelammingTurtle.setPos": "(VT) Set position x: [X] y: [Y] z: [Z]",
-	"voxelammingTurtle.reset": "(VT) Reset turtle",
-	"voxelammingTurtle.clearData": "(VT) Clear data",
-	"voxelammingTurtle.sendData": "(VT) Send data"
+	"voxelammingTurtle.setRoomName": "(Turtle) Set room name to [ROOMNAME]",
+	"voxelammingTurtle.setBoxSize": "(Turtle) Set voxel size to [BOXSIZE]",
+	"voxelammingTurtle.setBuildInterval": "(Turtle) Set build interval to [INTERVAL]",
+	"voxelammingTurtle.forward": "(Turtle) Move forward [LENGTH]",
+	"voxelammingTurtle.backward": "(Turtle) Move backward [LENGTH]",
+	"voxelammingTurtle.right": "(Turtle) Turn right [ANGLE]",
+	"voxelammingTurtle.left": "(Turtle) Turn left [ANGLE]",
+	"voxelammingTurtle.up": "(Turtle) Head up [ANGLE]",
+	"voxelammingTurtle.down": "(Turtle) Head down [ANGLE]",
+	"voxelammingTurtle.setColor": "(Turtle) Set color r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelammingTurtle.penDown": "(Turtle) Pen down",
+	"voxelammingTurtle.penUp": "(Turtle) Pen up",
+	"voxelammingTurtle.setPos": "(Turtle) Set position x: [X] y: [Y] z: [Z]",
+	"voxelammingTurtle.reset": "(Turtle) Reset turtle",
+	"voxelammingTurtle.clearData": "(Turtle) Clear data",
+	"voxelammingTurtle.sendData": "(Turtle) Send data"
 };
 var ja = {
 	"voxelammingTurtle.name": "ボクセラミングタートル",
-	"voxelammingTurtle.setRoomName": "(VT) ルームネームを [ROOMNAME] にする",
-	"voxelammingTurtle.setBoxSize": "(VT) ボクセルサイズを [BOXSIZE] にする",
-	"voxelammingTurtle.setBuildInterval": "(VT) ボクセルの作成間隔を [INTERVAL] 秒にする",
-	"voxelammingTurtle.forward": "(VT) 前に [LENGTH] 進む",
-	"voxelammingTurtle.backward": "(VT) 後ろに [LENGTH] 進む",
-	"voxelammingTurtle.right": "(VT) 右に [ANGLE] 度回転する",
-	"voxelammingTurtle.left": "(VT) 左に [ANGLE] 度回転する",
-	"voxelammingTurtle.up": "(VT) 頭を [ANGLE] 度上げる",
-	"voxelammingTurtle.down": "(VT) 頭を [ANGLE] 度下げる",
-	"voxelammingTurtle.setColor": "(VT) 色を設定する r: [R] g: [G] b: [B] alpha: [ALPHA]",
-	"voxelammingTurtle.penDown": "(VT) ペンを下ろす",
-	"voxelammingTurtle.penUp": "(VT) ペンを上げる",
-	"voxelammingTurtle.setPos": "(VT) 位置を移動する x: [X] y: [Y] z: [Z]",
-	"voxelammingTurtle.reset": "(VT) タートルをリセットする",
-	"voxelammingTurtle.clearData": "(VT) データを初期化する",
-	"voxelammingTurtle.sendData": "(VT) データを送信する"
+	"voxelammingTurtle.setRoomName": "(タートル) ルームネームを [ROOMNAME] にする",
+	"voxelammingTurtle.setBoxSize": "(タートル) ボクセルサイズを [BOXSIZE] にする",
+	"voxelammingTurtle.setBuildInterval": "(タートル) ボクセルの作成間隔を [INTERVAL] 秒にする",
+	"voxelammingTurtle.forward": "(タートル) 前に [LENGTH] 進む",
+	"voxelammingTurtle.backward": "(タートル) 後ろに [LENGTH] 進む",
+	"voxelammingTurtle.right": "(タートル) 右に [ANGLE] 度回転する",
+	"voxelammingTurtle.left": "(タートル) 左に [ANGLE] 度回転する",
+	"voxelammingTurtle.up": "(タートル) 頭を [ANGLE] 度上げる",
+	"voxelammingTurtle.down": "(タートル) 頭を [ANGLE] 度下げる",
+	"voxelammingTurtle.setColor": "(タートル) 色を設定する r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelammingTurtle.penDown": "(タートル) ペンを下ろす",
+	"voxelammingTurtle.penUp": "(タートル) ペンを上げる",
+	"voxelammingTurtle.setPos": "(タートル) 位置を移動する x: [X] y: [Y] z: [Z]",
+	"voxelammingTurtle.reset": "(タートル) タートルをリセットする",
+	"voxelammingTurtle.clearData": "(タートル) データを初期化する",
+	"voxelammingTurtle.sendData": "(タートル) データを送信する"
 };
 var translations = {
 	en: en,
 	ja: ja,
 	"ja-Hira": {
 	"voxelammingTurtle.name": "ボクセラミングタートル",
-	"voxelammingTurtle.setRoomName": "(VT) ルームネームを [ROOMNAME] にする",
-	"voxelammingTurtle.setBoxSize": "(VT) ボクセルサイズを [BOXSIZE] にする",
-	"voxelammingTurtle.setBuildInterval": "(VT) ボクセルのつくるかんかくを [INTERVAL] びょうにする",
-	"voxelammingTurtle.forward": "(VT) まえに [LENGTH] すすむ",
-	"voxelammingTurtle.backward": "(VT) うしろに [LENGTH] すすむ",
-	"voxelammingTurtle.right": "(VT) みぎに [ANGLE] どまわる",
-	"voxelammingTurtle.left": "(VT) ひだりに [ANGLE] どまわる",
-	"voxelammingTurtle.up": "(VT) あたまを [ANGLE] どあげる",
-	"voxelammingTurtle.down": "(VT) あたまを [ANGLE] どさげる",
-	"voxelammingTurtle.setColor": "(VT) いろをきめる r: [R] g: [G] b: [B] alpha: [ALPHA]",
-	"voxelammingTurtle.penDown": "(VT) ペンをおろす",
-	"voxelammingTurtle.penUp": "(VT) ペンをあげる",
-	"voxelammingTurtle.setPos": "(VT) いちをいどうする x: [X] y: [Y] z: [Z]",
-	"voxelammingTurtle.reset": "(VT) タートルをリセットする",
-	"voxelammingTurtle.clearData": "(VT) データをけす",
-	"voxelammingTurtle.sendData": "(VT) データをおくる"
+	"voxelammingTurtle.setRoomName": "(タートル) ルームネームを [ROOMNAME] にする",
+	"voxelammingTurtle.setBoxSize": "(タートル) ボクセルサイズを [BOXSIZE] にする",
+	"voxelammingTurtle.setBuildInterval": "(タートル) ボクセルのつくるかんかくを [INTERVAL] びょうにする",
+	"voxelammingTurtle.forward": "(タートル) まえに [LENGTH] すすむ",
+	"voxelammingTurtle.backward": "(タートル) うしろに [LENGTH] すすむ",
+	"voxelammingTurtle.right": "(タートル) みぎに [ANGLE] どまわる",
+	"voxelammingTurtle.left": "(タートル) ひだりに [ANGLE] どまわる",
+	"voxelammingTurtle.up": "(タートル) あたまを [ANGLE] どあげる",
+	"voxelammingTurtle.down": "(タートル) あたまを [ANGLE] どさげる",
+	"voxelammingTurtle.setColor": "(タートル) いろをきめる r: [R] g: [G] b: [B] alpha: [ALPHA]",
+	"voxelammingTurtle.penDown": "(タートル) ペンをおろす",
+	"voxelammingTurtle.penUp": "(タートル) ペンをあげる",
+	"voxelammingTurtle.setPos": "(タートル) いちをいどうする x: [X] y: [Y] z: [Z]",
+	"voxelammingTurtle.reset": "(タートル) タートルをリセットする",
+	"voxelammingTurtle.clearData": "(タートル) データをけす",
+	"voxelammingTurtle.sendData": "(タートル) データをおくる"
 }
 };
 
@@ -383,7 +383,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     this.boxes = [];
     this.sentence = [];
     this.lights = [];
-    this.commands = ['float']; // default: 'float mode'
+    this.commands = ['float', 'liteRender']; // default: 'float mode' 'liteRender'
     this.size = 1.0;
     this.shape = 'box';
     this.isMetallic = 0;
@@ -691,7 +691,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       this.boxes = [];
       this.sentence = [];
       this.lights = [];
-      this.commands = ['float']; // default: 'float mode'
+      this.commands = ['float', 'liteRender']; // default: 'float mode', 'liteRender'
       this.size = 1.0;
       this.shape = 'box';
       this.isMetallic = 0;
