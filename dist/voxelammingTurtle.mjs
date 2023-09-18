@@ -378,9 +378,11 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     this.isAllowedMatrix = 0;
     this.savedMatrices = [];
     this.translation = [0, 0, 0, 0, 0, 0];
+    this.frameTranslations = [];
     this.globalAnimation = [0, 0, 0, 0, 0, 0, 1, 0];
     this.animation = [0, 0, 0, 0, 0, 0, 1, 0];
     this.boxes = [];
+    this.frames = [];
     this.sentence = [];
     this.lights = [];
     this.commands = ['float', 'liteRender']; // default: 'float mode' 'liteRender'
@@ -390,6 +392,8 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     this.roughness = 0.5;
     this.isAllowedFloat = 1; // default: 'float mode'
     this.buildInterval = 0.01;
+    this.isFraming = false;
+    this.frameId = 0;
     this.dataQueue = [];
     // Turtle
     this.x = 0;
@@ -857,17 +861,19 @@ var ExtensionBlocks = /*#__PURE__*/function () {
       var date = new Date();
       var dataToSend = {
         translation: this.translation,
+        frameTranslations: this.frameTranslations,
         globalAnimation: this.globalAnimation,
         animation: this.animation,
         boxes: this.boxes,
+        frames: this.frames,
         sentence: this.sentence,
         lights: this.lights,
         commands: this.commands,
         size: this.size,
         shape: this.shape,
+        interval: this.buildInterval,
         isMetallic: this.isMetallic,
         roughness: this.roughness,
-        interval: this.buildInterval,
         isAllowedFloat: this.isAllowedFloat,
         date: date.toISOString()
       };
