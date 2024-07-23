@@ -308,7 +308,7 @@ class ExtensionBlocks {
                     opcode: 'sendAndRecordData',
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
-                        id: 'voxelamming.sendAndRecordData',
+                        id: 'voxelammingTurtle.sendAndRecordData',
                         default: '(VT) Send data and record as [NAME]',
                         description: 'send data to server'
                     }),

@@ -17,7 +17,7 @@
     "voxelammingTurtle.reset": "(Turtle) Reset turtle",
     "voxelammingTurtle.clearData": "(Turtle) Clear data",
     "voxelammingTurtle.sendData": "(Turtle) Send data",
-    "voxelamming.sendAndRecordData": "(Turtle) Send data and record as [NAME]"
+    "voxelammingTurtle.sendAndRecordData": "(Turtle) Send data and record as [NAME]"
   },
   "ja": {
     "voxelammingTurtle.name": "ボクセラミングタートル",
@@ -37,7 +37,7 @@
     "voxelammingTurtle.reset": "(タートル) タートルをリセットする",
     "voxelammingTurtle.clearData": "(タートル) データを初期化する",
     "voxelammingTurtle.sendData": "(タートル) データを送信する",
-    "voxelamming.sendAndRecordData": "(タートル) データを送信して、[NAME] として記録する"
+    "voxelammingTurtle.sendAndRecordData": "(タートル) データを送信して、[NAME] として記録する"
   },
   "ja-Hira": {
     "voxelammingTurtle.name": "ボクセラミングタートル",
@@ -57,6 +57,6 @@
     "voxelammingTurtle.reset": "(タートル) タートルをリセットする",
     "voxelammingTurtle.clearData": "(タートル) データをけす",
     "voxelammingTurtle.sendData": "(タートル) データをおくる",
-    "voxelamming.sendAndRecordData": "(タートル) データをおくって、[NAME] としてきろくする"
+    "voxelammingTurtle.sendAndRecordData": "(タートル) データをおくって、[NAME] としてきろくする"
   }
 }
