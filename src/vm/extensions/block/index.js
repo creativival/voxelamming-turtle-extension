@@ -304,6 +304,21 @@ class ExtensionBlocks {
                         description: 'send data to server'
                     }),
                 },
+                {
+                    opcode: 'sendAndRecordData',
+                    blockType: BlockType.COMMAND,
+                    text: formatMessage({
+                        id: 'voxelamming.sendAndRecordData',
+                        default: '(VT) Send data and record as [NAME]',
+                        description: 'send data to server'
+                    }),
+                    arguments: {
+                        NAME: {
+                            type: ArgumentType.STRING,
+                            defaultValue: 'Title'
+                        }
+                    }
+                },
                 // {
                 //     opcode: 'clearData',
                 //     blockType: BlockType.COMMAND,
@@ -550,10 +565,15 @@ class ExtensionBlocks {
         }
     }
 
+    sendData() {
+        this.sendAndRecordData('')
+    }
+
     // 連続してデータを送信するときに、データをキューに入れる
-    sendData () {
+    sendAndRecordData(args) {
         console.log('Sending data...');
         const date = new Date();
+        const name = args.NAME;
         const dataToSend = {
             translation: this.translation,
             frameTranslations: this.frameTranslations,
@@ -570,6 +590,7 @@ class ExtensionBlocks {
             isMetallic: this.isMetallic,
             roughness: this.roughness,
             isAllowedFloat: this.isAllowedFloat,
+            name: name,
             date: date.toISOString()
         };
 
