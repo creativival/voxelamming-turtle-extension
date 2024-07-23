@@ -276,7 +276,7 @@ var en = {
 	"voxelammingTurtle.reset": "(Turtle) Reset turtle",
 	"voxelammingTurtle.clearData": "(Turtle) Clear data",
 	"voxelammingTurtle.sendData": "(Turtle) Send data",
-	"voxelamming.sendAndRecordData": "(Turtle) Send data and record as [NAME]"
+	"voxelammingTurtle.sendAndRecordData": "(Turtle) Send data and record as [NAME]"
 };
 var ja = {
 	"voxelammingTurtle.name": "ボクセラミングタートル",
@@ -296,7 +296,7 @@ var ja = {
 	"voxelammingTurtle.reset": "(タートル) タートルをリセットする",
 	"voxelammingTurtle.clearData": "(タートル) データを初期化する",
 	"voxelammingTurtle.sendData": "(タートル) データを送信する",
-	"voxelamming.sendAndRecordData": "(タートル) データを送信して、[NAME] として記録する"
+	"voxelammingTurtle.sendAndRecordData": "(タートル) データを送信して、[NAME] として記録する"
 };
 var translations = {
 	en: en,
@@ -319,7 +319,7 @@ var translations = {
 	"voxelammingTurtle.reset": "(タートル) タートルをリセットする",
 	"voxelammingTurtle.clearData": "(タートル) データをけす",
 	"voxelammingTurtle.sendData": "(タートル) データをおくる",
-	"voxelamming.sendAndRecordData": "(タートル) データをおくって、[NAME] としてきろくする"
+	"voxelammingTurtle.sendAndRecordData": "(タートル) データをおくって、[NAME] としてきろくする"
 }
 };
 
@@ -581,7 +581,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           opcode: 'sendAndRecordData',
           blockType: blockType.COMMAND,
           text: formatMessage({
-            id: 'voxelamming.sendAndRecordData',
+            id: 'voxelammingTurtle.sendAndRecordData',
             default: '(VT) Send data and record as [NAME]',
             description: 'send data to server'
           }),
