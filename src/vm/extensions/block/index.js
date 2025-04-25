@@ -86,16 +86,21 @@ class ExtensionBlocks {
         this.runtime = runtime;
         this.roomName = '1000';
         this.isAllowedMatrix = 0;
-        this.savedMatrices = [];
-        this.translation = [0, 0, 0, 0, 0, 0];
-        this.frameTranslations = [];
+        this.nodeTransform = [0, 0, 0, 0, 0, 0];
+        this.frameTransforms = [];
         this.globalAnimation = [0, 0, 0, 0, 0, 0, 1, 0]
         this.animation = [0, 0, 0, 0, 0, 0, 1, 0]
         this.boxes = [];
         this.frames = [];
-        this.sentence = []
+        this.sentences = []
         this.lights = [];
         this.commands = ['float', 'liteRender']  // default: 'float mode' 'liteRender'
+        this.models = [];
+        this.modelMoves = [];
+        this.sprites = [];
+        this.spriteMoves = [];
+        this.gameScore = [];
+        this.gameScreen = [];
         this.size = 1.0;
         this.shape = 'box'
         this.isMetallic = 0
@@ -414,13 +419,21 @@ class ExtensionBlocks {
     }
 
     clearData() {
-        this.translation = [0, 0, 0, 0, 0, 0];
+        this.isAllowedMatrix = 0;
+        this.nodeTransform = [0, 0, 0, 0, 0, 0];
+        this.frameTransforms = [];
         this.globalAnimation = [0, 0, 0, 0, 0, 0, 1, 0]
         this.animation = [0, 0, 0, 0, 0, 0, 1, 0]
         this.boxes = [];
-        this.sentence = []
+        this.sentences = []
         this.lights = [];
         this.commands = ['float', 'liteRender']  // default: 'float mode', 'liteRender'
+        this.models = [];
+        this.modelMoves = [];
+        this.sprites = [];
+        this.spriteMoves = [];
+        this.gameScore = [];
+        this.gameScreen = [];
         this.size = 1.0;
         this.shape = 'box'
         this.isMetallic = 0
@@ -575,15 +588,21 @@ class ExtensionBlocks {
         const date = new Date();
         const name = args.NAME;
         const dataToSend = {
-            translation: this.translation,
-            frameTranslations: this.frameTranslations,
+            nodeTransform: this.nodeTransform,
+            frameTransform: this.frameTransform,
             globalAnimation: this.globalAnimation,
             animation: this.animation,
             boxes: this.boxes,
             frames: this.frames,
-            sentence: this.sentence,
+            sentences: this.sentences,
             lights: this.lights,
             commands: this.commands,
+            models: this.models,
+            modelMoves: this.modelMoves,
+            sprites: this.sprites,
+            spriteMoves: this.spriteMoves,
+            gameScore: this.gameScore,
+            gameScreen: this.gameScreen,
             size: this.size,
             shape: this.shape,
             interval: this.buildInterval,
