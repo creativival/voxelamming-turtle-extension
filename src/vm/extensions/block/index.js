@@ -379,7 +379,7 @@ class ExtensionBlocks {
                     blockType: BlockType.COMMAND,
                     text: formatMessage({
                         id: 'voxelammingTurtle.reset',
-                        default: 'Reset turtle',
+                        default: '(VT) Reset turtle',
                         description: 'reset'
                     }),
                 }
