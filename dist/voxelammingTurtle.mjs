@@ -649,7 +649,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockType: blockType.COMMAND,
           text: formatMessage({
             id: 'voxelammingTurtle.reset',
-            default: 'Reset turtle',
+            default: '(VT) Reset turtle',
             description: 'reset'
           })
         }],
